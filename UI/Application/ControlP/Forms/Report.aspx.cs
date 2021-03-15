@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
+﻿using BLL.BusinessEntity;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System;
+using System.IO;
+using System.Xml;
 
 public partial class PSM_Forms_Report : System.Web.UI.Page
 {
