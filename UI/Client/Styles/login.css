@@ -1,0 +1,151 @@
+﻿@import url(fonts.css);
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #1ABC9C; /*#03B6C1*/
+    color: #fff;
+    font: normal normal normal 10pt/14pt 'Open Sans';
+}
+
+label {
+    text-shadow: 1px 1px 0 #000;
+}
+
+#loginDistance {
+    width: 1px;
+    height: 50%;
+    background-color: Transparent;
+    margin-bottom: -170px; /* half of Login's height */
+    float: left;
+}
+
+#body {
+    margin: 0 auto;
+    position: relative;
+    width: 535px;
+    height: 250px;
+    clear: left;
+    direction: ltr;
+    text-align: center;
+}
+
+#logo {
+    float: left;
+    width: 126px;
+    height: 100px;
+    background: transparent url(../Images/Public/loginLogo.png) no-repeat left center;
+    margin: 20px 40px 0 0;
+}
+
+#welcome {
+    float: left;
+    margin-top: 120px;
+    margin-left: 20px;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+    #welcome span {
+        font-family: 'Open Sans bold';
+        font-size: 18px;
+    }
+
+#login {
+    float: left;
+    width: 360px;
+    height: 250px;
+    direction: ltr;
+    background: #EDEFF1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#developer {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+    #developer span {
+        color: #fff;
+        display: block;
+        margin-top: 10px;
+    }
+
+        #developer span a, #developer span a:visited {
+            color: #34495E;
+            text-decoration: none;
+            border-bottom: 1px dotted #fff;
+        }
+
+            #developer span a:hover {
+                border-bottom: 1px solid #fff;
+            }
+
+.loginTextBox {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-color: #fff;
+    width: 306px;
+    height: 36px;
+    color: #34495e;
+    font-size: 18px;
+    padding: 0 5px;
+    margin: 0 18px;
+    border: 2px solid #fff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-transition: all 0.25s linear 0s;
+    -moz-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+    .loginTextBox:focus {
+        border: 2px solid #1ABC9C;
+    }
+
+input.login, a.login {
+    height: 25px;
+    padding: 3px 20px 2px;
+    position: relative;
+    top: 15px;
+    margin: 0 18px;
+    white-space: nowrap;
+    border: none;
+    overflow: visible;
+    text-decoration: none;
+    color: #fff;
+    width: 320px;
+    height: 40px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background: #1ABC9C;
+    font-size: 18px;
+    -webkit-transition: all 0.25s linear 0s;
+    -moz-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+.username {
+    background: #fff url(../Images/Public/username.png) no-repeat 295px center;
+}
+
+.password {
+    background: #fff url(../Images/Public/password.png) no-repeat 295px center;
+}
+
+input.login:hover, a.login:hover {
+    color: #fff;
+}
+
+input.login:hover {
+    background: #42C7AD; /* #42C7AD;*/
+    cursor: pointer;
+}

@@ -1,0 +1,91 @@
+﻿.Notification
+{
+    position: fixed;
+    bottom: 1em;
+    right: 0;
+    z-index: 100;
+    opacity: 1;
+    display:block;
+    -webkit-transform: translateX(200%);
+	transform: translateX(200%);
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+.notyEffect {
+    display:block;
+    -webkit-transform: translateX(0%) !important;
+	transform: translateX(0%) !important;
+	-webkit-transition: all .3s !important;
+	transition: all .3s !important;
+    display:block !important;
+    opacity: 1 !important;
+}
+.Notification div {
+    padding: 5px 10px 5px 5px;
+    width: 350px;
+    min-height: 120px;
+}
+.Notification ul {
+    margin: 0;
+}
+.Notification li
+{
+    list-style-type: none;
+    padding: 0;
+    color: #fff;
+}
+.Notification li span {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 2px 5px 2px 0;
+}
+.Notification li p.message {
+    position: relative;
+    display: inline;    
+    bottom: 6px;
+    font: normal normal normal 14px/20px 'open sans';
+}
+.Notification div.Information {
+    background-color: #3498db;
+}
+.Notification div.Success {
+    background-color: #2ecc71;
+}
+.Notification div.Warning {
+    background-color: #f1c40f;
+}
+.Notification div.Error {
+    background-color: #e74c3c;
+}
+.Notification li span.iconInformation
+{
+    background: transparent url(../../Application/Images/CP/CPIcons.png) no-repeat -57px -3px;
+}
+.Notification li span.iconSuccess
+{
+    background: transparent url(../../Application/Images/CP/CPIcons.png) no-repeat -57px -33px;
+}
+.Notification li span.iconWarning
+{
+    background: transparent url(../../Application/Images/CP/CPIcons.png) no-repeat -57px -63px;
+}
+.Notification li span.iconError
+{
+    background: transparent url(../../Application/Images/CP/CPIcons.png) no-repeat -57px -93px;
+}
+
+.closeNotification
+{
+    background: transparent url(../../Application/Images/CP/CPIcons.png) no-repeat -56px -123px;
+    border: none;
+    width: 17px;
+    height: 16px;
+    display: block;
+}
+.closeNotification:hover
+{
+    background: transparent url(../../Application/Images/CP/CPIcons.png) no-repeat -56px -153px;
+    border: none;
+    cursor: pointer;
+}

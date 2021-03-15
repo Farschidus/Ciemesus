@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Base.master.cs" Inherits="Masters_Base" %><!DOCTYPE html>
+<html lang="<%= formLang %>">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="/Application/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/Application/Scripts/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript" src="/Application/Scripts/Plugins/jquery-impromptu.5.2.1.js"></script>  
+    <script type="text/javascript" src="/Application/Scripts/Farschidus.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Application/Styles/global.css" />
+    <script type="text/javascript">
+        var timer;
+        function closeNotification() {
+            $('.Notification').removeClass('notyEffect');
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="cphHeaderMaster" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data">
+    <asp:ScriptManager ID="CiemesusScriptManager" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+    </asp:ScriptManager>
+    <asp:ContentPlaceHolder ID="cphMainMaster" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:UpdateProgress ID="upImage" runat="server">
+        <ProgressTemplate>
+            <div id="UpdateProgress">
+                <span class="ImageProgress"></span>
+                <span class="pleaseWait"><%= Farschidus.Translator.AppTranslate["general.label.updateProgress.waiting"]%></span>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <asp:UpdatePanel ID="udpNotification" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <asp:Panel ID="pnlNotification" class="Notification" runat="server" Visible="false" >
+                <asp:Literal ID="lblNotificationMessage" runat="server"></asp:Literal>
+            </asp:Panel>
+            <ajax:AnimationExtender ID="pnlNotification_AnimationExtender" runat="server" Enabled="True" TargetControlID="pnlNotification">
+                <Animations>
+                        <OnLoad>
+                            <Sequence>
+                                <ScriptAction Script="$('.Notification').addClass('notyEffect');" />
+                                <ScriptAction Script="timer = setTimeout(function () { $('.Notification').delay(3000).removeClass('notyEffect'); }, 3000);" />
+                            </Sequence>                            
+                        </OnLoad>
+                        <OnHoverOver>
+                            <ScriptAction Script="clearTimeout(timer);" />                                
+                        </OnHoverOver>
+                        <OnHoverOut>
+                            <ScriptAction Script="timer = setTimeout(function () { $('.Notification').delay(3000).removeClass('notyEffect'); }, 3000);" />
+                        </OnHoverOut>
+                </Animations>
+            </ajax:AnimationExtender>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    </form>
+</body>
+</html>

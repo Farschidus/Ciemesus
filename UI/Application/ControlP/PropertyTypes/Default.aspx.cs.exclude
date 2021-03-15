@@ -1,0 +1,247 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Farschidus.Web.UI.WebControls;
+using BLL.BusinessEntity;
+
+public partial class PSM_PropertyTypes_Default : BaseCP
+{
+    #region "Properties"
+
+    public byte? pIDPropertyType
+    {
+        get
+        {
+            if (ViewState["pIDPropertyType"] == null)
+            {
+                return null;
+            }
+            return (byte)ViewState["pIDPropertyType"];
+        }
+        set
+        {
+            ViewState["pIDPropertyType"] = value;
+        }
+    }
+
+    #endregion
+
+    #region "Events"
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            pShowMediaManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = true;
+            pShownSearchButton = true;
+            grvList.EmptyDataText = Farschidus.Translator.AppTranslate["general.message.gridsEmptyDataText"];
+            Title = Farschidus.Translator.AppTranslate["propertyTypes.default.page.title"];
+            listPager.PageSizeSelectClause = Farschidus.Translator.AppTranslate["general.label.pager.pageSizeSelectClause"];
+            listPager.GoToClause = Farschidus.Translator.AppTranslate["general.label.pager.goToClause"];
+            mInitialBindings();
+        }
+    }
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        pListMode = ListMode.Search;
+        listPager.CurrentIndex = 1;
+
+        mLoadList();
+    }
+    protected override void btnLoadAll_Click(object sender, EventArgs e)
+    {
+        pListMode = ListMode.LoadAll;
+        listPager.CurrentIndex = 1;
+        mLoadList();
+    }
+    protected override void btnCreate_Click(object sender, EventArgs e)
+    {
+        mClear();
+    }
+    protected override void btnSubmit_Click(object sender, EventArgs e)
+    {
+        mSave();
+    }
+    protected override void btnCancel_Click(object sender, EventArgs e)
+    {
+        mLoadList();
+    }
+    protected void grvList_RowDraged(object sender, GridViewRowDragedEventArgs e)
+    {
+        // Use "e" Arquments: e.Status, e.ComandName, e.ComandName, e.DragedRowIndex, e.TargetRowIndex;
+    }
+    protected void grvList_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        mClear();
+        pIDPropertyType = Convert.ToByte(grvList.DataKeys[Convert.ToInt32(e.NewEditIndex)][0]);
+        e.Cancel = true;
+        mFillForm();
+    }
+    protected void grvList_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        byte iDPropertyType = Convert.ToByte(grvList.DataKeys[Convert.ToInt32(e.RowIndex)][0]);
+        if (mValidateDelete(iDPropertyType))
+        {
+            mDelete(iDPropertyType);
+        }
+    }
+    protected void Pager_PageIndexChanged(object sender, PagerPageIndexChangeEventArgs e)
+    {
+        mLoadList();
+    }
+    protected void Pager_PageSizeChanged(object sender, PagerPageSizeChangeEventArgs e)
+    {
+        mLoadList();
+    }
+
+    #endregion
+
+    #region "Methodes"
+
+    private void mInitialBindings()
+    {
+        mLoadList();
+
+        //// Put ddls loading here like the example below:
+        //PhaseStatuses statuses = new PhaseStatuses();
+        //statuses.LoadAll();
+        //ddlPhaseStatuses.DataSource = statuses.DefaultView;
+        //ddlPhaseStatuses.DataTextField = DAL.DataAccess._PhaseStatuses.ColumnNames.Title;
+        //ddlPhaseStatuses.DataValueField = DAL.DataAccess._PhaseStatuses.ColumnNames.IDPhaseStatus;
+        //ddlPhaseStatuses.DataBind();
+    }
+    private void mLoadList()
+    {
+        switch (pListMode)
+        {
+            case ListMode.LoadAll:
+                mLoadAll();
+                break;
+            case ListMode.Search:
+                mSearch();
+                break;
+        }
+    }
+    private void mLoadAll()
+    {
+        int itemCount = 0;
+        PropertyTypes propertyTypes = new PropertyTypes();
+        propertyTypes.LoadAll(listPager.CurrentIndex - 1, listPager.PageSize, ref itemCount, null);
+
+        listPager.ItemCount = itemCount;
+
+        grvList.DataSource = propertyTypes.DefaultView;
+        grvList.DataBind();
+        uplList.Update();
+    }
+    private void mSearch()
+    {
+        int itemCount = 0;
+        PropertyTypes propertyTypes = new PropertyTypes();
+       
+        string name = "";
+        if (!string.IsNullOrEmpty(txtNameSearch.Text))
+        {
+            name = txtNameSearch.Text.Trim();
+        }
+
+        propertyTypes.Search(listPager.CurrentIndex - 1, listPager.PageSize, ref itemCount,
+     null,
+     name,
+     null);
+        listPager.ItemCount = itemCount;
+
+        grvList.DataSource = propertyTypes.DefaultView;
+        grvList.DataBind();
+        uplList.Update();
+    }
+    private void mFillForm()
+    {
+       PropertyTypes propertyTypes = new PropertyTypes(pIDPropertyType.Value);
+        //txtIDType.Text = propertyTypes.pIDType;
+        txtName.Text = propertyTypes.pName;
+        uplAddEdit.Update();
+    }
+    private bool mValidateAddEdit()
+    {
+        pMessage.Clear();
+        bool isValid = true;
+        // Validation logic goes here (Validate Example is in Phases Default page)
+        return isValid;
+    }
+    private bool mValidateDelete(byte iDPropertyType)
+    {
+        return true;
+    }
+    private void mSave()
+    {
+        if (mValidateAddEdit())
+        {
+            try
+            {
+                PropertyTypes propertyTypes = new PropertyTypes();
+                if (pIDPropertyType.HasValue)
+                {
+                    propertyTypes.LoadByPrimaryKey(pIDPropertyType.Value);
+                }
+                else
+                {
+                    propertyTypes.AddNew();
+                }
+                //propertyTypes.pIDType = txtIDType.Text;
+                propertyTypes.pName = txtName.Text;
+
+                propertyTypes.Save();
+                pMessage.Clear();
+                pMessage.Add(Farschidus.Translator.AppTranslate["message.addEdit.success"], Farschidus.Web.UI.Message.MessageTypes.Success);
+                mShowMessage(pMessage);
+
+                if (!pIDPropertyType.HasValue)
+                {
+                    mClear();
+                }
+            }
+            catch (Exception ex)
+            {
+                pMessage.Clear();
+                pMessage.Add(ex.Message, Farschidus.Web.UI.Message.MessageTypes.Error);
+                mShowMessage(pMessage);
+            }
+        }
+        else
+        {
+            mShowMessage(pMessage);
+        }
+    }
+    private void mDelete(byte iDPropertyType)
+    {
+        try
+        {
+            PropertyTypes propertyTypes = new PropertyTypes(iDPropertyType);
+            propertyTypes.MarkAsDeleted(false);
+
+            pMessage.Clear();
+            pMessage.Add(Farschidus.Translator.AppTranslate["message.delete.success"], Farschidus.Web.UI.Message.MessageTypes.Success);
+            mShowMessage(pMessage);
+
+            propertyTypes.Save();
+            mLoadList();
+        }
+        catch (Exception ex)
+        {
+            pMessage.Clear();
+            pMessage.Add(ex.Message, Farschidus.Web.UI.Message.MessageTypes.Error);
+            mShowMessage(pMessage);
+        }
+    }
+    private void mClear()
+    {
+        txtName.Text = string.Empty;
+        pIDPropertyType = null;
+        uplAddEdit.Update();        
+    }
+
+    #endregion
+}

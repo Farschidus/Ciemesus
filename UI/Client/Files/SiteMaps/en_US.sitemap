@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="" title="" description="">
+    <siteMapNode title="Home" url="~/en_US/Pages/Home/" resourceKey="4BDA847B-A626-4881-9C7D-70A9BECCE554" />
+    <siteMapNode title="Contact Us" url="~/en_US/Pages/Contact/" resourceKey="724a17b7-8ee4-4cac-82f8-cfd8c8a0009a" />
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,175 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+
+public partial class ControlP_UserManager_EditUser : System.Web.UI.Page
+{
+    string username;
+    MembershipUser user;
+
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        // Load the User Roles into checkboxes.
+        UserRoles.DataSource = Roles.GetAllRoles();
+        UserRoles.DataBind();
+
+        // Disable checkboxes if appropriate:
+        if (UserInfo.CurrentMode != DetailsViewMode.Edit)
+        {
+            foreach (ListItem checkbox in UserRoles.Items)
+            {
+                checkbox.Enabled = false;
+            }
+        }
+
+        // Bind these checkboxes to the User's own set of roles.
+        string[] userRoles = Roles.GetRolesForUser(username);
+        foreach (string role in userRoles)
+        {
+            ListItem checkbox = UserRoles.Items.FindByValue(role);
+            checkbox.Selected = true;
+        }
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        username = Request.QueryString["username"];
+        if (String.IsNullOrEmpty(username))
+        {
+            Response.Redirect("Default.aspx");
+        }
+        try
+        {
+            user = Membership.GetUser(username);
+            LblTitle.Text = String.Format("User: <i style='color:#a2ff00'>{0}</i>", user.UserName);
+            if (!IsPostBack)
+            {
+                //ProfileCommon profile = (ProfileCommon)ProfileCommon.Create(username, true);
+                //lblFirstNamePe.Text = profile["UserFullNamePe"].ToString();
+                //lblFirstNameEn.Text = profile["UserFullNameEn"].ToString();
+            }
+        }
+        catch
+        {
+            Response.Redirect("Default.aspx");
+        }
+    }
+    protected void UserInfo_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
+    {
+        //Need to handle the update manually because MembershipUser does not have a
+        //parameterless constructor  
+
+        user.Email = (string)e.NewValues[0];
+        user.Comment = (string)e.NewValues[1];
+        user.IsApproved = (bool)e.NewValues[2];
+
+        try
+        {
+            // Update user info:
+            Membership.UpdateUser(user);
+            // Update user roles:
+            UpdateUserRoles();
+            MessagePanel1.Message = "اطلاعات با موفقیت ویرایش گردید.";
+            MessagePanel1.Class = _controls_MessagePanel.MessageType.Success;
+
+            e.Cancel = true;
+            UserInfo.ChangeMode(DetailsViewMode.ReadOnly);
+        }
+        catch (Exception ex)
+        {
+            MessagePanel1.Message = "Update Failed: " + ex.Message;
+            MessagePanel1.Class = _controls_MessagePanel.MessageType.Error;
+
+            e.Cancel = true;
+            UserInfo.ChangeMode(DetailsViewMode.ReadOnly);
+        }
+    }
+
+    protected void UpdateUserRoles()
+    {
+        foreach (ListItem rolebox in UserRoles.Items)
+        {
+            if (rolebox.Selected)
+            {
+                if (!Roles.IsUserInRole(username, rolebox.Text))
+                {
+                    Roles.AddUserToRole(username, rolebox.Text);
+                }
+            }
+            else
+            {
+                if (Roles.IsUserInRole(username, rolebox.Text))
+                {
+                    Roles.RemoveUserFromRole(username, rolebox.Text);
+                }
+            }
+        }
+    }
+    protected void DeleteUser(object sender, EventArgs e)
+    {
+        try
+        {
+            //Membership.DeleteUser(username, false); // DC: My apps will NEVER delete the related data.
+            Membership.DeleteUser(username, true); // DC: except during testing, of course!
+            Response.Redirect("Default.aspx");
+        }
+        catch
+        {
+            MessagePanel1.Message = "Error in deleting user!";
+            MessagePanel1.Class = _controls_MessagePanel.MessageType.Error;
+        }
+    }
+    protected void UnlockUser(object sender, EventArgs e)
+    {
+        // Dan Clem, added 5/30/2007 post-live upgrade.
+
+        // Unlock the user.
+        user.UnlockUser();
+
+        // DataBind the GridView to reflect same.
+        UserInfo.DataBind();
+    }
+    protected void UserInfo_ItemCommand(object sender, DetailsViewCommandEventArgs e)
+    {
+        //ProfileCommon profile = (ProfileCommon)ProfileCommon.Create(username, true);
+
+        switch (e.CommandName)
+        {
+            case "Edit":
+                txtFirstNamePe.Visible = true;
+                txtFirstNameEn.Visible = true;
+                lblFirstNamePe.Visible = false;
+                lblFirstNameEn.Visible = false;
+                //txtFirstNamePe.Text = profile["UserFullNamePe"].ToString();
+                //txtFirstNameEn.Text = profile["UserFullNameEn"].ToString();
+                break;
+            case "Update":
+                txtFirstNamePe.Visible = false;
+                txtFirstNameEn.Visible = false;
+                lblFirstNamePe.Visible = true;
+                lblFirstNameEn.Visible = true;
+                //profile["UserFullNamePe"] = txtFirstNamePe.Text;
+                //profile["UserFullNameEn"] = txtFirstNameEn.Text;
+                //lblFirstNamePe.Text = profile["UserFullNamePe"].ToString();
+                //lblFirstNameEn.Text = profile["UserFullNameEn"].ToString();
+                //profile.Save();
+                break;
+            case "Cancel":
+                txtFirstNamePe.Visible = false;
+                txtFirstNameEn.Visible = false;
+                lblFirstNamePe.Visible = true;
+                lblFirstNameEn.Visible = true;
+                //lblFirstNamePe.Text = profile["UserFullNamePe"].ToString();
+                //lblFirstNameEn.Text = profile["UserFullNameEn"].ToString();
+                break;
+            case "Select":
+                Response.Redirect("Default.aspx");
+                break;
+        }
+    }
+}

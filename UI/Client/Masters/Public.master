@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Application/Masters/Base.master" AutoEventWireup="true" CodeFile="Public.master.cs" Inherits="Masters_Public" %>
+
+<%@ Register Src="~/Client/Ascx/PubLangSelector.ascx" TagPrefix="LanuageSelector" TagName="PubLangSelector" %>
+<%@ Register Src="~/Client/Ascx/BreadcrumpGen.ascx" TagPrefix="Breadcrump" TagName="BreadcrumpGen" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cphHeaderMaster" runat="Server">
+    <meta name="description" content="<%= Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Metatags", "Description", "langCode", Global.MethodsAndProps.CurrentLanguageCode) %>" />
+    <meta name="keywords" content="<%= Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Metatags", "KeyWords", "langCode", Global.MethodsAndProps.CurrentLanguageCode) %>" />
+    <script type="text/javascript" src="/Application/Scripts/Plugins/jquery.easing.1.3.js"></script>
+    <link href="/Application/Scripts/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Client/Styles/public.css" />
+    <script src="/Application/Scripts/Bootstrap/bootstrap.min.js"></script>
+    <link href="/Application/Styles/Pilot/animate.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            DefaultTextBinding();
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(DefaultTextBinding);
+            if ($('li.active').length > 0) {
+                $('li.active').parents("li:last").addClass('active');
+            }
+        });
+        function DefaultTextBinding() {
+            $('.default-value').each(function () {
+                var default_value = this.value;
+                $(this).focus(function () {
+                    if (this.value == default_value) {
+                        this.value = '';
+                    }
+                });
+                $(this).blur(function () {
+                    if (this.value == '') {
+                        this.value = default_value;
+                    }
+                });
+            });
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphMainMaster" runat="Server">
+    <div id="Wrapper">
+        <div id="MenuTop">
+            <div class="container">
+                <div id="sitemapLogin">
+                   &nbsp;|&nbsp;<asp:Literal ID="litLogin" runat="server"></asp:Literal>
+                </div>
+                <div id="siteDate"><%= CurrentDate %></div>
+                <div id="LanguageSelector">
+                    <LanuageSelector:PubLangSelector runat="server" ID="PubLangSelector" RenderType="Literal" />
+                </div>
+                <div id="search">
+                    <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch">
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput default-value"></asp:TextBox>
+                        <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" CssClass="searchButton" />
+                    </asp:Panel>
+                </div>
+                <a class="navbar-brand" href='<%= HomeUrl %>'>
+                    <%= mGetLogo()%>
+                </a>
+                <nav class="navbar navbar-default" role="navigation"> <%--navbar-fixed-top--%>
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" aria-expanded="true">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <%= mGenerateNavbar()%>
+                        </div>
+                    </div>
+                </nav>
+                <div id="Breadcrump"><%--<Breadcrump:BreadcrumpGen runat="server" ID="BreadcrumpGen" />--%></div>
+            </div>
+            <div id="MenuBg"></div>
+        </div>
+        <div id="Content">
+            <div class="container">
+                <div id="Banner">
+                    <asp:ContentPlaceHolder ID="cphHeadContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <asp:ContentPlaceHolder ID="cphMain" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="Footer">
+            <div class="container">
+                <%= Farschidus.Translator.AppTranslate["footer.label.companyName"]%>
+            </div>
+        </div>
+    </div>
+</asp:Content>

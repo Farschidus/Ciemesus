@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Application/Masters/Base.master" AutoEventWireup="true" CodeFile="Popup.master.cs" 
+    Inherits="Application_Masters_Popup" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cphHeaderMaster" runat="Server">
+    <link rel="stylesheet" type="text/css" href="/Application/Styles/cp.css" />
+    <style type="text/css">
+        body {
+            background: none;
+            font: normal normal normal 8pt/12pt tahoma;
+            margin: 0;
+            color: #fff;
+            padding: 10px;
+        }
+        a {
+            font-weight: 700;
+            text-decoration: none;
+            color: #EDE580;
+        }
+        div.PagerContainer, div.GotoStaticAndPageSizeContainer {
+            color: #000;
+        }
+    </style>
+    <script type="text/javascript">      
+        var deleteConfirmMessage = '<%# Farschidus.Translator.AppTranslate["general.message.confirmDelete"]%>';
+        var deleteConfirmButtons = { '<%# Farschidus.Translator.AppTranslate["general.button.ok"]%>': true, '<%# Farschidus.Translator.AppTranslate["general.button.cancel"]%>': false };
+    </script>
+    <asp:ContentPlaceHolder ID="cphHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphMainMaster" runat="Server">
+    <asp:ContentPlaceHolder ID="cphMain" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

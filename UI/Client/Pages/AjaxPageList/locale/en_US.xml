@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<locale name="fa_IR" full_name="farsi">
+  <!-- General -->
+  <message key="page.default.dates.creationDate">Creation Date</message>
+  <message key="page.default.media.title">Related Files</message>
+  <message key="page.default.pageList.title">Related Pages</message>
+  <!--Messages-->
+  <message key="page.default.message.pageNotExist">There is no such a page. Please select from the site menu</message>
+</locale>

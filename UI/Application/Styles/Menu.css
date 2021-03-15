@@ -1,0 +1,214 @@
+*,
+*:after,
+*::before {	     
+    -moz-box-sizing: border-box;
+	     box-sizing: border-box;
+}
+html,
+body,
+form,
+.container,
+.pusher,
+.content {
+	height: 100%;
+}
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: " ";
+}
+.clearfix:after {
+	clear: both;
+}
+.menu a {
+	text-decoration: none;
+	outline: none;
+    color: #fff;
+}
+
+.menu a:hover, .menu a:focus {
+	outline: none;
+    color: #fff;
+}
+
+.content {
+	overflow: hidden;
+	background: #fff;
+}
+
+.content,
+.content-inner {
+	position: relative;
+}
+
+.container {
+	position: relative;
+	overflow: hidden;
+}
+
+.pusher {
+	position: relative;
+	left: 3.3em;
+	z-index: 99;
+	height: 100%;
+    padding-right: 3.3em;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.pusher::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+.menuOpen .pusher::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.menu img.ciemesus {
+	width: 150px;
+	background: #1ABC9C;
+}
+
+.version {
+	position: absolute;
+	top: 4px;
+	left: 133px;
+	font-size: 12px;
+	color: #666666;
+}
+
+.menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 300px;
+	height: 100%;
+    background: #1ABC9C; /*03B6C1*/
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+/* content style */
+.menu h2 {
+	height: 60px;
+    margin: 0;
+	padding-top: 9px;
+    padding-left: 3px;	
+    color: #1ABC9C; /*03B6C1*/
+	text-shadow: 0 0 1px rgba(0,0,0,0.1);
+	font-weight: 300;
+	font-size: 24px;
+    background-color: #323031;
+}
+.menu ul {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    color: #03b6c1;   
+    list-style: none;
+    vertical-align: central;
+}
+.menu ul li.selected {
+    border-left: 3px solid #ECF0F1;
+    background-color: #15967D;
+}
+.menu ul li {
+    height: 36px;
+    display: block;
+	padding: 6px 6px 6px;
+	outline: none;
+	box-shadow: inset 0 -1px rgba(196, 225, 228, 0.2);
+	text-transform: uppercase;
+	text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	letter-spacing: 1px;
+	font-weight: 400;
+	-webkit-transition: background 0.3s, box-shadow 0.3s;
+	transition: background 0.3s, box-shadow 0.3s; 
+}
+.menu ul li:hover {
+    background: rgba(0,0,0,0.2);
+	box-shadow: inset 0 -1px rgba(0,0,0,0);
+	color: #fff;
+}
+
+.menu ul li a span {
+	display: block;
+	text-transform: uppercase;
+    font-size: 1.1em;
+    padding: 4px 10px 4px 35px;
+}
+.itemImage {
+    float: left;
+    width: 20px; 
+    height: 20px;
+}
+
+.menu ul li:first-child a {
+	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
+}
+
+.menu ul li a:hover {
+	/*background: rgba(0,0,0,0.2);
+	box-shadow: inset 0 -1px rgba(0,0,0,0);
+	color: #fff;*/
+}
+/* Effect 2: Reveal */
+.effect.menuOpen .pusher {
+	-webkit-transform: translate3d(11em, 0, 0);
+	transform: translate3d(11em, 0, 0);
+}
+.effect.menu {
+	z-index: 1;
+}
+.effect.menuOpen .effect.menu {
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
+.no-csstransforms3d .pusher,
+.no-js .pusher {
+	padding-left: 10em;
+}
+
+/*******************************  Icon Classes   ***********************************/
+#Menu ul li a div {
+    float: left;
+    display: inline-block;
+    background: transparent url('../Images/CP/MenuIcons.png') no-repeat left top; 
+    width: 24px;
+    height: 24px
+}
+
+#Menu div.Dashboard { background-position: 0 0; }
+#Menu div.Languages { background-position: 0 -24px; }
+#Menu div.Users { background-position: 0 -48px; }
+#Menu div.Userpages { background-position: 0 -72px; }
+#Menu div.Home { background-position: 0 -96px; }
+#Menu div.Pages { background-position: 0 -120px; }
+#Menu div.List { background-position: 0 -144px; }
+#Menu div.PagesList { background-position: 0 -168px; }
+#Menu div.Gallery { background-position: 0 -192px; }
+#Menu div.Contact { background-position: 0 -216px; }
+#Menu div.Plugins { background-position: 0 -240px; }
+#Menu div.Category { background-position: 0 -264px; }
+#Menu div.Media { background-position: 0 -288px; }
+#Menu div.MenuManager { background-position: 0 -312px; }
+#Menu div.Localisation { background-position: 0 -336px; }
+#Menu div.Settings { background-position: 0 -360px; }
+#Menu div.Properties { background-position: 0 -384px; }
+#Menu div.Forms { background-position: 0 -408px; }

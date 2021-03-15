@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<locale name="fa_IR" full_name="farsi">
+  <!-- General -->
+  <message key="page.default.dates.creationDate">ایجاد:</message>
+  <message key="page.default.media.title">فایل‌های ضمیمه</message>
+  <!--Messages-->
+  <message key="page.default.message.pageNotExist" >چنین صفحه‌ای موجود نمی‌باشد، لطفا از منوی سایت استفاده نمایید.</message>
+</locale>

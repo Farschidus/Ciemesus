@@ -1,0 +1,76 @@
+﻿<%@ Page Title="ویرایش اطلاعات کاربری" Language="C#" MasterPageFile="~/Application/Masters/CP.master"
+    AutoEventWireup="true" CodeFile="EditUser.aspx.cs" Inherits="ControlP_UserManager_EditUser" %>
+
+<%@ Register Src="~/ascx/MessagePanel.ascx" TagName="MessagePanel" TagPrefix="uc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="Server">
+<!--[if IE]>
+<style type="text/css">  
+    table, td
+    {
+    	border: none;
+    }
+</style>
+<![endif]-->
+</asp:Content>
+<asp:Content ID="SearchContent" ContentPlaceHolderID="cphSearch" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="Server">
+    <h2 dir="ltr">
+        <asp:Label ID="LblTitle" runat="server" />
+    </h2>
+    <uc1:MessagePanel ID="MessagePanel1" runat="server" />
+    <table align="center">
+        <tr>
+            <td valign="top">
+                <h3>
+                    ویرایش نقش کاربری:
+                </h3>
+                <asp:CheckBoxList ID="UserRoles" runat="server" RepeatDirection="Horizontal" RepeatColumns="9" />
+                <h3>
+                    ویرایش اطلاعات کاربر:
+                </h3>
+                نام و نام خانوادگی
+                <asp:TextBox ID="txtFirstNamePe" runat="server" Visible="false" Style="margin-right: 46px"></asp:TextBox>
+                <asp:Label ID="lblFirstNamePe" runat="server" Style="margin-right: 46px"></asp:Label><br />
+                نام و نام خانوادگی انگلیسی
+                <asp:TextBox ID="txtFirstNameEn" runat="server" Visible="false" Style="margin-right: 0px;
+                    direction: ltr"></asp:TextBox>
+                <asp:Label ID="lblFirstNameEn" runat="server" Style="margin-right: 1px"></asp:Label><br />
+                <asp:DetailsView AutoGenerateRows="False" DataSourceID="MemberData" ID="UserInfo"
+                    runat="server" OnItemUpdating="UserInfo_ItemUpdating" OnItemCommand="UserInfo_ItemCommand">
+                    <Fields>
+                        <asp:BoundField DataField="UserName" HeaderText="نام کاربری" ReadOnly="True"></asp:BoundField>
+                        <asp:BoundField DataField="Email" HeaderText="پست الکترونیک"></asp:BoundField>
+                        <asp:BoundField DataField="Comment" HeaderText="توضیحات"></asp:BoundField>
+                        <asp:CheckBoxField DataField="IsApproved" HeaderText="فعال" />
+                        <asp:CheckBoxField DataField="IsLockedOut" HeaderText="قفل بودن شناسه" ReadOnly="true" />
+                        <asp:CheckBoxField DataField="IsOnline" HeaderText="آنلاین" ReadOnly="True" />
+                        <asp:BoundField DataField="CreationDate" HeaderText="تاریخ ایجاد کاربر" ReadOnly="True">
+                        </asp:BoundField>
+                        <asp:BoundField DataField="LastActivityDate" HeaderText="آخرین تاریخ فعالیت" ReadOnly="True">
+                        </asp:BoundField>
+                        <asp:BoundField DataField="LastLoginDate" HeaderText="آخرین تاریخ ورود به سیستم"
+                            ReadOnly="True"></asp:BoundField>
+                        <asp:BoundField DataField="LastLockoutDate" HeaderText="آخرین تاریخ مسدود شدن" ReadOnly="True">
+                        </asp:BoundField>
+                        <asp:BoundField DataField="LastPasswordChangedDate" HeaderText="آخرین تاریخ تغییر رمز عبور"
+                            ReadOnly="True"></asp:BoundField>
+                        <asp:CommandField ButtonType="button" ShowEditButton="true" EditText="ویرایش" ShowSelectButton="true"
+                            SelectText="بازگشت به فهرست کاربران" CancelText="انصراف" UpdateText="ثبت" />
+                    </Fields>
+                </asp:DetailsView>
+                <div style="text-align: right; margin: 10px 0px;">
+                    <asp:Button ID="Button1" runat="server" Text="برداشتن قفل شناسه" OnClick="UnlockUser"
+                        OnClientClick="return confirm('Click OK to unlock this user.')" />
+                    <%--<asp:Button ID="Button2" runat="server" Text="Delete User" OnClick="DeleteUser" OnClientClick="return confirm('Are Your Sure?')" />--%>
+                </div>
+                <asp:ObjectDataSource ID="MemberData" runat="server" DataObjectTypeName="System.Web.Security.MembershipUser"
+                    SelectMethod="GetUser" UpdateMethod="UpdateUser" TypeName="System.Web.Security.Membership">
+                    <SelectParameters>
+                        <asp:QueryStringParameter Name="username" QueryStringField="username" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            </td>
+        </tr>
+    </table>
+</asp:Content>

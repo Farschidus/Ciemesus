@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12002836-7861-4B84-B4F2-E4E22DA8DAF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Farschidus">
+      <HintPath>..\UI\Bin\Farschidus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessEntity\Sex.cs" />
+    <Compile Include="BusinessEntity\Gallery.cs" />
+    <Compile Include="BusinessEntity\Languages.cs" />
+    <Compile Include="BusinessEntity\ListTypePage.cs" />
+    <Compile Include="BusinessEntity\Logs.cs" />
+    <Compile Include="BusinessEntity\Medias.cs" />
+    <Compile Include="BusinessEntity\MediaSubjects.cs" />
+    <Compile Include="BusinessEntity\MediaSubjectTypes.cs" />
+    <Compile Include="BusinessEntity\Members.cs" />
+    <Compile Include="BusinessEntity\Plugins.cs" />
+    <Compile Include="BusinessEntity\GalleryPlugins.cs" />
+    <Compile Include="BusinessEntity\Properties.cs" />
+    <Compile Include="BusinessEntity\PropertyItems.cs" />
+    <Compile Include="BusinessEntity\PropertyTypes.cs" />
+    <Compile Include="BusinessEntity\SubjectPlugins.cs" />
+    <Compile Include="BusinessEntity\SubjectProperties.cs" />
+    <Compile Include="BusinessEntity\SubjectPropertyValues.cs" />
+    <Compile Include="BusinessEntity\Subjects.cs" />
+    <Compile Include="BusinessEntity\SubjectTypes.cs" />
+    <Compile Include="BusinessEntity\TranslatorTypes.cs" />
+    <Compile Include="Hardcodes\Item.cs" />
+    <Compile Include="Hardcodes\Tables.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{de370dfe-35f2-421a-bc62-cc765c8f547c}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<locale name="fa_IR" full_name="farsi">
+  <!--Search-->
+  <message key="users.default.search.roles">Roles:</message>
+  <message key="users.default.search.approval">Approval status:</message>
+  <message key="users.default.search.locked">Lock status:</message>
+  <message key="users.default.search.online">Online status:</message>
+  <message key="users.default.search.usernameFilter">Username Filter:</message>
+  
+  <!--Add and Edit-->
+  <message key="users.default.addEdit.roles">User Roles:</message>
+  <message key="users.default.profile.username">User Name:</message>
+  <message key="users.default.profile.email">Email:</message>
+  <message key="users.default.profile.firstName">First Name:</message>
+  <message key="users.default.profile.lastName">Last Name:</message>
+  <message key="users.default.profile.birthDate">Date of Birth:</message>
+  <message key="users.default.profile.occupation">Occupation:</message>
+  <message key="users.default.profile.address">Address 1st line:</message>
+  <message key="users.default.profile.address2">Address 2nd line:</message>
+  <message key="users.default.profile.country">Country:</message>
+  <message key="users.default.profile.city">City:</message>
+  <message key="users.default.profile.telephone">Telephone:</message>
+  <!--Grid Headers-->
+  <message key="users.default.grid.fullName">Full Name</message>
+  <message key="users.default.grid.userName">Username</message>
+  <message key="users.default.grid.lastActivityDate">Last Activity</message>
+  <message key="users.default.grid.changeActivation">Activation</message>
+  <message key="users.default.grid.lockStatus">Lock Status</message>
+  <message key="users.default.grid.changePassword">Password</message>
+  <message key="users.default.grid.edit">Edit</message>
+  <message key="users.default.grid.delete">Delete</message>
+  <!--Popup-->
+  <message key="users.default.popup.userName">User Name: </message>
+  <message key="users.default.popup.password">New Password: </message>
+  <message key="users.default.popup.changePassword">Change Password</message>
+  <!--Messages-->  
+  <message key="users.profile.message.updateSuccessfully">User Profile Updated Successfuly.</message>
+  <message key="users.profile.message.roleUpdate">Roles Updated Successfuly.</message>
+  <message key="users.profile.message.errorUpdate">There was an error in updated your profile.</message>
+</locale>

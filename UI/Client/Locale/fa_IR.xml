@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<locale name="fa_IR" full_name="Farsi">
+  <module type="Genaral" name="Genaral">
+    <message key="general.meta.description">توضیحات</message>
+    <message key="general.meta.keywords">کلیدواژه ها</message>
+    <message key="general.label.language">
+    </message>
+    <message key="general.label.login">ورود</message>
+    <message key="general.label.na">بدون پاسخ</message>
+    <message key="general.label.sitemap">نقشه سایت</message>
+    <message key="general.label.updateProgress.waiting">لطفا صبر کنید</message>
+    <message key="general.label.search">جستجو</message>
+    <message key="general.button.search">&lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;</message>
+    <message key="general.button.submit">ثبت</message>
+    <message key="general.message.error">ثبت</message>
+    <message key="general.message.success">اطلاعات شما با موفقیت ثبت گردید</message>
+    <message key="general.message.dates.creationDate">ثبت</message>
+    <message key="general.message.page.deactivate">اطلاعات شما با موفقیت ثبت گردید</message>
+    <message key="general.message.pageNotExist">ثبت</message>
+    <message key="general.message.media.title">اطلاعات شما با موفقیت ثبت گردید</message>
+    <message key="general.message.pageList.title">خطا:</message>
+  </module>
+  <module type="Genaral" name="footer">
+    <message key="footer.label.companyName">&lt;div&gt;شرکت قوانینی &lt;span style="color: #85C446;"&gt;|&lt;/span&gt; قدرت گرفته از &lt;span style="color: #85C446; font-family: 'Open Sans';"&gt;Ciemesus&lt;/span&gt;&lt;/div&gt; &lt;img id='jxlznbqejzpenbqeesgtrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=127203&amp;p=rfthuiwkjyoeuiwkobpdxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=127203&amp;p=nbpdodrfyndtodrflymaqfti'/&gt;</message>
+    <message key="footer.label.companyAddress">
+    </message>
+  </module>
+  <module type="Login" name="LoginPage">
+    <message key="login.default.label.userName">شناسه</message>
+    <message key="login.default.label.password">رمز</message>
+    <message key="login.default.label.loginButton">ورود</message>
+  </module>
+  <module type="Page" name="RegisterationPage">
+    <message key="registration.page.default.title">ثبت نام</message>
+    <message key="registration.page.default.username">نام کاربری</message>
+    <message key="registration.page.default.password">رمز عبور</message>
+    <message key="registration.page.default.repeatPassword">تکرار رمز</message>
+    <message key="registration.page.default.email">ایمیل</message>
+    <message key="registration.page.default.firstName">نام</message>
+    <message key="registration.page.default.lastName">نام خانوادگی</message>
+    <message key="registration.page.default.gender">جنسیت</message>
+    <message key="registration.page.default.female">زن</message>
+    <message key="registration.page.default.male">مرد</message>
+    <message key="registration.page.default.dateOfBirth">تاریخ تولد</message>
+    <message key="registration.page.default.tel">تلفن</message>
+    <message key="registration.page.default.mobile">تلفن همراه</message>
+    <message key="registration.page.default.fax">فکس</message>
+    <message key="registration.page.default.postalCode">کدپستی</message>
+    <message key="registration.page.default.state">استان</message>
+    <message key="registration.page.default.city">شهر</message>
+    <message key="registration.page.default.address">آدرس</message>
+    <message key="registration.page.default.activityType">نوع فعالیت</message>
+    <message key="registration.page.default.description">توضیحات</message>
+    <message key="registration.page.button.register">ثبت نام</message>
+    <message key="registration.page.message.userExist">این شناسه کاربری موجود می باشد</message>
+    <message key="registration.page.message.success">اطلاعات با موفقیت ثبت گردید</message>
+  </module>
+  <module type="SearchPage" name="SearchPage">
+    <message key="search.default.message.typeinSearchBox">لطفا عبارت جستجوی خود را در کادر جستجو تایپ کنید</message>
+    <message key="search.default.message.noResult">هیچ نتیجه‌ای یافت نشد</message>
+    <message key="search.default.message.SearchResultFor">نتیجه جستجو برای:</message>
+  </module>
+  <module type="Page" name="ComparePage">
+    <message key="comparePage.page.default.title">مقایسه کالا</message>
+    <message key="comparePage.page.button.compare">مقایسه</message>
+  </module>
+  <module type="Page" name="List">
+    <message key="list.page.default.backToList">بازگشت</message>
+    <message key="list.page.default.backToList.arrow">glyphicon-chevron-left</message>
+  </module>
+  <module type="UserControls" name="Contact">
+    <message key="ascx.contact.message.emailFormatError">آدرس ایمیل صحیح نمی‌باشد.</message>
+    <message key="ascx.contact.message.sendSuccessful">ایمیل با موفقیت ارسال گردید</message>
+    <message key="ascx.contact.lable.title">تماس با ما</message>
+    <message key="ascx.contact.lable.department">دپارتمان</message>
+    <message key="ascx.contact.lable.name">نام</message>
+    <message key="ascx.contact.lable.senderEmail">ایمیل:</message>
+    <message key="ascx.contact.lable.email">ایمیل:</message>
+    <message key="ascx.contact.lable.body">متن</message>
+    <message key="ascx.contact.button.send">ارسال</message>
+    <message key="ascx.contact.lable.phone">تلفن: </message>
+    <message key="ascx.contact.lable.fax">فکس: </message>
+    <message key="ascx.contact.lable.address">آدرس: </message>
+  </module>
+  <module type="UserControls" name="GalleryList">
+    <message key="ascx.galleryList.lable.title">عنوان</message>
+  </module>
+  <module type="UserControls" name="LatestList">
+    <message key="ascx.latestList.lable.title">آخرین محصولات</message>
+  </module>
+  <module type="UserControls" name="BredCrump">
+    <message key="bredCrump.seperator"><![CDATA[&raquo;]]></message>
+    <message key="bredCrump.pages.home">صفحه نخست</message>
+    <message key="bredCrump.pages.contact">تماس با ما</message>
+    <message key="bredCrump.pages.search">جستجو</message>
+    <message key="bredCrump.pages.compare">مقایسه</message>
+  </module>
+  <module type="UserControls" name="ListAndDateFilter">
+    <message key="ascx.listAndDateFilter.lable.category">By Category:</message>
+    <message key="ascx.listAndDateFilter.lable.date">By Date:</message>
+  </module>
+</locale>

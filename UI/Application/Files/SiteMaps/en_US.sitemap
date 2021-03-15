@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/siteMapNodeap-File-1.0">
+  <siteMapNode roles="*">
+    <siteMapNode title="Dashboard" url="~/en_US/ControlP/Desktop/" description="Dashboard‌" roles="Administrator" />
+    <siteMapNode title="Languages" url="~/en_US/ControlP/Languages/" description="Languages" roles="Administrator" />
+    <siteMapNode title="Settings" url="~/en_US/ControlP/Settings/" description="Settings" roles="Administrator" />
+    <siteMapNode title="Users" url="~/en_US/ControlP/UserManager/" description="Users" roles="Administrator,UsersManager" />
+    <siteMapNode title="Users Pages" url="~/en_US/ControlP/UserPages/" description="Userpages" roles="Administrator,UserPages" />
+    <siteMapNode title="Home Page" url="~/en_US/ControlP/Home/" description="Home" roles="Administrator" />
+    <siteMapNode title="Pages" url="~/en_US/ControlP/Pages/" description="Pages" roles="Administrator" />
+    <siteMapNode title="Groups" url="~/en_US/ControlP/SubjectTypes/" description="List" roles="Administrator" />
+    <siteMapNode title="Group Pages" url="~/en_US/ControlP/List/" description="PagesList" roles="Administrator" />
+    <siteMapNode title="Galleries" url="~/en_US/ControlP/Gallery/" description="Gallery" roles="Administrator" />
+    <siteMapNode title="Contact Page" url="~/en_US/ControlP/Contact/" description="Contact" roles="Administrator" />
+    <siteMapNode title="Forms" url="~/en_US/ControlP/Forms/" description="Forms" roles="Administrator" />
+    <siteMapNode title="Properties" url="~/en_US/ControlP/Properties/" description="Properties" roles="Administrator" />
+    <siteMapNode title="Pluggins" url="~/en_US/ControlP/Plugins/" description="Plugins" roles="Administrator" />
+    <siteMapNode title="Categories" url="~/en_US/ControlP/Category/" description="Category" roles="Administrator" />
+    <siteMapNode title="Medias" url="~/en_US/ControlP/Media/" description="Media" roles="Administrator"  />
+    <siteMapNode title="Website Menus" url="~/en_US/ControlP/MenuManager/" description="MenuManager" roles="Administrator" />
+    <siteMapNode title="Localisation" url="~/en_US/ControlP/Localization/" description="Localisation" roles="Administrator" />
+  </siteMapNode>
+</siteMap>

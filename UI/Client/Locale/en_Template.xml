@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<locale name="en_US" full_name="english">
+  <module type="Genaral" name="Genaral">
+    <message key="general.meta.description">Description</message>
+    <message key="general.meta.keywords">keyword, keyword</message>
+    <message key="general.label.language">language:</message>
+    <message key="general.label.login">login</message>
+    <message key="general.label.na">N/A</message>
+    <message key="general.label.sitemap">Sitemap</message>
+    <message key="general.label.updateProgress.waiting">Wait</message>
+    <message key="general.label.search">Search</message>
+    <message key="general.button.search">Search</message>
+    <message key="general.message.error">Error:</message>
+    <message key="general.message.dates.creationDate">Creation Date</message>
+    <message key="general.message.page.deactivate">This page is not active</message>
+    <message key="general.message.pageNotExist">There is no such a page. Please select from the site menu</message>
+    <message key="general.message.media.title">Related Files</message>
+    <message key="general.message.pageList.title">Related Pages</message>
+  </module>
+  <module type="Genaral" name="footer">
+    <message key="footer.label.companyName"><![CDATA[Company Name]]></message>
+    <message key="footer.label.companyAddress"><![CDATA[Company Address]]></message>
+  </module>
+  <module type="Login" name="LoginPage">
+    <message key="login.default.label.userName">Username</message>
+    <message key="login.default.label.password">Password</message>
+    <message key="login.default.label.loginButton">Login</message>
+  </module>
+  <module type="Page" name="RegisterationPage">
+    <message key="registration.page.default.title">Registration Form</message>
+    <message key="registration.page.default.username">Username</message>
+    <message key="registration.page.default.password">Password</message>
+    <message key="registration.page.default.repeatPassword">Repeat Password</message>
+    <message key="registration.page.default.email">Email</message>
+    <message key="registration.page.default.firstName">First Name</message>
+    <message key="registration.page.default.lastName">Last Name</message>
+    <message key="registration.page.default.gender">Gender</message>
+    <message key="registration.page.default.female">Female</message>
+    <message key="registration.page.default.male">Male</message>
+    <message key="registration.page.default.dateOfBirth">Date of Birth</message>
+    <message key="registration.page.default.tel">Telephone</message>
+    <message key="registration.page.default.mobile">Mobile</message>
+    <message key="registration.page.default.fax">Fax</message>
+    <message key="registration.page.default.postalCode">Postal Code</message>
+    <message key="registration.page.default.state">State</message>
+    <message key="registration.page.default.city">City</message>
+    <message key="registration.page.default.address">Address</message>
+    <message key="registration.page.default.activityType">ActivityType</message>
+    <message key="registration.page.default.description">Description</message>
+    <message key="registration.page.button.register">Register</message>
+    <message key="registration.page.message.userExist">This user name is not available</message>
+    <message key="registration.page.message.success">Information Submitted Successfully</message>
+  </module>
+  <module type="SearchPage" name="SearchPage">
+    <message key="search.default.message.typeinSearchBox">Please type your search phrase in search textbox</message>
+    <message key="search.default.message.noResult">No result found for</message>
+    <message key="search.default.message.SearchResultFor">Search Result For:</message>
+  </module>
+  <module type="Page" name="ComparePage">
+    <message key="comparePage.page.default.title">Compare Items</message>
+    <message key="comparePage.page.button.compare">Compare</message>
+  </module>
+  <module type="Page" name="List">
+    <message key="list.page.default.backToList">Back to list</message>
+    <message key="list.page.default.backToList.arrow">glyphicon-chevron-right</message>
+  </module>
+  <module type="UserControls" name="Contact">
+    <message key="ascx.contact.message.emailFormatError">Error in email format</message>
+    <message key="ascx.contact.message.sendSuccessful">Your Message sent successfully</message>
+    <message key="ascx.contact.lable.title">Contact Us</message>
+    <message key="ascx.contact.lable.department">Department</message>
+    <message key="ascx.contact.lable.name">Name</message>
+    <message key="ascx.contact.lable.senderEmail">Email:</message>
+    <message key="ascx.contact.lable.email">Email:</message>
+    <message key="ascx.contact.lable.body">Body</message>
+    <message key="ascx.contact.button.send">send</message>
+    <message key="ascx.contact.lable.phone">Phone:</message>
+    <message key="ascx.contact.lable.fax">Fax:</message>
+    <message key="ascx.contact.lable.address">Address:</message>
+  </module>
+  <module type="UserControls" name="GalleryList">
+    <message key="ascx.galleryList.lable.title">Title</message>
+  </module>
+  <module type="UserControls" name="LatestList">
+    <message key="ascx.latestList.lable.title">Latest Product</message>
+  </module>
+  <module type="UserControls" name="BredCrump">
+    <message key="bredCrump.seperator"><![CDATA[&raquo;]]></message>
+    <message key="bredCrump.pages.home">Home</message>
+    <message key="bredCrump.pages.contact">Contact</message>
+    <message key="bredCrump.pages.search">Search</message>
+    <message key="bredCrump.pages.compare">Compare</message>
+  </module>
+  <module type="UserControls" name="ListAndDateFilter">
+    <message key="ascx.listAndDateFilter.lable.category">By Category:</message>
+    <message key="ascx.listAndDateFilter.lable.date">By Date:</message>
+  </module>
+  <module type="UserManager" name="UserManagerSexType">
+    <message key="userManager.default.addEdit.male">Male</message>
+    <message key="userManager.default.addEdit.female">Female</message>
+  </module>
+</locale>

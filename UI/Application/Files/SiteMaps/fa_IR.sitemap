@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/siteMapNodeap-File-1.0">
+  <siteMapNode roles="*">
+    <siteMapNode title="میزکار مدیر" url="~/fa_IR/ControlP/Desktop/" description="Dashboard‌" roles="Administrator" />
+    <siteMapNode title="مدیریت زبان‌ها" url="~/fa_IR/ControlP/Languages/" description="Languages" roles="Administrator" />
+    <siteMapNode title="تنظیمات" url="~/fa_IR/ControlP/Settings/" description="Settings" roles="Administrator" />
+    <siteMapNode title="مدیریت کاربران" url="~/fa_IR/ControlP/UserManager/" description="Users" roles="Administrator,UsersManager" />
+    <siteMapNode title="صفحات کاربران" url="~/fa_IR/ControlP/UserPages/" description="Userpages" roles="Administrator,UserPages" />
+    <siteMapNode title="صفحه نخست" url="~/fa_IR/ControlP/Home/" description="Home" roles="Administrator" />
+    <siteMapNode title="مدیریت صفحات" url="~/fa_IR/ControlP/Pages/" description="Pages" roles="Administrator" />
+    <siteMapNode title="مدیریت گروه‌ها" url="~/fa_IR/ControlP/SubjectTypes/" description="List" roles="Administrator" />
+    <siteMapNode title="صفحات گروهی" url="~/fa_IR/ControlP/List/" description="PagesList" roles="Administrator" />
+    <siteMapNode title="مدیریت گالری‌ها" url="~/fa_IR/ControlP/Gallery/" description="Gallery" roles="Administrator" />
+    <siteMapNode title="مدیریت تماس‌باما" url="~/fa_IR/ControlP/Contact/" description="Contact" roles="Administrator" />
+    <siteMapNode title="مدیریت فرم‌ها" url="~/fa_IR/ControlP/Forms/" description="Forms" roles="Administrator" />
+    <siteMapNode title="ویژگی‌ها" url="~/fa_IR/ControlP/Properties/" description="Properties" roles="Administrator" />
+    <siteMapNode title="مدیریت پلاگین‌ها" url="~/fa_IR/ControlP/Plugins/" description="Plugins" roles="Administrator" />
+    <siteMapNode title="مدیریت دسته‌ها" url="~/fa_IR/ControlP/Category/" description="Category" roles="Administrator" />
+    <siteMapNode title="بانک فایل‌ها" url="~/fa_IR/ControlP/Media/" description="Media" roles="Administrator" />
+    <siteMapNode title="مدیریت منو" url="~/fa_IR/ControlP/MenuManager/" description="MenuManager" roles="Administrator" />
+    <siteMapNode title="بومی سازی" url="~/fa_IR/ControlP/Localization/" description="Localisation" roles="Administrator" />
+  </siteMapNode>
+</siteMap>

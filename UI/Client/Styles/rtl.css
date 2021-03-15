@@ -1,0 +1,158 @@
+﻿body {
+    direction: rtl;
+    font-family: IRANSans;
+    line-height: 2.5;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input.searchInput[type="text"] {
+    font-family: IRANSans;
+}
+
+.navbar-brand {
+    padding: 0;
+    position: relative;
+    top: -30px;
+    float: right;
+}
+
+.navbar-brand > img {
+    position: relative;
+    margin-top: 0;
+}
+
+#sitemapLogin {
+    font-size: 14px;
+    float: left;
+    direction: ltr;
+    left: 100px;
+    margin-top: -2px;
+}
+
+#siteDate {
+    float: left;
+    direction: rtl;
+    left: -37px;
+}
+
+#LanguagesList {
+    top: 5px;
+}
+
+#LanguageSelector {
+    float: left;
+    direction: ltr;
+    clear: left;
+}
+
+#LanguagesList .selectable {
+    margin: 0 0 0 5px;
+}
+
+#LanguagesList a {
+    line-height: 29px;
+}
+
+#search {
+    float: left;
+    top: 27px;
+}
+
+#Banner {
+    direction: ltr;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+span.ReturnToList {
+    background: transparent url(../Images/Public/return.png) no-repeat left top;
+    float: left;
+}
+
+    span.ReturnToList:hover {
+        background: transparent url(../Images/Public/returnHover.png) no-repeat left top;
+    }
+
+.listItemCoverinBody {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+#List img.itemImage {
+    float: right;
+    margin: 0 0 0 10px;
+}
+
+a.backToList {
+    float: left;
+}
+
+#ProjectsWidget {
+    direction: rtl;
+}
+
+div.SideBar h3.SideBar-title {
+    font-size: 34px;
+    float: right;
+    margin: 0;
+}
+
+    div.SideBar h3.SideBar-title span {
+        font-size: 34px;
+        float: right;
+        padding: 20px;
+        line-height: 42px;
+    }
+
+div.SideBar .SideBar-content {
+    margin: 0px 15px 0px 0px;
+}
+
+    div.SideBar .SideBar-content ul li {
+        float: right;
+        margin: 0px 12px 0px 0px;
+    }
+
+        div.SideBar .SideBar-content ul li a span.item-title {
+            bottom: 43px;
+            height: 45px;
+        }
+
+#Body ul li, #List ul li {
+    margin: 0 0 0 30px;
+    padding: 3px 25px 3px 0;
+    background: url(../Images/Public/bullet.png) no-repeat scroll right 7px transparent;
+}
+
+/*  Navbar Start   *************************/
+@media (min-width:768px) {
+    .navbar-nav > li {
+        float: right;
+    }
+}
+
+.dropdown-menu {
+    left: auto;
+    right: 0;
+    float: right;
+    text-align: right;
+}
+
+.navbar-toggle {
+    float: left;
+}
+
+.navbar-nav {
+    font-family: IRANSans;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    line-height: 5px;
+}
+/*  Navbar End   *************************/
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: right;
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Departments>
+  <Department id="1">
+    <title>General Inquiries</title>
+    <subject>Sent from contact page - General Inquiries</subject>
+    <email>info@ciemesus.com</email>
+    <phone>+46 (73) 533 5150</phone>
+    <fax>+46 (73) 533 5150</fax>
+    <address>Internet</address>
+  </Department>
+</Departments>
