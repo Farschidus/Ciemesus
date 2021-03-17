@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <section name="Website">
+    <item key="Name" value="Ciemesus" langCode="en_US" />
+    <item key="ServerDateFormat" value="yyyy/MM/dd" />
+    <item key="TimeZone" value="3.5" />
+    <item key="SinglePage" value="False" />
+    <item key="RedirectToHome" value="False" />
+  </section>
+  <section name="Thumbnail">
+    <item key="Dimention" width="300" height="300" />
+  </section>
+  <section name="Language">
+    <item key="PublicDefault" value="1" />
+    <item key="CpDefault" value="1" />
+  </section>
+  <section name="Email">
+    <item key="UserName" value="info@ciemesus.com" />
+    <item key="Password" value="xxxxxxxx" />
+    <item key="Host" value="mail.ciemesus.com" />
+    <item key="Port" value="25" />
+  </section>
+  <section name="Metatags">
+    <item key="KeyWords" value="ciemesus, cms, content management system, Farschidus" langCode="en_US" />
+    <item key="Description" value="Ciemesus, Yet another content management system by Farschidus" langCode="en_US" />
+  </section>
+  <section name="ListType">
+    <item key="Grid">
+    </item>
+    <item key="List">
+    </item>
+  </section>
+</settings>

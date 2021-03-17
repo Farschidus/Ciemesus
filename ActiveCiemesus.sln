@@ -11,7 +11,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UI", "http://localhost:3623
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		ProjectReferences = "{12002836-7861-4b84-b4f2-e4e22da8daf8}|BLL.dll;{DE370DFE-35F2-421A-BC62-CC765C8F547C}|DAL.dll;{96e70386-11b2-40d8-bd1a-565db20cb3d0}|Farschidus.dll;"
+		ProjectReferences = "{12002836-7861-4b84-b4f2-e4e22da8daf8}|BLL.dll;{DE370DFE-35F2-421A-BC62-CC765C8F547C}|DAL.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_36237"
 		Debug.AspNetCompiler.PhysicalPath = "UI\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_36237\"
@@ -29,7 +29,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UI", "http://localhost:3623
 		SlnRelativePath = "UI\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farschidus", "J:\Asus Laptop\Drive D\Projects\Farschidus Library\Farschidus\Farschidus.csproj", "{96E70386-11B2-40D8-BD1A-565DB20CB3D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farschidus", "Farschidus\Farschidus.csproj", "{96E70386-11B2-40D8-BD1A-565DB20CB3D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
