@@ -33,10 +33,8 @@ namespace Global
         // FILES
         public const string FILE_SCRIPTS_PERSIANDATEPIKER = "/Application/Scripts/persianDatePicker.js";
         public const string FILE_SCRIPTS_JQUERY = "~/Application/Scripts/jquery.min.js";
-        public const string FILE_CPRTLCSS = "~/Application/Styles/rtl.css";
+        public const string FILE_CPRTLCSS = "~/Application/static/src/rtl.css";
         public const string FILE_RTLCSS = "~/Client/Styles/rtl.css";
-        public const string FILE_EN_FONT = "~/Client/Styles/enFont.css";
-        public const string FILE_FA_FONT = "~/Client/Styles/faFont.css";
         public const string FILE_CONTACT_XML = "~/Client/Files/Xmls/Contacts.xml";
         public const string FILE_PLAYER_SWF = "~/Client/Files/Flash/Player.swf";
         public const string FILE_TRANSLATOR_TEMPLATE_XML = "en_Template.xml";

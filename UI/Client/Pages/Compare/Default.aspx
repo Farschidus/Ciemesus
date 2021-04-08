@@ -4,7 +4,6 @@
 <%@ Register Src="~/Client/Ascx/PageMedia.ascx" TagName="PageMedia" TagPrefix="uc2" %>
 <%@ Register Src="~/Client/Ascx/PagePlugin.ascx" TagName="PagePlugin" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
-    <script type="text/javascript" src="/Application/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript">
         function lookUpForCompare() {
             var a = $('#<%= txtSearchAndCompare.ClientID %>').val().trim();

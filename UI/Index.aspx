@@ -11,17 +11,9 @@
     <meta name="description" content="<%= Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Metatags", "Description", "langCode", Global.MethodsAndProps.CurrentLanguageCode) %>" />
     <meta name="keywords" content="<%= Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Metatags", "KeyWords", "langCode", Global.MethodsAndProps.CurrentLanguageCode) %>" />
     <link type="image/x-icon" rel="shortcut icon" href="/Client/Images/favicon.ico" />
-    <!-- Bootstrap Core CSS -->
-    <link href="/Application/Scripts/Bootstrap/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="/Client/Styles/public.css" rel="stylesheet">
-    <link href="/Client/Styles/fonts.css" rel="stylesheet">
-    <link href="/Client/User_Files/CSS/owlCoreCss.css" rel="stylesheet" type="text/css">
-    <link href="/Client/User_Files/CSS/owlTheme.css" rel="stylesheet" type="text/css">
-    <link href="/Client/User_Files/CSS/owlTransitionsCss3.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/client/static/dist/css/spa.min.css?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>" />
 </head>
 <body id="page-top" class="index">
-    <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,7 +34,6 @@
             <!-- /.navbar-collapse -->
         </div>
     </nav>
-
     <header>
         <asp:Literal ID="litHeader" runat="server" />
     </header>
@@ -50,10 +41,7 @@
     <footer>
         <asp:Literal ID="litFooter" runat="server" />
     </footer>
-    <!-- Scripts -->
-    <script src="/Application/Scripts/jquery.min.js"></script>
-    <script src="/Application/Scripts/Bootstrap/bootstrap.min.js"></script>
-    <script src="/Application/Scripts/Plugins/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/client/static/dist/js/spa.min.js?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>"></script>
     <asp:Literal ID="litScripts" runat="server" />
 </body>
 </html>

@@ -9,10 +9,8 @@
 <%@ Register Src="~/Application/Ascx/PropertyValueManager.ascx" TagName="PropertyValueManager" TagPrefix="ucPropertyValue" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeaderMaster" runat="Server">
-    <link rel="stylesheet" type="text/css" href="/Application/Styles/Pilot/Reset.css" />
-    <link rel="stylesheet" type="text/css" href="/Application/Styles/Menu.css" />
-    <link rel="stylesheet" type="text/css" href="/Application/Styles/Pilot/icons.css" />
-    <link rel="stylesheet" type="text/css" href="/Application/Styles/cp.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/Application/Images/General/ciemesus.ico" />
+    <link rel="stylesheet" type="text/css" href="/application/static/dist/css/cp.min.css?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>" />
     <script type="text/javascript">
         var isTinyMCE = false,
         isHide = true,

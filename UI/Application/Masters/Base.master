@@ -2,19 +2,11 @@
 <html lang="<%= formLang %>">
 <head runat="server">
     <title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="/Application/Scripts/jquery.min.js"></script>
-    <script type="text/javascript" src="/Application/Scripts/jquery-ui-1.10.3.min.js"></script>
-    <script type="text/javascript" src="/Application/Scripts/Plugins/jquery-impromptu.5.2.1.js"></script>  
-    <script type="text/javascript" src="/Application/Scripts/Farschidus.js"></script>
-    <link rel="stylesheet" type="text/css" href="/Application/Styles/global.css" />
-    <script type="text/javascript">
-        var timer;
-        function closeNotification() {
-            $('.Notification').removeClass('notyEffect');
-        }
-    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="/application/static/dist/js/base.min.js?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>"></script>
+    <link rel="stylesheet" type="text/css" href="/application/static/dist/css/base.min.css?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>" />
     <asp:ContentPlaceHolder ID="cphHeaderMaster" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -43,10 +35,10 @@
                             <Sequence>
                                 <ScriptAction Script="$('.Notification').addClass('notyEffect');" />
                                 <ScriptAction Script="timer = setTimeout(function () { $('.Notification').delay(3000).removeClass('notyEffect'); }, 3000);" />
-                            </Sequence>                            
+                            </Sequence>
                         </OnLoad>
                         <OnHoverOver>
-                            <ScriptAction Script="clearTimeout(timer);" />                                
+                            <ScriptAction Script="clearTimeout(timer);" />
                         </OnHoverOver>
                         <OnHoverOut>
                             <ScriptAction Script="timer = setTimeout(function () { $('.Notification').delay(3000).removeClass('notyEffect'); }, 3000);" />

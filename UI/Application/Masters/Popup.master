@@ -2,7 +2,7 @@
     Inherits="Application_Masters_Popup" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeaderMaster" runat="Server">
-    <link rel="stylesheet" type="text/css" href="/Application/Styles/cp.css" />
+    <link rel="stylesheet" type="text/css" href="/Application/static/dist/css/cp.min.css" />
     <style type="text/css">
         body {
             background: none;
@@ -20,7 +20,7 @@
             color: #000;
         }
     </style>
-    <script type="text/javascript">      
+    <script type="text/javascript">
         var deleteConfirmMessage = '<%# Farschidus.Translator.AppTranslate["general.message.confirmDelete"]%>';
         var deleteConfirmButtons = { '<%# Farschidus.Translator.AppTranslate["general.button.ok"]%>': true, '<%# Farschidus.Translator.AppTranslate["general.button.cancel"]%>': false };
     </script>

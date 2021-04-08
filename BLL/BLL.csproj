@@ -38,9 +38,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Farschidus">
-      <HintPath>..\UI\Bin\Farschidus.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +75,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{de370dfe-35f2-421a-bc62-cc765c8f547c}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Farschidus\Farschidus.csproj">
+      <Project>{96e70386-11b2-40d8-bd1a-565db20cb3d0}</Project>
+      <Name>Farschidus</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

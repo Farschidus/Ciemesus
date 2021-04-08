@@ -19,7 +19,7 @@
     <message key="general.message.pageList.title">Related Pages</message>
   </module>
   <module type="Genaral" name="footer">
-    <message key="footer.label.companyName">&lt;div&gt;Gorouh-e-Chahar Consulting Engineers &lt;span style="color: #85C446"&gt;|&lt;/span&gt; Powered by &lt;span style="color: #85C446"&gt;Ciemesus&lt;/span&gt;&lt;/div&gt;&lt;img id='jxlznbqejzpenbqeesgtrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=127203&amp;p=rfthuiwkjyoeuiwkobpdxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=127203&amp;p=nbpdodrfyndtodrflymaqfti'/&gt;</message>
+    <message key="footer.label.companyName">&lt;div&gt;Sample Site &lt;span style="color: #85C446"&gt;|&lt;/span&gt; Powered by &lt;span style="color: #85C446"&gt;Ciemesus&lt;/span&gt;&lt;/div&gt;</message>
     <message key="footer.label.companyAddress">
     </message>
   </module>

@@ -283,6 +283,7 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/
+\node_modules
 
 # Visual Studio 6 build log
 *.plg
@@ -360,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Ciemesus Rule
+**/static/dist/
+UI/Client/Files/Xmls/config.xml

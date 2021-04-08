@@ -1,0 +1,32 @@
+{
+  "name": "ciemesus",
+  "version": "5.1.0",
+  "description": "CMS from Farschidus",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Farschidus/Ciemesus.git"
+  },
+  "keywords": [
+    "cms",
+    "ciemesus",
+    "farschidus"
+  ],
+  "author": "Farschidus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Farschidus/Ciemesus/issues"
+  },
+  "homepage": "https://github.com/Farschidus/Ciemesus#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-rename": "^2.0.0"
+  }
+}

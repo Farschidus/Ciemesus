@@ -6,18 +6,8 @@
 	<title>Coming Soon</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="Client/Images/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Application/Scripts/bootstrap/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Client/styles/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Client/styles/flipclock.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="Client/styles/underConstruction-util.css">
-	<link rel="stylesheet" type="text/css" href="Client/styles/underConstruction.css">
-<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/client/static/dist/css/underConstruction.min.css?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>" />
 </head>
 <body>
 	<div class="bg-img1 size1 overlay1 p-t-24" style="background-image: url('Client/Images/Public/underConstruction.jpg');">
@@ -83,16 +73,7 @@
 			</div>
 		</div>
 	</div>
-<!--===============================================================================================-->	
-	<script src="Application/Scripts/jquery.min.js"></script>
-<!--===============================================================================================-->
-	<script src="Application/Scripts/bootstrap/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="Application/Scripts/countdowntime/flipclock.min.js"></script>
-	<script src="Application/Scripts/countdowntime/moment.min.js"></script>
-	<script src="Application/Scripts/countdowntime/moment-timezone.min.js"></script>
-	<script src="Application/Scripts/countdowntime/moment-timezone-with-data.min.js"></script>
-	<script src="Application/Scripts/countdowntime/countdowntime.js"></script>
+	<script type="text/javascript" src="/client/static/dist/js/underConstruction.min.js?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>"></script>
 	<script>
 		$('.cd100').countdown100({
 			/*Set Endtime here; Endtime must be > current time*/
@@ -107,7 +88,5 @@
 			//go to " http://momentjs.com/timezone/ " to get timezone
 		});
 	</script>
-<!--===============================================================================================-->
-	<script src="Application/Scripts/underConstruction.js"></script>
 </body>
 </html>

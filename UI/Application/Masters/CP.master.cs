@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
+﻿using BLL.BusinessEntity;
+using System;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
 
 public partial class Masters_CPilot : Masters_Base
 {
@@ -37,12 +33,13 @@ public partial class Masters_CPilot : Masters_Base
             //lnkHomePage.HRef =  string.Format(Global.Constants.PAGE_HOME_ASPX, lang.pCode);
             lnkHomePage.Title = Farschidus.Translator.AppTranslate["general.label.backToWebsite"];
 
+            // TODO make sure and remove below code
             // FavIcon Selection
-            HtmlLink favIcon = new HtmlLink();
-            favIcon.Attributes.Add("type", "image/x-icon");
-            favIcon.Attributes.Add("rel", "shortcut icon");
-            favIcon.Attributes.Add("href", Global.Constants.IMAGE_CIEMESUS_FAVICON);
-            Page.Header.Controls.Add(favIcon);
+            //HtmlLink favIcon = new HtmlLink();
+            //favIcon.Attributes.Add("type", "image/x-icon");
+            //favIcon.Attributes.Add("rel", "shortcut icon");
+            //favIcon.Attributes.Add("href", Global.Constants.IMAGE_CIEMESUS_FAVICON);
+            //Page.Header.Controls.Add(favIcon);
         }
     }
     protected void ddlCPLanguages_SelectedIndexChanged(object sender, EventArgs e)

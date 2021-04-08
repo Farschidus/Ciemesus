@@ -101,7 +101,7 @@ public partial class PSM_Settings_Default : BaseCP
     }
     protected void fulImages_UploadedComplete(object sender, AjaxControlToolkit.AsyncFileUploadEventArgs e)
     {
-        string strFavTemp = Global.Constants.IMAGE_TEMP_FAVICON;  
+        string strFavTemp = Global.Constants.IMAGE_TEMP_FAVICON;
 
         if (fulImage.HasFile)
         {

@@ -59,10 +59,10 @@ public partial class Masters_Public : Masters_Base
         languages.LoadByLanguageCode(Global.MethodsAndProps.CurrentLanguageCode);
 
         // Set Current Language for Html Meta Tag
-        HtmlMeta htmlMeta = new HtmlMeta();
-        htmlMeta.HttpEquiv = "X-UA-Compatible";
-        htmlMeta.Content = "IE=edge";
-        Page.Header.Controls.AddAt(2, htmlMeta);
+        //HtmlMeta htmlMeta = new HtmlMeta();
+        //htmlMeta.HttpEquiv = "X-UA-Compatible";
+        //htmlMeta.Content = "IE=edge";
+        //Page.Header.Controls.AddAt(2, htmlMeta);
 
         if (!IsPostBack)
         {
@@ -86,20 +86,6 @@ public partial class Masters_Public : Masters_Base
                 link.Attributes.Add("type", "text/css");
                 link.Attributes.Add("rel", "stylesheet");
                 Page.Header.Controls.Add(link);
-
-                HtmlLink faFontLink = new HtmlLink();
-                faFontLink.Attributes.Add("href", ResolveUrl(Global.Constants.FILE_FA_FONT));
-                faFontLink.Attributes.Add("type", "text/css");
-                faFontLink.Attributes.Add("rel", "stylesheet");
-                Page.Header.Controls.Add(faFontLink);
-            }
-            else
-            {
-                HtmlLink enFontLink = new HtmlLink();
-                enFontLink.Attributes.Add("href", ResolveUrl(Global.Constants.FILE_EN_FONT));
-                enFontLink.Attributes.Add("type", "text/css");
-                enFontLink.Attributes.Add("rel", "stylesheet");
-                Page.Header.Controls.Add(enFontLink);
             }
             // Search Default Text for Current Language
             if (Request.QueryString[Global.Constants.QUERYSTRING_SEARCH] != null)
@@ -108,14 +94,14 @@ public partial class Masters_Public : Masters_Base
                 txtSearch.Text = Farschidus.Translator.AppTranslate["general.label.search"];
 
             // FavIcon Selection
-            HtmlLink favIcon = new HtmlLink();
-            favIcon.Attributes.Add("type", "image/x-icon");
-            favIcon.Attributes.Add("rel", "shortcut icon");
-            if (File.Exists(Server.MapPath("~" + Global.Constants.IMAGE_PUBLIC_FAVICON)))
-                favIcon.Attributes.Add("href", Global.Constants.IMAGE_PUBLIC_FAVICON);
-            else
-                favIcon.Attributes.Add("href", Global.Constants.IMAGE_CIEMESUS_FAVICON);
-            Page.Header.Controls.Add(favIcon);
+            //HtmlLink favIcon = new HtmlLink();
+            //favIcon.Attributes.Add("type", "image/x-icon");
+            //favIcon.Attributes.Add("rel", "shortcut icon");
+            //if (File.Exists(Server.MapPath("~" + Global.Constants.IMAGE_PUBLIC_FAVICON)))
+            //    favIcon.Attributes.Add("href", Global.Constants.IMAGE_PUBLIC_FAVICON);
+            //else
+            //    favIcon.Attributes.Add("href", Global.Constants.IMAGE_CIEMESUS_FAVICON);
+            //Page.Header.Controls.Add(favIcon);
         }
         else
         {
