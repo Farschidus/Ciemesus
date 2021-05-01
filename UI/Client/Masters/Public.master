@@ -7,49 +7,55 @@
     <meta name="description" content="<%= Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Metatags", "Description", "langCode", Global.MethodsAndProps.CurrentLanguageCode) %>" />
     <meta name="keywords" content="<%= Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Metatags", "KeyWords", "langCode", Global.MethodsAndProps.CurrentLanguageCode) %>" />
     <link rel="shortcut icon" type="image/x-icon" href="/Client/Images/favicon.ico" />
-    <script type="text/javascript" src="/client/static/dist/js/client.min.js?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>"></script>
-    <link rel="stylesheet" type="text/css" href="/client/static/dist/css/client.min.css?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>" />
+    <script type="text/javascript" src="/client/static/dist/js/client.min.js?<%= System.Configuration.ConfigurationManager.AppSettings["Version"] %>"></script>
+    <link rel="stylesheet" type="text/css" href="/client/static/dist/css/client.min.css?<%= System.Configuration.ConfigurationManager.AppSettings["Version"] %>" />
     <asp:ContentPlaceHolder ID="cphHead" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMainMaster" runat="Server">
     <div id="Wrapper">
         <div id="MenuTop">
-            <div class="container">
-                <div id="sitemapLogin">
-                   &nbsp;|&nbsp;<asp:Literal ID="litLogin" runat="server"></asp:Literal>
-                </div>
-                <div id="siteDate"><%= CurrentDate %></div>
-                <div id="LanguageSelector">
-                    <LanuageSelector:PubLangSelector runat="server" ID="PubLangSelector" RenderType="Literal" />
-                </div>
-                <div id="search">
-                    <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch">
-                        <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput default-value"></asp:TextBox>
-                        <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" CssClass="searchButton" />
+            <div class="navbar nav-topbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand d-none d-sm-block flex-shrink-0" href='<%= HomeUrl %>'>
+                        <%= mGetLogo()%>
+                    </a>
+                    <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href='<%= HomeUrl %>'>
+                        <%= mGetSmallLogo()%>
+                    </a>
+                    <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch" class="input-group d-none d-lg-flex mx-4">
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput form-control rounded-end pe-5 default-value"></asp:TextBox>
+                        <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" CssClass="searchButton" Text="search" />
+                        <i class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-3"></i>
                     </asp:Panel>
-                </div>
-                <a class="navbar-brand" href='<%= HomeUrl %>'>
-                    <%= mGetLogo()%>
-                </a>
-                <nav class="navbar navbar-default" role="navigation"> <%--navbar-fixed-top--%>
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" aria-expanded="true">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
+                    <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center my-auto">
+                        <div id="LanguageSelector" class="d-flex flex-row mx-0">
+                            <LanuageSelector:PubLangSelector runat="server" ID="PubLangSelector" RenderType="Literal" RenderTitle="false" />
                         </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <%= mGenerateNavbar()%>
+                        <div id="siteDate"><%= CurrentDate %></div>
+                        <div id="sitemapLogin">
+                            <span class="seperator">|</span>
+                            <asp:Literal ID="litLogin" runat="server"></asp:Literal>
                         </div>
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
-                </nav>
-                <div id="Breadcrump"><%--<Breadcrump:BreadcrumpGen runat="server" ID="BreadcrumpGen" />--%></div>
+                </div>
             </div>
-            <div id="MenuBg"></div>
+            <div class="navbar navbar-menu navbar-expand-lg navbar-stuck-menu">
+                <div class="container">
+                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                        <asp:Panel ID="pnlSearch2" runat="server" DefaultButton="btnSearchMenu" class="input-group d-lg-none my-3">
+                            <asp:TextBox ID="txtSearch2" runat="server" CssClass="searchInput form-control rounded-end pe-5 default-value"></asp:TextBox>
+                            <asp:Button ID="btnSearchMenu" runat="server" OnClick="btnSearch_Click" CssClass="searchButton" Text="search" />
+                            <i class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-3"></i>
+                        </asp:Panel>
+                        <%= mGenerateNavbar()%>
+                    </div>
+                </div>
+            </div>
+            <div id="Breadcrump"><%--<Breadcrump:BreadcrumpGen runat="server" ID="BreadcrumpGen" />--%></div>
         </div>
         <div id="Content">
             <div class="container">

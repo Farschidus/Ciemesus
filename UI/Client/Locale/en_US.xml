@@ -19,7 +19,7 @@
     <message key="general.message.pageList.title">Related Pages</message>
   </module>
   <module type="Genaral" name="footer">
-    <message key="footer.label.companyName">&lt;div&gt;Sample Site &lt;span style="color: #85C446"&gt;|&lt;/span&gt; Powered by &lt;span style="color: #85C446"&gt;Ciemesus&lt;/span&gt;&lt;/div&gt;</message>
+    <message key="footer.label.companyName">&lt;div&gt;Sample Site &lt;span class="seperator"&gt;|&lt;/span&gt; Powered by &lt;span style="color: #85C446"&gt;Ciemesus&lt;/span&gt;&lt;/div&gt;</message>
     <message key="footer.label.companyAddress">
     </message>
   </module>

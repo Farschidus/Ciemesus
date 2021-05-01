@@ -75,12 +75,12 @@
     <message key="ascx.contact.lable.department">دپارتمان</message>
     <message key="ascx.contact.lable.name">نام</message>
     <message key="ascx.contact.lable.senderEmail">ایمیل:</message>
-    <message key="ascx.contact.lable.email">ایمیل:</message>
+    <message key="ascx.contact.lable.email">&lt;i class="fa fa-envelope"&gt;&lt;/i&gt;</message>
     <message key="ascx.contact.lable.body">متن</message>
     <message key="ascx.contact.button.send">ارسال</message>
-    <message key="ascx.contact.lable.phone">تلفن: </message>
-    <message key="ascx.contact.lable.fax">فکس: </message>
-    <message key="ascx.contact.lable.address">آدرس: </message>
+    <message key="ascx.contact.lable.phone">&lt;i class="fa fa-phone"&gt;&lt;/i&gt;</message>
+    <message key="ascx.contact.lable.fax">&lt;i class="fa fa-fax"&gt;&lt;/i&gt;</message>
+    <message key="ascx.contact.lable.address">&lt;i class="fa fa-home"&gt;&lt;/i&gt;</message>
   </module>
   <module type="UserControls" name="GalleryList">
     <message key="ascx.galleryList.lable.title">عنوان</message>

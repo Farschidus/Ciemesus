@@ -1,12 +1,12 @@
-﻿using System;
-using System.Text;
+﻿using BLL.BusinessEntity;
+using System;
 using System.IO;
-using System.Xml;
+using System.Text;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
-using BLL.BusinessEntity;
-using System.Web.Security;
+using System.Xml;
 
 public partial class Masters_Public : Masters_Base
 {
@@ -40,7 +40,7 @@ public partial class Masters_Public : Masters_Base
         }
     }
 
-    string loginUser = @"<a href=""javascript:__doPostBack('btnLogout', 'Logout')"">Logout as {0} {1}</a>";
+    string loginUser = @"<a href=""javascript:__doPostBack('btnLogout', 'Logout')"">Logout</a>";
     //string loginUser = @" < div class='dropdown' style='display:inline-block'>
     //                  <button class='btn btn-login btn-sm dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
     //                    <span class='caret'></span>
@@ -58,12 +58,6 @@ public partial class Masters_Public : Masters_Base
         Languages languages = new Languages();
         languages.LoadByLanguageCode(Global.MethodsAndProps.CurrentLanguageCode);
 
-        // Set Current Language for Html Meta Tag
-        //HtmlMeta htmlMeta = new HtmlMeta();
-        //htmlMeta.HttpEquiv = "X-UA-Compatible";
-        //htmlMeta.Content = "IE=edge";
-        //Page.Header.Controls.AddAt(2, htmlMeta);
-
         if (!IsPostBack)
         {
             // Login User Info
@@ -71,37 +65,38 @@ public partial class Masters_Public : Masters_Base
             {
                 string registrationPage = string.Format(Global.Constants.PAGE_REGISTER_ASPX.Substring(1), languages.pCode);
                 ProfileCommon userProfile = Profile.GetProfile(pCurrentUser.UserName);
-                litLogin.Text = string.Format(loginUser, userProfile.FirstName, userProfile.LastName, registrationPage);
+                litLogin.Text = string.Format(loginUser, registrationPage);
             }
             else
             {
                 litLogin.Text = string.Format("<a href='/en_US/Pages/Login'>{0}</a>", Farschidus.Translator.AppTranslate["general.label.login"]);
             }
 
-            // CSS and Web Fonts for Current Language
-            if (languages.pIsRTL)
-            {
-                HtmlLink link = new HtmlLink();
-                link.Attributes.Add("href", ResolveUrl(Global.Constants.FILE_RTLCSS));
-                link.Attributes.Add("type", "text/css");
-                link.Attributes.Add("rel", "stylesheet");
-                Page.Header.Controls.Add(link);
-            }
             // Search Default Text for Current Language
             if (Request.QueryString[Global.Constants.QUERYSTRING_SEARCH] != null)
                 txtSearch.Text = Request.QueryString[Global.Constants.QUERYSTRING_SEARCH].ToString();
             else
                 txtSearch.Text = Farschidus.Translator.AppTranslate["general.label.search"];
 
+            if (languages.pIsRTL)
+            {
+                // Adding RTL CSS file
+                HtmlLink rtlCssLink = new HtmlLink();
+                rtlCssLink.Attributes.Add("href", ResolveUrl(Global.Constants.FILE_RTLCSS));
+                rtlCssLink.Attributes.Add("type", "text/css");
+                rtlCssLink.Attributes.Add("rel", "stylesheet");
+                Page.Header.Controls.Add(rtlCssLink);
+            }
+
             // FavIcon Selection
-            //HtmlLink favIcon = new HtmlLink();
-            //favIcon.Attributes.Add("type", "image/x-icon");
-            //favIcon.Attributes.Add("rel", "shortcut icon");
-            //if (File.Exists(Server.MapPath("~" + Global.Constants.IMAGE_PUBLIC_FAVICON)))
-            //    favIcon.Attributes.Add("href", Global.Constants.IMAGE_PUBLIC_FAVICON);
-            //else
-            //    favIcon.Attributes.Add("href", Global.Constants.IMAGE_CIEMESUS_FAVICON);
-            //Page.Header.Controls.Add(favIcon);
+            HtmlLink favIcon = new HtmlLink();
+            favIcon.Attributes.Add("type", "image/x-icon");
+            favIcon.Attributes.Add("rel", "shortcut icon");
+            if (File.Exists(Server.MapPath("~" + Global.Constants.IMAGE_PUBLIC_FAVICON)))
+                favIcon.Attributes.Add("href", Global.Constants.IMAGE_PUBLIC_FAVICON);
+            else
+                favIcon.Attributes.Add("href", Global.Constants.IMAGE_CIEMESUS_FAVICON);
+            Page.Header.Controls.Add(favIcon);
         }
         else
         {
@@ -114,6 +109,7 @@ public partial class Masters_Public : Masters_Base
             }
         }
     }
+
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         Response.Redirect(string.Format(Global.Constants.PAGE_SEARCH_ASPX + txtSearch.Text.Trim(), Global.MethodsAndProps.CurrentLanguageCode));
@@ -134,7 +130,7 @@ public partial class Masters_Public : Masters_Base
         if (rootNode != null && rootNode.HasChildNodes)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(@"<ul class=""nav navbar-nav"">");
+            sb.Append(@"<ul class='navbar-nav mx-auto'>");
             foreach (XmlNode childNode in rootNode.ChildNodes)
             {
                 mGetChildNodes(sb, childNode);
@@ -149,12 +145,13 @@ public partial class Masters_Public : Masters_Base
     }
     private void mGetChildNodes(StringBuilder sb, XmlNode node)
     {
-        string nodeSelected = mIsCurrentNode(node.Attributes["url"].Value) ? "active" : "";
+        string dropdownClass = node.HasChildNodes ? " dropdown" : "";
+        string nodeSelected = mIsCurrentNode(node.Attributes["url"].Value) ? " active" : "";
         string nodeUrl = mSetUrl(node.Attributes["url"].Value, node.Attributes["title"].Value, node.HasChildNodes);
-        sb.Append(string.Format("<li class='{2}{0}'>{1}", nodeSelected, nodeUrl, node.HasChildNodes ? "dropdown " : ""));
+        sb.Append(string.Format("<li class='nav-item{0}{1}'>{2}", dropdownClass, nodeSelected, nodeUrl));
         if (node.HasChildNodes)
         {
-            sb.Append("<ul  class='dropdown-menu' role='menu'>");
+            sb.Append("<ul class='dropdown-menu'>");
             foreach (XmlNode childNode in node.ChildNodes)
             {
                 mGetChildNodes(sb, childNode);
@@ -182,31 +179,31 @@ public partial class Masters_Public : Masters_Base
         if (mIsCurrentNode(url))
         {
             if (hasChild)
-                return string.Format("<a {0} href='#'>{1}<span class='sr-only'>(current)</span></a>", @"class=""dropdown-toggle"" data-toggle=""dropdown"" role=""button"" aria-expanded=""false""", title.ToString());
+                return string.Format("<a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href ='#'>{0}<span class='sr-only'>(current)</span></a>", title.ToString());
             else
-                return string.Format("<a href='#'>{0}<span class='sr-only'>(current)</span></a>", title.ToString());
+                return string.Format("<a class='nav-link' href='#'>{0}<span class='sr-only'>(current)</span></a>", title.ToString());
         }
         else
         {
             if (url.ToString().Contains("javascript"))
             {
                 if (hasChild)
-                    return string.Format("<a {0} href='#'>{1}<span class='sr-only'>(current)</span></a>", @"class=""dropdown-toggle"" data-toggle=""dropdown"" role=""button"" aria-expanded=""false""", title.ToString());
+                    return string.Format("<a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#'>{0}</a>", title.ToString());
                 else
-                    return string.Format("<a>{0}<span class='sr-only'>(current)</span></a>", title.ToString());
+                    return string.Format("<a class='nav-link'>{0}</a>", title.ToString());
             }
             else
             {
                 if (url.ToString().Substring(0, 1).Equals("~"))
                 {
                     if (hasChild)
-                        return string.Format("<a {0} href='{1}'>{2}<span class='sr-only'>(current)</span></a>", @"class=""dropdown-toggle"" data-toggle=""dropdown"" role=""button"" aria-expanded=""false""", url.ToString().Substring(1), title.ToString());
+                        return string.Format("<a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='{0}'>{1}</a>", url.ToString().Substring(1), title.ToString());
                     else
-                        return string.Format(@"<a href='{0}'>{1}</a>", url.ToString().Substring(1), title.ToString());
+                        return string.Format(@"<a class='nav-link' href='{0}'>{1}</a>", url.ToString().Substring(1), title.ToString());
                 }
                 else
                 {
-                    return string.Format(@"<a href='{0}'>{1}</a>", url.ToString(), title.ToString());
+                    return string.Format(@"<a class='nav-link' href='{0}'>{1}</a>", url.ToString(), title.ToString());
                 }
             }
         }
@@ -221,11 +218,27 @@ public partial class Masters_Public : Masters_Base
         if (languages.pIsRTL)
         {
             sb.Append(@"<img class='hidden-xs' src='/Client/Images/Public/LogoFa.png'>");
-            sb.Append(@"<img class='visible-xs' src='/Client/Images/Public/LogoFa-xs.png'>");
         }
         else
         {
             sb.Append(@"<img class='hidden-xs' src='/Client/Images/Public/LogoEn.png'>");
+        }
+
+        return sb.ToString();
+    }
+    public string mGetSmallLogo()
+    {
+        Languages languages = new Languages();
+        languages.LoadByLanguageCode(Global.MethodsAndProps.CurrentLanguageCode);
+
+        StringBuilder sb = new StringBuilder();
+
+        if (languages.pIsRTL)
+        {
+            sb.Append(@"<img class='visible-xs' src='/Client/Images/Public/LogoFa-xs.png'>");
+        }
+        else
+        {
             sb.Append(@"<img class='visible-xs' src='/Client/Images/Public/LogoEn-xs.png'>");
         }
 

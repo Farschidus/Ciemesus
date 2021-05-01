@@ -1,12 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Base.master.cs" Inherits="Masters_Base" %><!DOCTYPE html>
-<html lang="<%= formLang %>">
+<html lang="<%= Lang %>">
 <head runat="server">
     <title></title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript" src="/application/static/dist/js/base.min.js?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>"></script>
-    <link rel="stylesheet" type="text/css" href="/application/static/dist/css/base.min.css?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>" />
     <asp:ContentPlaceHolder ID="cphHeaderMaster" runat="server">
     </asp:ContentPlaceHolder>
 </head>

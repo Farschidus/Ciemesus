@@ -9,11 +9,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphHeadContent" runat="Server">
-    <div id="Banner">
-        <div id="ctl00_ctl00_cphMainMaster_cphHeadContent_pageBanner_uplBanner">
-            <img id="ctl00_ctl00_cphMainMaster_cphHeadContent_pageBanner_imgPageBanner" class="img-responsive" src="/Client/Images/Public/Contact.jpg" style="border-width: 0px;" align="absmiddle">
-        </div>
-    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphMain" runat="Server">
     <section id="PageTitle">

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BLL.BusinessEntity;
+using System;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
 
 public partial class Client_Ascx_PubLangSelector : System.Web.UI.UserControl
 {
@@ -21,7 +17,15 @@ public partial class Client_Ascx_PubLangSelector : System.Web.UI.UserControl
         {
             renderType = value;
         }
+    }
 
+    private bool renderTitle;
+    public bool RenderTitle
+    {
+        set
+        {
+            renderTitle = value;
+        }
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -59,13 +63,14 @@ public partial class Client_Ascx_PubLangSelector : System.Web.UI.UserControl
         StringBuilder sb = new StringBuilder();
 
         sb.Append("<ul id='LanguagesList'>");
-        sb.Append(string.Format("<li class='languageTitle'>{0}</li>", Farschidus.Translator.AppTranslate["general.label.language"]));
+        if(renderTitle)
+            sb.Append(string.Format("<li class='languageTitle'>{0}</li>", Farschidus.Translator.AppTranslate["general.label.language"]));
         do
         {
             if (languages.pCode.Equals(Global.MethodsAndProps.CurrentLanguageCode))
-                sb.Append(string.Format(item,  string.Format("javascript:void({0})",languages.pIDLanguage), languages.pTitle.Substring(0, 2), string.Format("{0} {1}", "selected", languages.pCode.Substring(0, 2))));
+                sb.Append(string.Format(item,  string.Format("javascript:void({0})",languages.pIDLanguage), languages.pTitle.Substring(0, 2), string.Format("{0} {1}", "mr-1 selected", languages.pCode.Substring(0, 2))));
             else
-                sb.Append(string.Format(item, string.Format(Global.Constants.PAGE_HOME_ASPX.Substring(1), languages.pCode), languages.pTitle.Substring(0, 2), string.Format("{0} {1}", "selectable", languages.pCode.Substring(0, 2))));
+                sb.Append(string.Format(item, string.Format(Global.Constants.PAGE_HOME_ASPX.Substring(1), languages.pCode), languages.pTitle.Substring(0, 2), string.Format("{0} {1}", "mr-1 selectable", languages.pCode.Substring(0, 2))));
         }
         while (languages.MoveNext());
         sb.Append("</ul>");

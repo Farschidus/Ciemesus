@@ -5,77 +5,83 @@
 * Fonts
 */
 @font-face {
-    font-family: "IRANSans";
-	src: url("../Fonts/IranSans/IRANSans-UltraLight.eot?#") format("eot"),
-    url("../Fonts/IranSans/IRANSans-UltraLight.woff2") format("woff2"),
-    url("../Fonts/IranSans/IRANSans-UltraLight.woff") format("woff");
+    font-family: 'IRANSans';
     font-weight: 200;
     font-style: normal;
+	src: url('../Fonts/IranSans/IRANSans-UltraLight.eot?#') format('eot'),
+         url('../Fonts/IranSans/IRANSans-UltraLight.woff2') format('woff2'),
+         url('../Fonts/IranSans/IRANSans-UltraLight.woff') format('woff');
 }
 @font-face {
-    font-family: "IRANSans";
-	src: url("../Fonts/IranSans/IRANSans-Light-Expanded.eot?#") format("eot"),
-    url("../Fonts/IranSans/IRANSans-Light-Expanded.woff2") format("woff2"),
-    url("../Fonts/IranSans/IRANSans-Light-Expanded.woff") format("woff");
+    font-family: 'IRANSans';
     font-weight: 300;
     font-style: normal;
+	src: url('../Fonts/IranSans/IRANSans-Light-Expanded.eot?#') format('eot'),
+         url('../Fonts/IranSans/IRANSans-Light-Expanded.woff2') format('woff2'),
+         url('../Fonts/IranSans/IRANSans-Light-Expanded.woff') format('woff');
 }
 @font-face {
-    font-family: "IRANSans";
-	src: url("../Fonts/IranSans/IRANSANSExpanded.eot?#") format("eot"),
-    url("../Fonts/IranSans/IRANSANSExpanded.woff2") format("woff2"),
-    url("../Fonts/IranSans/IRANSANSExpanded.woff") format("woff");
+    font-family: 'IRANSans';
     font-weight: 400;
     font-style: normal;
+	src: url('../Fonts/IranSans/IRANSANSExpanded.eot?#') format('eot'),
+         url('../Fonts/IranSans/IRANSANSExpanded.woff2') format('woff2'),
+         url('../Fonts/IranSans/IRANSANSExpanded.woff') format('woff');
 }
 @font-face {
-    font-family: "IRANSans";
-	src: url("../Fonts/IranSans/IRANSans-Bold.eot?#") format("eot"),
-    url("../Fonts/IranSans/IRANSans-Bold.woff2") format("woff2"),
-    url("../Fonts/IranSans/IRANSans-Bold.woff") format("woff");
-    font-weight: 700;
+    font-family: 'IRANSans';
     font-style: normal;
     font-weight: bold;
+	src: url('../Fonts/IranSans/IRANSans-Bold.eot?#') format('eot'),
+         url('../Fonts/IranSans/IRANSans-Bold.woff2') format('woff2'),
+         url('../Fonts/IranSans/IRANSans-Bold.woff') format('woff');
 }
-
+/*********************************/
 @font-face {
 	font-family: 'NazaninNormal';
+    font-weight: normal;
+	font-style: normal;
 	src: url('../Fonts/Nazanin/Nazanin.eot');
 	src: url('../Fonts/Nazanin/Nazanin.eot?#iefix') format('embedded-opentype'),
-				url('../Fonts/Nazanin/Nazanin.woff') format('woff'),
-				url('../Fonts/Nazanin/Nazanin.ttf') format('truetype'),
-				url('../Fonts/Nazanin/Nazanin.svg#NazaninNormal') format('svg');
-	font-weight: normal;
-	font-style: normal;
+		 url('../Fonts/Nazanin/Nazanin.woff') format('woff'),
+		 url('../Fonts/Nazanin/Nazanin.ttf') format('truetype'),
+		 url('../Fonts/Nazanin/Nazanin.svg#NazaninNormal') format('svg');
 }
 @font-face {
-		font-family: 'NazaninBold';
-		src: url('../Fonts/Nazanin/Nazanin-Bold.eot');
-		src: url('../Fonts/Nazanin/Nazanin-Bold.eot?#iefix') format('embedded-opentype'),
-					url('../Fonts/Nazanin/Nazanin-Bold.woff') format('woff'),
-					url('../Fonts/Nazanin/Nazanin-Bold.ttf') format('truetype'),
-					url('../Fonts/Nazanin/Nazanin-Bold.svg#NazaninBold') format('svg');
-		font-weight: normal;
-		font-style: normal;
+    font-family: 'NazaninBold';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../Fonts/Nazanin/Nazanin-Bold.eot');
+    src: url('../Fonts/Nazanin/Nazanin-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('../Fonts/Nazanin/Nazanin-Bold.woff') format('woff'),
+		 url('../Fonts/Nazanin/Nazanin-Bold.ttf') format('truetype'),
+		 url('../Fonts/Nazanin/Nazanin-Bold.svg#NazaninBold') format('svg');
 }
+/*********************************/
 @font-face {
     font-family: 'BYekan';
+    font-weight: normal;
+	font-style: normal;
     src:url('../Fonts/BYekan/BYekan.eot?#iefix') format('embedded-opentype'),
         url('../Fonts/BYekan/BYekan.woff') format('woff'),
         url('../Fonts/BYekan/BYekan.ttf') format('truetype');
-    font-weight: normal;
-	font-style: normal;
 }
+/*********************************/
 @font-face {
     font-family: 'Nassim';
-    src: url("../Fonts/Nassim/Nassim-regular.eot?#") format("eot"),url("../Fonts/Nassim/Nassim-regular.woff") format("woff"),url("../Fonts/Nassim/Nassim-regular.ttf") format("truetype")
+    src: url('../Fonts/Nassim/Nassim-regular.eot?#') format('eot'),
+         url('../Fonts/Nassim/Nassim-regular.woff') format('woff'),
+         url('../Fonts/Nassim/Nassim-regular.ttf') format('truetype')
 }
 
 @font-face {
     font-family: 'Nassim';
-    src: url("../Fonts/Nassim/Nassim-bold.eot?#") format("eot"),url("../Fonts/Nassim/Nassim-bold.woff") format("woff"),url("../Fonts/Nassim/Nassim-bold.ttf") format("truetype");
-    font-weight: bold
+    font-weight: bold;
+    src: url('../Fonts/Nassim/Nassim-bold.eot?#') format('eot'),
+         url('../Fonts/Nassim/Nassim-bold.woff') format('woff'),
+         url('../Fonts/Nassim/Nassim-bold.ttf') format('truetype');
 }
+/*********************************/
 @font-face
 {
     font-family: 'Open Sans';
@@ -132,3 +138,14 @@
          url('../Fonts/OpenSans/OpenSans-Regular.svg#OpenSansRegular') format('svg');
 }
 /*********************************/
+@font-face {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../Fonts/FontAwesome/fontawesome-webfont.eot?v=4.5.0');
+    src: url('../Fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+         url('../Fonts/FontAwesome/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+         url('../Fonts/FontAwesome/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+         url('../Fonts/FontAwesome/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+         url('../Fonts/FontAwesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+}
