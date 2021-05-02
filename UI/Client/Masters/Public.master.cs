@@ -179,7 +179,7 @@ public partial class Masters_Public : Masters_Base
         if (mIsCurrentNode(url))
         {
             if (hasChild)
-                return string.Format("<a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href ='#'>{0}<span class='sr-only'>(current)</span></a>", title.ToString());
+                return string.Format("<a class='nav-link dropdown-toggle' data-toggle='dropdown' href ='#'>{0}<span class='sr-only'>(current)</span></a>", title.ToString());
             else
                 return string.Format("<a class='nav-link' href='#'>{0}<span class='sr-only'>(current)</span></a>", title.ToString());
         }
@@ -188,7 +188,7 @@ public partial class Masters_Public : Masters_Base
             if (url.ToString().Contains("javascript"))
             {
                 if (hasChild)
-                    return string.Format("<a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#'>{0}</a>", title.ToString());
+                    return string.Format("<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>{0}</a>", title.ToString());
                 else
                     return string.Format("<a class='nav-link'>{0}</a>", title.ToString());
             }
@@ -197,7 +197,7 @@ public partial class Masters_Public : Masters_Base
                 if (url.ToString().Substring(0, 1).Equals("~"))
                 {
                     if (hasChild)
-                        return string.Format("<a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='{0}'>{1}</a>", url.ToString().Substring(1), title.ToString());
+                        return string.Format("<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='{0}'>{1}</a>", url.ToString().Substring(1), title.ToString());
                     else
                         return string.Format(@"<a class='nav-link' href='{0}'>{1}</a>", url.ToString().Substring(1), title.ToString());
                 }
