@@ -11,7 +11,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphMain" runat="Server">
     <div id="Body">
         <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch">
-            <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput default-value" style="margin-top:0;width:100%;height: 35px;"></asp:TextBox>
+            <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput form-control rounded-end pe-5 default-value" style="margin-top:0;width:100%;height: 35px;"></asp:TextBox>
             <asp:LinkButton ID="btnSearch" runat="server" OnClick="btnSearch_Click" CssClass="searchButton btn">
                      <%= Farschidus.Translator.AppTranslate["general.button.search"]%>
             </asp:LinkButton>

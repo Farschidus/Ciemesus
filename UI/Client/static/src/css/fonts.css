@@ -84,18 +84,18 @@
 /*********************************/
 @font-face
 {
-    font-family: 'Open Sans';
+    font-family: OpenSans;
     font-style: normal;
-    font-weight: 700;
-    src: url('../Fonts/OpenSans/OpenSans-Bold.eot');
-    src: url('../Fonts/OpenSans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
-         url('../Fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
-         url('../Fonts/OpenSans/OpenSans-Bold.ttf') format('truetype'),
-         url('../Fonts/OpenSans/OpenSans-Bold.svg#OpenSansBold') format('svg');
+    font-weight: 400;
+    src: url('../Fonts/OpenSans/OpenSans-Regular.eot');
+    src: url('../Fonts/OpenSans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/OpenSans/OpenSans-Regular.woff') format('woff'),
+         url('../Fonts/OpenSans/OpenSans-Regular.ttf') format('truetype'),
+         url('../Fonts/OpenSans/OpenSans-Regular.svg#OpenSansRegular') format('svg');
 }
 @font-face
 {
-    font-family: 'Open Sans';
+    font-family: OpenSanslight;
     font-style: normal;
     font-weight: 300;
     src: url('../Fonts/OpenSans/OpenSans-Light.eot');
@@ -106,7 +106,7 @@
 }
 @font-face
 {
-    font-family: 'Open Sans';
+    font-family: OpenSansLightItalic;
     font-style: italic;
     font-weight: 300;
     src: url('../Fonts/OpenSans/OpenSans-LightItalic.eot');
@@ -117,7 +117,7 @@
 }
 @font-face
 {
-    font-family: 'Open Sans';
+    font-family: OpenSansItalic;
     font-style: italic;
     font-weight: 400;
     src: url('../Fonts/OpenSans/OpenSans-Italic.eot');
@@ -126,16 +126,16 @@
          url('../Fonts/OpenSans/OpenSans-Italic.ttf') format('truetype'),
          url('../Fonts/OpenSans/OpenSans-Italic.svg#OpenSansItalic') format('svg');
 }
-@font-face
-{
-    font-family: 'Open Sans';
+
+@font-face {
+    font-family: OpenSansBold;
     font-style: normal;
-    font-weight: 400;
-    src: url('../Fonts/OpenSans/OpenSans-Regular.eot');
-    src: url('../Fonts/OpenSans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../Fonts/OpenSans/OpenSans-Regular.woff') format('woff'),
-         url('../Fonts/OpenSans/OpenSans-Regular.ttf') format('truetype'),
-         url('../Fonts/OpenSans/OpenSans-Regular.svg#OpenSansRegular') format('svg');
+    font-weight: 700;
+    src: url('../Fonts/OpenSans/OpenSans-Bold.eot');
+    src: url('../Fonts/OpenSans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
+         url('../Fonts/OpenSans/OpenSans-Bold.ttf') format('truetype'),
+         url('../Fonts/OpenSans/OpenSans-Bold.svg#OpenSansBold') format('svg');
 }
 /*********************************/
 @font-face {

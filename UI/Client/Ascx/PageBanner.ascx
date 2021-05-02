@@ -15,7 +15,7 @@
                 </div>
             </FooterTemplate>
         </asp:Repeater>
-        <asp:Image ID="imgPageBanner" runat="server" ImageAlign="AbsMiddle" Visible="false" class="img-responsive" />
+        <asp:Image ID="imgPageBanner" runat="server" Visible="false" class="img-fluid" />
         <asp:Literal ID="litJS" runat="server"></asp:Literal>
         <asp:Literal ID="litCSS" runat="server"></asp:Literal>
     </ContentTemplate>

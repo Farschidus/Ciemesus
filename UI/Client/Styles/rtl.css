@@ -6,6 +6,10 @@
     text-align: right;
 }
 
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 30px;
+}
+
 #LanguagesList {
     margin: 0 0 0 5px;
 }
@@ -22,4 +26,18 @@
 
 .navbar-toggler {
     margin: 0 .5rem 0 0;
+}
+
+.dropdown-menu {
+    min-width: 27rem;
+    text-align: right;
+    right: 0;
+}
+
+a.backToList {
+    float: left;
+}
+
+input.searchInput[type="text"] {
+    font-family: iransans;
 }
