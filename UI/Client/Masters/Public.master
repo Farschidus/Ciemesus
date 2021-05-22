@@ -58,11 +58,11 @@
             <div id="Breadcrump"><%--<Breadcrump:BreadcrumpGen runat="server" ID="BreadcrumpGen" />--%></div>
         </div>
         <div id="Content">
+            <div id="Banner">
+                <asp:ContentPlaceHolder ID="cphHeadContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
             <div class="container">
-                <div id="Banner">
-                    <asp:ContentPlaceHolder ID="cphHeadContent" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
                 <asp:ContentPlaceHolder ID="cphMain" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

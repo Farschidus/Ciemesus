@@ -217,11 +217,11 @@ public partial class Masters_Public : Masters_Base
 
         if (languages.pIsRTL)
         {
-            sb.Append(@"<img class='hidden-xs' src='/Client/Images/Public/LogoFa.png'>");
+            sb.Append(@"<img class='logo hidden-xs' src='/Client/Images/Public/LogoFa.png'>");
         }
         else
         {
-            sb.Append(@"<img class='hidden-xs' src='/Client/Images/Public/LogoEn.png'>");
+            sb.Append(@"<img class='logo hidden-xs' src='/Client/Images/Public/LogoEn.png'>");
         }
 
         return sb.ToString();
@@ -235,11 +235,11 @@ public partial class Masters_Public : Masters_Base
 
         if (languages.pIsRTL)
         {
-            sb.Append(@"<img class='visible-xs' src='/Client/Images/Public/LogoFa-xs.png'>");
+            sb.Append(@"<img class='logoXs visible-xs' src='/Client/Images/Public/LogoFa-xs.png'>");
         }
         else
         {
-            sb.Append(@"<img class='visible-xs' src='/Client/Images/Public/LogoEn-xs.png'>");
+            sb.Append(@"<img class='logoXs visible-xs' src='/Client/Images/Public/LogoEn-xs.png'>");
         }
 
         return sb.ToString();
