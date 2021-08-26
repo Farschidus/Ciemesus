@@ -47,6 +47,7 @@
                 <section id="Body">
                     <div class="container">
                         <asp:Literal ID="litBody" runat="server" />
+                        <asp:Literal ID="litList" runat="server" />
                     </div>
                 </section>
                 <%--<uc4:ListGroups runat="server" ID="listGroups" GenerateAjaxUrl="true" />--%>

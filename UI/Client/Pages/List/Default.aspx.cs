@@ -138,7 +138,7 @@ public partial class Pages_List_Default : BasePublic
             }
             while (subjects.MoveNext());
             sb.Append("</div>");
-            litBody.Text = sb.ToString();
+            litList.Text = sb.ToString();
         }
     }
     private void mFillItemView(Guid subjectID)

@@ -2,6 +2,7 @@
 <settings>
   <section name="Website">
     <item key="Name" value="Ciemesus" langCode="en_US" />
+    <item key="Name" value="سیمسوس" langCode="fa_IR" />
     <item key="ServerDateFormat" value="yyyy/MM/dd" />
     <item key="TimeZone" value="3.5" />
     <item key="SinglePage" value="False" />
