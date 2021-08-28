@@ -98,7 +98,11 @@
             <ContentTemplate>
                 <table width="850px" style="display: inline-block">
                     <tr>
-                        <td class="right ltr" colspan="2">
+                        <td class="right ltr">
+                            <%=Farschidus.Translator.AppTranslate["pagesManaging.default.addEdit.pageID"]%>
+                        </td>
+                        <td class="left ltr">
+                            <%= Global.MethodsAndProps.mGetHtmlSpan((pIDSubject.HasValue) ? pIDSubject.Value.ToString() : string.Empty) %>
                             <asp:HiddenField ID="hdfData" runat="server" />
                         </td>
                     </tr>

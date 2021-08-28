@@ -126,71 +126,71 @@
         <asp:UpdatePanel ID="uplAddEdit" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
             <ContentTemplate>
                 <table width="850px" style="display: inline-block">
-                <tr>
-                    <td class="right ltr">
-                        <%=Farschidus.Translator.AppTranslate["pagesManaging.default.addEdit.pageID"]%>
-                    </td>
-                    <td class="left ltr">
-                        <%= Global.MethodsAndProps.mGetHtmlSpan( (pIDSubject.HasValue) ? pIDSubject.Value.ToString() : string.Empty) %>
-                        <asp:HiddenField ID="hdfData" runat="server" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right ltr">
-                        <%=Farschidus.Translator.AppTranslate["general.label.urlLink"]%>
-                    </td>
-                    <td class="left ltr">
-                        <%= Global.MethodsAndProps.mGetHtmlLink(pIDSubject, BLL.BusinessEntity.SubjectTypes.Enum.listItem) %>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right ltr">
-                        <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.isActive"]%>
-                    </td>
-                    <td class="left ltr">
-                        <asp:CheckBox ID="cbxIsActive" runat="server"></asp:CheckBox>                        
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right ltr">
-                        <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.date"]%>
-                    </td>
-                    <td class="left ltr">
-                        <asp:TextBox ID="txtDate" runat="server" Width="100px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDate" runat="server" ErrorMessage="*" ControlToValidate="txtDate"
-                            ValidationGroup="valGrouop"></asp:RequiredFieldValidator>                        
-                        <ajax:MaskedEditExtender ID="DateExtender" runat="server" TargetControlID="txtDate"
-                            Mask="99/99/9999" MessageValidatorTip="true" OnFocusCssClass="MaskedEditFocus"
-                            OnInvalidCssClass="MaskedEditError" MaskType="Date" DisplayMoney="Left" AcceptNegative="Left"
-                            ErrorTooltipEnabled="True" />
-                        <ajax:CalendarExtender ID="calExtDate" runat="server" TargetControlID="txtDate">
-                        </ajax:CalendarExtender>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right ltr">
-                        <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.alias"]%>
-                    </td>
-                    <td class="left languageLtr">
-                        <asp:TextBox ID="txtAlias" runat="server" Width="780px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right ltr">
-                        <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.title"]%>
-                    </td>
-                    <td class="left languageLtr">
-                        <asp:TextBox ID="txtTitle" runat="server" Width="780px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right ltr top">
-                        <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.body"]%>
-                    </td>
-                    <td class="left ltr">
-                        <uc1:tinyMCE runat="server" ID="tinyMCE" />
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="right ltr">
+                            <%=Farschidus.Translator.AppTranslate["pagesManaging.default.addEdit.pageID"]%>
+                        </td>
+                        <td class="left ltr">
+                            <%= Global.MethodsAndProps.mGetHtmlSpan((pIDSubject.HasValue) ? pIDSubject.Value.ToString() : string.Empty) %>
+                            <asp:HiddenField ID="hdfData" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right ltr">
+                            <%=Farschidus.Translator.AppTranslate["general.label.urlLink"]%>
+                        </td>
+                        <td class="left ltr">
+                            <%= Global.MethodsAndProps.mGetHtmlLink(pIDSubject, BLL.BusinessEntity.SubjectTypes.Enum.listItem) %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right ltr">
+                            <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.isActive"]%>
+                        </td>
+                        <td class="left ltr">
+                            <asp:CheckBox ID="cbxIsActive" runat="server"></asp:CheckBox>                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right ltr">
+                            <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.date"]%>
+                        </td>
+                        <td class="left ltr">
+                            <asp:TextBox ID="txtDate" runat="server" Width="100px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvDate" runat="server" ErrorMessage="*" ControlToValidate="txtDate"
+                                ValidationGroup="valGrouop"></asp:RequiredFieldValidator>                        
+                            <ajax:MaskedEditExtender ID="DateExtender" runat="server" TargetControlID="txtDate"
+                                Mask="99/99/9999" MessageValidatorTip="true" OnFocusCssClass="MaskedEditFocus"
+                                OnInvalidCssClass="MaskedEditError" MaskType="Date" DisplayMoney="Left" AcceptNegative="Left"
+                                ErrorTooltipEnabled="True" />
+                            <ajax:CalendarExtender ID="calExtDate" runat="server" TargetControlID="txtDate">
+                            </ajax:CalendarExtender>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right ltr">
+                            <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.alias"]%>
+                        </td>
+                        <td class="left languageLtr">
+                            <asp:TextBox ID="txtAlias" runat="server" Width="780px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right ltr">
+                            <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.title"]%>
+                        </td>
+                        <td class="left languageLtr">
+                            <asp:TextBox ID="txtTitle" runat="server" Width="780px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right ltr top">
+                            <%=Farschidus.Translator.AppTranslate["listItemManaging.default.addEdit.body"]%>
+                        </td>
+                        <td class="left ltr">
+                            <uc1:tinyMCE runat="server" ID="tinyMCE" />
+                        </td>
+                    </tr>
                 </table>
             </ContentTemplate>
         </asp:UpdatePanel>
