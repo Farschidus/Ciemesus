@@ -64,7 +64,6 @@ public partial class Masters_Public : Masters_Base
             if (pCurrentUser != null)
             {
                 string registrationPage = string.Format(Global.Constants.PAGE_REGISTER_ASPX.Substring(1), languages.pCode);
-                ProfileCommon userProfile = Profile.GetProfile(pCurrentUser.UserName);
                 litLogin.Text = string.Format(loginUser, registrationPage);
             }
             else

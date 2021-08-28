@@ -62,10 +62,8 @@
                 <asp:ContentPlaceHolder ID="cphHeadContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-            <div class="container">
-                <asp:ContentPlaceHolder ID="cphMain" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
+            <asp:ContentPlaceHolder ID="cphMain" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
         <div id="Footer">
             <div class="container">

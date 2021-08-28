@@ -43,7 +43,7 @@ public partial class PSM_SubjectPropertyValues_Default : BaseCP
         //    mInitialBindings();
         //}
     }
-    protected void btnLoadAll_Click(object sender, EventArgs e)
+    protected override void btnLoadAll_Click(object sender, EventArgs e)
     {
         //pListMode = ListMode.LoadAll;
         //listPager.CurrentIndex = 1;
@@ -56,15 +56,15 @@ public partial class PSM_SubjectPropertyValues_Default : BaseCP
 
         //mLoadList();
     }
-    protected void btnCreate_Click(object sender, EventArgs e)
+    protected override void btnCreate_Click(object sender, EventArgs e)
     {
         //mClear();
     }
-    protected void btnSubmit_Click(object sender, EventArgs e)
+    protected override void btnSubmit_Click(object sender, EventArgs e)
     {
         //mSave();
     }
-    protected void btnCancel_Click(object sender, EventArgs e)
+    protected override void btnCancel_Click(object sender, EventArgs e)
     {
         //mLoadList();
     }

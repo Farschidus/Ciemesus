@@ -123,8 +123,6 @@ public partial class FileManager_Funcations : System.Web.UI.Page
 
         foreach (string Dir in Directorys)
         {
-
-            int FileType;
             HTML += " <input class='btn' style='float:right;' onclick=OpenFile('" + "2" + "','" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20").Replace("//", "/") + "') id='Button1' type='button' value='open' /> ";
             // HTML += " <input class='btn' style='float:right;' onclick=InsertFile('" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20") + "') id='Button2' type='button' value='insert' /> ";
             HTML += "<li path='" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20") + "'" + " ondblclick=OpenFile('" + "2" + "','" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20").Replace("//", "/") + "') class=ui-widget-content>";
