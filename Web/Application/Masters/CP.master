@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Application/Masters/Base.master" AutoEventWireup="true"
-    CodeFile="CP.master.cs" Inherits="Masters_CPilot" %>
+    CodeFile="CP.master.cs" Inherits="Masters_CPanel" %>
 
 <%@ Register Src="~/Application/Ascx/MediaManager.ascx" TagName="MediaManager" TagPrefix="ucMedia" %>
 <%@ Register Src="~/Application/Ascx/BannerManager.ascx" TagName="BannerManager" TagPrefix="ucBanner" %>

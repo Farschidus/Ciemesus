@@ -48,7 +48,7 @@ public partial class PSM_Languages_Default : BaseCP
             ViewState["pLanguages"] = value.Serialize();
         }
     }
-    private Farschidus.Web.UI.Message pMessage = new Farschidus.Web.UI.Message();
+    // private Farschidus.Web.UI.Message pMessage = new Farschidus.Web.UI.Message();
 
     #endregion
 

@@ -392,7 +392,7 @@ public partial class PSM_UserPages_Default : BaseCP
     }
     public string mGetUSerFullName(object idUser)
     {
-        ProfileCommon userProfile = Profile.GetProfile(Membership.GetUser(idUser).UserName);
+        var userProfile = GetProfileInstance.GetProfile(Membership.GetUser(idUser).UserName);
         if (userProfile != null)
             return userProfile.FirstName + " " + userProfile.LastName;
         else

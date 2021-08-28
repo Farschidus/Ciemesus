@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 
-public partial class Masters_CPilot : Masters_Base
+public partial class Masters_CPanel : Masters_Base
 {
     protected override void OnInit(EventArgs e)
     {        

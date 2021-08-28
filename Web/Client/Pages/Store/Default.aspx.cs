@@ -229,7 +229,7 @@ public partial class Pages_Store_Default : BasePublic
             if (storeType.Equals(1))
             {
                 MembershipUser user = Membership.GetUser();
-                ProfileCommon userProfile = Profile.GetProfile(user.UserName);
+                var userProfile = GetProfileInstance.GetProfile(user.UserName);
 
                 list.Add("<!--OrderNo-->", OrderNo);
                 list.Add("<!--OrderDate-->", dateStamp);

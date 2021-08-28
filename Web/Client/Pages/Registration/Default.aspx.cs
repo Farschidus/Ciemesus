@@ -39,7 +39,7 @@ public partial class Pages_Registration_Default : BasePublic
     }
     private void mFillForm()
     {
-        ProfileCommon userProfile = Profile.GetProfile(pCurrentUser.UserName);
+        var userProfile = GetProfileInstance.GetProfile(pCurrentUser.UserName);
 
         lblUserName.Text = pCurrentUser.UserName;
         lblUserName.Visible = true;
@@ -85,7 +85,7 @@ public partial class Pages_Registration_Default : BasePublic
                             string tempPWD = pCurrentUser.ResetPassword();
                             pCurrentUser.ChangePassword(tempPWD, txtPasswordCreate.Text.Trim());
                         }
-                        ProfileCommon userProfile = Profile.GetProfile(pCurrentUser.UserName);
+                        var userProfile = GetProfileInstance.GetProfile(pCurrentUser.UserName);
 
                         mUpdateProfile(userProfile);
                         
@@ -96,7 +96,7 @@ public partial class Pages_Registration_Default : BasePublic
                         Membership.CreateUser(txtUserNameCreate.Text.Trim(), txtPasswordCreate.Text.Trim(), txtEmail.Text.Trim());
                         MembershipUser membershipUser = Membership.GetUser(txtUserNameCreate.Text.Trim());
                         Roles.AddUserToRole(membershipUser.UserName, Global.Constants.STRING_ROLE_MEMBER);
-                        ProfileCommon userProfile = Profile.GetProfile(membershipUser.UserName);
+                        var userProfile = GetProfileInstance.GetProfile(membershipUser.UserName);
 
                         mUpdateProfile(userProfile);
                         

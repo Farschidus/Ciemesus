@@ -299,7 +299,7 @@ public partial class PSM_UserManager_Default : BaseCP
             checkbox.Selected = true;
         }
 
-        ProfileCommon userProfile = Profile.GetProfile(lblUserName.Text);
+        var userProfile = GetProfileInstance.GetProfile(lblUserName.Text);
 
         txtEmail.Text = pMembershipUser.Email;
         txtFirstName.Text = userProfile.FirstName;
@@ -344,7 +344,7 @@ public partial class PSM_UserManager_Default : BaseCP
 
                 Membership.UpdateUser(pMembershipUser);
 
-                ProfileCommon userProfile = Profile.GetProfile(pMembershipUser.UserName);
+                var userProfile = GetProfileInstance.GetProfile(pMembershipUser.UserName);
 
                 if (!string.IsNullOrEmpty(txtFirstName.Text))
                     userProfile.SetPropertyValue("FirstName", txtFirstName.Text);
@@ -451,7 +451,7 @@ public partial class PSM_UserManager_Default : BaseCP
 
     public string mGetUSerFullName(object idUser)
     {
-        ProfileCommon userProfile = Profile.GetProfile(Membership.GetUser(idUser).UserName);
+        var userProfile = GetProfileInstance.GetProfile(Membership.GetUser(idUser).UserName);
         if (userProfile != null)
             return userProfile.FirstName + " " + userProfile.LastName;
         else

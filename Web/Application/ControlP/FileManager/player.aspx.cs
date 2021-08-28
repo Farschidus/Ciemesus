@@ -16,7 +16,7 @@ public partial class Controls_ACMSTextBox_JavaScript_tiny_mce_plugins_FileManage
         }        
     }
 
-    private void OpenFile( string FilePath )
+    private new void OpenFile( string FilePath )
     {
         string EX = System.IO.Path.GetExtension(FilePath);
         string HTML = string.Empty;
