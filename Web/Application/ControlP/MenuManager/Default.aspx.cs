@@ -1,12 +1,14 @@
-﻿using System;
+﻿using BLL.BusinessEntity;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml;
 using System.Web;
-using System.Web.UI;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI.WebControls;
-using System.Web.Script.Serialization;
-using BLL.BusinessEntity;
+using System.Xml;
 
 public partial class ControlP_MenuManager_Default : BaseCP
 {
@@ -538,33 +540,26 @@ public partial class ControlP_MenuManager_Default : BaseCP
         XmlNodeList FirstLevelList = siteMapRootNode.ChildNodes;
 
         XmlDocument outputXML = new XmlDocument();
-        XmlNode root = outputXML.CreateElement("root");
+        XmlNode root = outputXML.CreateElement("ul");
 
         foreach (XmlNode node in FirstLevelList)
         {
-            root.AppendChild(mGenerateItemforJsTree(outputXML, node, "0"));
+            root.AppendChild(mGenerateItemforJsTree(outputXML, node));
             mGetChildNodes(outputXML, node, root);
         }
 
         outputXML.AppendChild(root);
         return outputXML.InnerXml.ToString();
     }
-    private static XmlNode mGenerateItemforJsTree(XmlDocument outputXML, XmlNode node, string parentID)
+    private static XmlNode mGenerateItemforJsTree(XmlDocument outputXML, XmlNode node)
     {
-        XmlNode item = outputXML.CreateElement("item");
-        XmlNode content = outputXML.CreateElement("content");
-        XmlNode name = outputXML.CreateElement("name");
-        XmlAttribute atrParentID = outputXML.CreateAttribute("parent_id");
+        XmlNode item = outputXML.CreateElement("li");
         XmlAttribute atrID = outputXML.CreateAttribute("id");
 
-        name.InnerText = node.Attributes["title"].Value;
-        atrParentID.Value = parentID;
+        item.InnerText = node.Attributes["title"].Value;
         atrID.Value = node.Attributes["resourceKey"].Value;
 
-        content.AppendChild(name);
-        item.Attributes.Append(atrParentID);
         item.Attributes.Append(atrID);
-        item.AppendChild(content);
         return item;
     }
     private static bool mGetChildNodes(XmlDocument outputXML, XmlNode node, XmlNode root)
@@ -573,7 +568,7 @@ public partial class ControlP_MenuManager_Default : BaseCP
         {
             foreach (XmlNode childNode in node.ChildNodes)
             {
-                root.AppendChild(mGenerateItemforJsTree(outputXML, childNode, node.Attributes["resourceKey"].Value));
+                root.AppendChild(mGenerateItemforJsTree(outputXML, childNode));
                 mGetChildNodes(outputXML, childNode, root);
             }
             return true;
@@ -614,26 +609,58 @@ public partial class ControlP_MenuManager_Default : BaseCP
 
     #region "WebMethod"
 
-    [System.Web.Services.WebMethod]
-    [System.Web.Script.Services.ScriptMethod]
+    [WebMethod]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
     public static string LoadSiteMap(string siteMap)
     {
-        string output = string.Empty;
+        List<JsTree> result = new List<JsTree>();
         string sitemapFile = HttpContext.Current.Server.MapPath(string.Format("{0}{1}.sitemap", Global.Constants.FOLDER_SITEMAPS, siteMap));
         if (File.Exists(sitemapFile))
         {
             XmlDocument xmlDoc = new XmlDocument();
             FileStream fs = new FileStream(sitemapFile, FileMode.Open, FileAccess.Read);
             xmlDoc.Load(fs);
-            output = mGetWellFormattedJsTree(xmlDoc);
+            XmlNode siteMapRootNode = xmlDoc.GetElementsByTagName("siteMap")[0].FirstChild;
+
+            result = mGetJsTreeDataObj(siteMapRootNode);
             fs.Close();
         }
-        return output;
+        string jsonData = JsonConvert.SerializeObject(result, new JsonSerializerSettings
+        {
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            NullValueHandling = NullValueHandling.Ignore
+        });
+        return jsonData;
     }
 
-    [System.Web.Services.WebMethod]
-    [System.Web.Script.Services.ScriptMethod]
-    public static void MoveNode(string nodeID, string refID, string type, string treeType)
+    private static List<JsTree> mGetJsTreeDataObj(XmlNode siteMapNode)
+    {
+        var parentNode = new List<JsTree>();
+        foreach (XmlNode node in siteMapNode.ChildNodes)
+        {
+            var jsTree = new JsTree
+            {
+                Id = node.Attributes["resourceKey"].Value,
+                Text = node.Attributes["title"].Value
+            };
+
+            if (node.HasChildNodes)
+            {
+                jsTree.Children = mGetJsTreeDataObj(node);
+                parentNode.Add(jsTree);
+            }
+            else
+            {
+                parentNode.Add(jsTree);
+            }
+        }
+
+        return parentNode;
+    }
+
+    [WebMethod]
+    [ScriptMethod]
+    public static void MoveNode(string nodeID, string refID, int position, string treeType)
     {
         string sitemapFile = HttpContext.Current.Server.MapPath(string.Format("{0}{1}.sitemap", Global.Constants.FOLDER_SITEMAPS, treeType));
 
@@ -643,28 +670,39 @@ public partial class ControlP_MenuManager_Default : BaseCP
         manager.AddNamespace("sm", "http://schemas.microsoft.com/AspNet/SiteMap-File-1.0");
 
         XmlNode selectedNode = xmlDoc.SelectSingleNode("//sm:siteMapNode[@resourceKey='" + nodeID + "']", manager);
-        XmlNode refNode = xmlDoc.SelectSingleNode("//sm:siteMapNode[@resourceKey='" + refID + "']", manager);
-        XmlNode parentRefNode = refNode.ParentNode;
+        XmlNode refNode;
+        if (refID != "#")
+            refNode = xmlDoc.SelectSingleNode("//sm:siteMapNode[@resourceKey='" + refID + "']", manager);
+        else
+            refNode = xmlDoc.GetElementsByTagName("siteMap")[0].FirstChild;
+
         XmlNode parentSelectedNode = selectedNode.ParentNode;
+        XmlNodeList newParentChildrens = refNode.ChildNodes;
 
         parentSelectedNode.RemoveChild(selectedNode);
-        switch (type)
+
+        
+        if (position > 0)
         {
-            case "before":
-                parentRefNode.InsertBefore(selectedNode, refNode);
-                break;
-            case "after":
-                parentRefNode.InsertAfter(selectedNode, refNode);
-                break;
-            case "last":
+            var newRefNode = newParentChildrens[position - 1];
+            refNode.InsertAfter(selectedNode, newRefNode);
+        }
+        else if(position == 0)
+        {
+            if (refNode.HasChildNodes)
+            {
+                refNode.InsertBefore(selectedNode, refNode.FirstChild);
+            }
+            else
+            {
                 refNode.AppendChild(selectedNode);
-                break;
+            }
         }
         xmlDoc.Save(sitemapFile);
     }
 
-    [System.Web.Services.WebMethod]
-    [System.Web.Script.Services.ScriptMethod]
+    [WebMethod]
+    [ScriptMethod]
     public static void DeleteNode(string nodeID, string treeType)
     {
         string sitemapFile = HttpContext.Current.Server.MapPath(string.Format("{0}{1}.sitemap", Global.Constants.FOLDER_SITEMAPS, treeType));
@@ -679,8 +717,8 @@ public partial class ControlP_MenuManager_Default : BaseCP
         xmlDoc.Save(sitemapFile);
     }
 
-    [System.Web.Services.WebMethod]
-    [System.Web.Script.Services.ScriptMethod]
+    [WebMethod]
+    [ScriptMethod]
     public static void RenameNode(string nodeID, string newName, string treeType)
     {
         string sitemapFile = HttpContext.Current.Server.MapPath(string.Format("{0}{1}.sitemap", Global.Constants.FOLDER_SITEMAPS, treeType));
@@ -692,6 +730,13 @@ public partial class ControlP_MenuManager_Default : BaseCP
         renamedNode.Attributes["title"].Value = newName;
 
         xmlDoc.Save(sitemapFile);
+    }
+
+    public class JsTree
+    {
+        public string Id { get; set; }
+        public string Text { get; set; }
+        public List<JsTree> Children { get; set; }
     }
 
     #endregion

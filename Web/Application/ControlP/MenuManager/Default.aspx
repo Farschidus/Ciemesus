@@ -2,9 +2,8 @@
      CodeFile="Default.aspx.cs" Inherits="ControlP_MenuManager_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="Server">
-    <script type="text/javascript" src="/Application/Scripts/Plugins/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/Application/Scripts/Plugins/jquery.hotkeys.js"></script>
-    <script type="text/javascript" src="/Application/Scripts/Plugins/jquery.jstree.js"></script>
+<%--    <link rel="stylesheet" href="/Application/static/src/app/css/jstree-themes/default/style.min.css" />
+    <script type="text/javascript" src="/Application/static/src/app/js/jstree.min.js"></script>--%>
     <script type="text/javascript">
         $(document).ready(function () {
             webCall();
@@ -19,42 +18,45 @@
         var position = "inside"
         function MakeTree(result) {
             $("#menuContainer")
-            .bind("move_node.jstree", function (none, sender) {
-                FarschidusMove(sender.args[0].o[0].id, sender.args[0].r[0].id, sender.args[0].p);
-            }).bind("rename_node.jstree", function (none, sender) {
-                FarschidusRename(sender.args[0][0].id, sender.args[1]);
-            }).bind("delete_node.jstree", function (none, sender) {
-                FarschidusDelete(sender.args[0][0].id);
-            })
-            .jstree({
-                "plugins": ["themes", "xml_data", "dnd", "crrm", "contextmenu"],
-                "xml_data": {
-                    "data": result
-                },
-                "themes": {
-                    "theme": "default",
-                    "dots": true,
-                    "icons": true
-                },
-                "contextmenu": {
-                    "items": function ($node) {
-                        return {
-                            "Rename": {
-                                "label": "Rename",
-                                "_class": "rename",
-                                "action": function (obj) { this.rename(obj); }
-                            },
-                            "Delete": {
-                                "label": "Delete",
-                                "_class": "delete",
-                                "action": function (obj) { this.remove(obj); }
-                            }
-                        };
+                .bind("move_node.jstree", function (none, sender) {
+                    FarschidusMove(sender.node.id, sender.parent, sender.position);
+                }).bind("rename_node.jstree", function (none, sender) {
+                    FarschidusRename(sender.node.id, sender.text);
+                }).bind("delete_node.jstree", function (none, sender) {
+                    FarschidusDelete(sender.node.id);
+                })
+                .bind("loaded.jstree", function (event, data) {
+                    $(this).jstree("open_all");
+                })
+                .jstree({
+                    "core": {
+                        "data": JSON.parse(result),
+                        "check_callback": true,
+                        "themes": {
+                            "theme": "default",
+                            "dots": true,
+                            "icons": true
+                        },
+                    },
+                    "plugins": ["contextmenu", "dnd"],
+                    "contextmenu": {
+                        "items": function ($node) {
+                            var tree = $("#menuContainer").jstree(true);
+                            return {
+                                "Rename": {
+                                    "label": "Rename",
+                                    "action": function (obj) { tree.edit($node); }
+                                },
+                                "Delete": {
+                                    "label": "Delete",
+                                    "action": function (obj) { tree.delete_node($node); }
+                                }
+                            };
+                        }
                     }
+                });
+            };
 
-                }
-            });
-        }
         function webCall() {
             PageMethods.set_path("/Application/controlP/MenuManager/default.aspx");
             treeType = $('#<%= hdfMenuName.ClientID %>').val();

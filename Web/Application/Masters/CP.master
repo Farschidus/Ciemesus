@@ -11,6 +11,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeaderMaster" runat="Server">
     <link rel="shortcut icon" type="image/x-icon" href="/Application/Images/General/ciemesus.ico" />
     <link rel="stylesheet" type="text/css" href="/application/static/dist/css/cp.min.css?<%= System.Configuration.ConfigurationManager.AppSettings["Version"] %>" />
+    <script type="text/javascript" src="/application/static/dist/js/cp.min.js?<%= System.Configuration.ConfigurationManager.AppSettings["Version"] %>" />
     <script type="text/javascript">
         var isTinyMCE = false,
         isHide = true,

@@ -15,6 +15,7 @@ const copyAppFonts = 'copyAppFonts';
 const copyAppImages = 'copyAppImages';
 const baseJs = 'baseJs';
 const baseCss = 'baseCss';
+const cpJs = 'cpJs';
 const cpCss = 'cpCss';
 
 const cleanClient = 'cleanClient';
@@ -84,14 +85,28 @@ gulp.task(baseCss, function () {
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('./application/static/dist/css'));
 });
-// application - cp css
+// application - app js
+gulp.task(cpJs, function () {
+    return gulp.src(['./application/static/src/app/js/jstree.js'])
+        .pipe(concat('cp.js'))
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('./application/static/dist/js'));
+});
+// application - app css
 gulp.task(cpCss, function () {
-    return gulp.src(['./application/static/src/application/css/reset.css',
-        './application/static/src/application/css/menu.css',
-        './application/static/src/application/css/fonts.css',
-        './application/static/src/application/css/messageBox.css',
-        './application/static/src/application/css/confirmPopup.css',
-        './application/static/src/application/css/cp.css'])
+    return gulp.src(['./application/static/src/app/css/reset.css',
+        './application/static/src/app/css/menu.css',
+        './application/static/src/app/css/fonts.css',
+        './application/static/src/app/css/messageBox.css',
+        './application/static/src/app/css/confirmPopup.css',
+        './application/static/src/app/css/cp.css',
+        './application/static/src/app/css/jstree.css'])
         .pipe(autoprefixer({
             cascade: true
         }))
@@ -212,8 +227,8 @@ gulp.task(spaCss, function () {
 });
 
 // Actions
-gulp.task(actionsApplication, gulp.series(cleanApplication, copyAppFonts, copyAppImages, baseJs, baseCss, cpCss));
+gulp.task(actionsApplication, gulp.series(cleanApplication, copyAppFonts, copyAppImages, baseJs, baseCss, cpJs, cpCss));
 gulp.task(actionsClient, gulp.series(cleanClient, copyClientFonts, copyClientImages, clientJs, clientCss, underConstructionJs, underConstructionCss, spaJs, spaCss));
-gulp.task('A-FastClientBuiold', gulp.series(cleanClient, copyClientFonts, copyClientImages, clientJs, clientCss));
+gulp.task('A-FastClientBuild', gulp.series(cleanClient, copyClientFonts, copyClientImages, clientJs, clientCss));
 
 gulp.task('actions-allBuild', gulp.parallel([actionsApplication, actionsClient]));
