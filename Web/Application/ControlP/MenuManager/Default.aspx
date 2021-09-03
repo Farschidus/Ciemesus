@@ -2,8 +2,6 @@
      CodeFile="Default.aspx.cs" Inherits="ControlP_MenuManager_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeader" runat="Server">
-<%--    <link rel="stylesheet" href="/Application/static/src/app/css/jstree-themes/default/style.min.css" />
-    <script type="text/javascript" src="/Application/static/src/app/js/jstree.min.js"></script>--%>
     <script type="text/javascript">
         $(document).ready(function () {
             webCall();
