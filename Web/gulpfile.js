@@ -152,6 +152,7 @@ gulp.task(clientCss, function () {
         './client/static/src/css/fonts.css',
         './client/static/src/css/notification.css',
         './client/static/src/css/font-awesome.min.css',
+        './client/static/src/css/login.css',
         './client/static/src/css/public.css',
         './client/static/src/css/animate.css'])
         .pipe(autoprefixer({
