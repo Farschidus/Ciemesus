@@ -15,6 +15,11 @@ public partial class Masters_CPanel : Masters_Base
     {
         if (!IsPostBack)
         {
+            HtmlGenericControl jsBundleLink = new HtmlGenericControl("script");
+            jsBundleLink.Attributes.Add("src", string.Format("/application/static/dist/js/cp.min.js?{0}", System.Configuration.ConfigurationManager.AppSettings["Version"]));
+            jsBundleLink.Attributes["type"] = "text/javascript";
+            Page.Header.Controls.AddAt(4, jsBundleLink);
+
             Languages languages = new Languages();
             languages.LoadByLanguageCode(Global.MethodsAndProps.CurrentLanguageCode);
             // Set Sitemap Provider
@@ -32,14 +37,6 @@ public partial class Masters_CPanel : Masters_Base
             Languages lang = new Languages(Farschidus.Translator.PublicDefaultLanguage);
             //lnkHomePage.HRef =  string.Format(Global.Constants.PAGE_HOME_ASPX, lang.pCode);
             lnkHomePage.Title = Farschidus.Translator.AppTranslate["general.label.backToWebsite"];
-
-            // TODO make sure and remove below code
-            // FavIcon Selection
-            //HtmlLink favIcon = new HtmlLink();
-            //favIcon.Attributes.Add("type", "image/x-icon");
-            //favIcon.Attributes.Add("rel", "shortcut icon");
-            //favIcon.Attributes.Add("href", Global.Constants.IMAGE_CIEMESUS_FAVICON);
-            //Page.Header.Controls.Add(favIcon);
         }
     }
     protected void ddlCPLanguages_SelectedIndexChanged(object sender, EventArgs e)
