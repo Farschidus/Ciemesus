@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.IO;
 using System.Configuration;
-using System.Text;
-public partial class FileManager_Funcations : System.Web.UI.Page
+
+public partial class FileManager_Funcations : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -97,8 +94,15 @@ public partial class FileManager_Funcations : System.Web.UI.Page
     }
     private void FilesULLI(string DirPath)
     {
+        string userFileFolder = Server.MapPath(ConfigurationManager.AppSettings["FileManager"].ToString());
+
+        string FullPath = DirPath == "UserFiles" ? userFileFolder : Server.MapPath(DirPath);
+
+        // additional securite check to make sure that no operation can done out of the user file
+        if (!FullPath.Contains(userFileFolder))
+            return;
+
         DirPath = DirPath.Replace("//", "/");
-        string FullPath = Server.MapPath(DirPath);
 
         string[] Files = Directory.GetFiles(FullPath);
         string[] Directorys = Directory.GetDirectories(FullPath);
@@ -109,25 +113,24 @@ public partial class FileManager_Funcations : System.Web.UI.Page
         {
             FileInfo f = new FileInfo(File);
             int FileType;
-            string iconestring = GetIcone(System.IO.Path.GetExtension(File), out FileType);
-            HTML += " <input class='btn' style='float:right;' onclick=OpenFile('" + FileType.ToString() + "','" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') id='Button1' type='button' value='open' /> ";
-            HTML += " <input class='btn' style='float:right;' onclick=InsertFile('" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') id='Button2' type='button' value='insert' /> ";
-            HTML += "<li path='" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20") + "' ondblclick=OpenFile('" + FileType.ToString() + "','" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') class=ui-widget-content>";
+            string iconestring = GetIcone(Path.GetExtension(File), out FileType);
+            HTML += " <input class='btn' style='float:right;' onclick=OpenFile('" + FileType.ToString() + "','" + (DirPath + "/" + Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') id='Button1' type='button' value='open' /> ";
+            HTML += " <input class='btn' style='float:right;' onclick=InsertFile('" + (DirPath + "/" + Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') id='Button2' type='button' value='insert' /> ";
+            HTML += "<li path='" + (DirPath + "/" + Path.GetFileName(File)).Replace(" ", "%20") + "' ondblclick=OpenFile('" + FileType.ToString() + "','" + (DirPath + "/" + Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') class=ui-widget-content>";
             HTML += "<img style='float:left;' width='25px;' src='" + iconestring + "'/>";
-            HTML += "<span float:left;padding-right:20px;>" + System.IO.Path.GetFileName(File) + "</span>";
+            HTML += "<span float:left;padding-right:20px;>" + Path.GetFileName(File) + "</span>";
             HTML += "<br><span float:left;padding-right:20px;>" + f.CreationTime + "</span>";
             HTML += "<div style='float:right;padding-right:20px;padding-top:0px;'>" + f.Length / 1024 + " KB</div>";
             HTML += "</li>";
-
         }
 
         foreach (string Dir in Directorys)
         {
-            HTML += " <input class='btn' style='float:right;' onclick=OpenFile('" + "2" + "','" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20").Replace("//", "/") + "') id='Button1' type='button' value='open' /> ";
-            // HTML += " <input class='btn' style='float:right;' onclick=InsertFile('" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20") + "') id='Button2' type='button' value='insert' /> ";
-            HTML += "<li path='" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20") + "'" + " ondblclick=OpenFile('" + "2" + "','" + (DirPath + "/" + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20").Replace("//", "/") + "') class=ui-widget-content>";
+            HTML += " <input class='btn' style='float:right;' onclick=OpenFile('" + "2" + "','" + (DirPath + "/" + Path.GetFileName(Dir)).Replace(" ", "%20").Replace("//", "/") + "') id='Button1' type='button' value='open' /> ";
+            // HTML += " <input class='btn' style='float:right;' onclick=InsertFile('" + (DirPath + "/" + Path.GetFileName(Dir)).Replace(" ", "%20") + "') id='Button2' type='button' value='insert' /> ";
+            HTML += "<li path='" + (DirPath + "/" + Path.GetFileName(Dir)).Replace(" ", "%20") + "'" + " ondblclick=OpenFile('" + "2" + "','" + (DirPath + "/" + Path.GetFileName(Dir)).Replace(" ", "%20").Replace("//", "/") + "') class=ui-widget-content>";
             HTML += "<img style='float:left;' width='25px;' src='icons/folder-32.png' />";
-            HTML += "<span float:left;padding-right:20px;>" + System.IO.Path.GetFileName(Dir) + "</span>";
+            HTML += "<span float:left;padding-right:20px;>" + Path.GetFileName(Dir) + "</span>";
             HTML += "</li>";
         }
         HTML = HTML + "</ol>";
@@ -139,12 +142,11 @@ public partial class FileManager_Funcations : System.Web.UI.Page
     // this funcation not used its return the files and folder as json array
     private void LoadFiles(string DirPath)
     {
+        string userFileFolder = Server.MapPath(ConfigurationManager.AppSettings["FileManager"].ToString());
 
-
-        string FullPath = Server.MapPath(DirPath);
+        string FullPath = DirPath == "UserFiles" ? userFileFolder : Server.MapPath(DirPath);
 
         // additional securite check to make sure that no operation can done out of the user file
-        String userFileFolder = Server.MapPath(ConfigurationManager.AppSettings["FileManager"].ToString());
         if (!FullPath.Contains(userFileFolder))
             return;
 
@@ -154,13 +156,12 @@ public partial class FileManager_Funcations : System.Web.UI.Page
 
         foreach (string File in Files)
         {
-
             FileInfo f = new FileInfo(File);
             int FileType;
-            Json += "{\"FilePath\":\"" + (DirPath + System.IO.Path.GetFileName(File)).Replace(" ", "%20") + "\",";
-            Json += "\"FileName\":\"" + System.IO.Path.GetFileName(File) + "\",";
+            Json += "{\"FilePath\":\"" + (DirPath + Path.GetFileName(File)).Replace(" ", "%20") + "\",";
+            Json += "\"FileName\":\"" + Path.GetFileName(File) + "\",";
             Json += "\"FileSize\":\"" + f.Length.ToString() + " bytes" + "\",";
-            Json += "\"Fileicon\":\"" + GetIcone(System.IO.Path.GetExtension(File), out FileType) + "\",";
+            Json += "\"Fileicon\":\"" + GetIcone(Path.GetExtension(File), out FileType) + "\",";
             Json += "\"FileType\":\"" + FileType.ToString() + "\"";
 
             Json += "},";
@@ -168,7 +169,6 @@ public partial class FileManager_Funcations : System.Web.UI.Page
 
         foreach (string Dir in Directorys)
         {
-
             Json += "{\"FilePath\":\"" + (DirPath + Path.GetFileName(Dir)).Replace(" ", "%20") + "/" + "\",";
             Json += "\"FileName\":\"" + Path.GetFileName(Dir) + "\",";
             Json += "\"FileType\":\"" + "2" + "\",";
@@ -178,12 +178,10 @@ public partial class FileManager_Funcations : System.Web.UI.Page
         }
 
         Json = Json.Trim(',');
-        Json = Json + "]";
+        Json += "]";
         Response.Clear();
         Response.Write(Json);
         Response.End();
-
-
     }
 
     private void LoadFilesHTML(string DirPath)
@@ -207,7 +205,7 @@ public partial class FileManager_Funcations : System.Web.UI.Page
             string[] Directorys = Directory.GetDirectories(FullPath);
             foreach (string Dir in Directorys)
             {
-                html += "<li path='" + (DirPath + System.IO.Path.GetFileName(Dir)) + "/" + "' class='jstree-closed'><a onclick=LoadFiles('" + (DirPath + System.IO.Path.GetFileName(Dir)).Replace(" ", "%20") + "/')  href='#'>" + Path.GetFileName(Dir) + "</a></li>";
+                html += "<li path='" + (DirPath + Path.GetFileName(Dir)) + "/" + "' class='jstree-closed'><a onclick=LoadFiles('" + (DirPath + Path.GetFileName(Dir)).Replace(" ", "%20") + "/')  href='#'>" + Path.GetFileName(Dir) + "</a></li>";
                 //html += "{\"FilePath\":\"" + DirPath + Path.GetFileName(Dir) + "/" + "\",";
                 //html += "\"FileName\":\"" + Path.GetFileName(Dir) + "\",";
                 //html += "\"FileType\":\"" + "2" + "\",";
@@ -275,7 +273,7 @@ public partial class FileManager_Funcations : System.Web.UI.Page
         {
             if (!string.IsNullOrEmpty(FolderName))
             {
-                if (System.IO.Directory.Exists(Server.MapPath(FolderName)))
+                if (Directory.Exists(Server.MapPath(FolderName)))
                 {
                     try
                     {
@@ -288,9 +286,9 @@ public partial class FileManager_Funcations : System.Web.UI.Page
                     }
                 }
 
-                if (System.IO.File.Exists(Server.MapPath(FolderName)))
+                if (File.Exists(Server.MapPath(FolderName)))
                 {
-                    System.IO.File.Delete(Server.MapPath(FolderName));
+                    File.Delete(Server.MapPath(FolderName));
                 }
             }
         }
@@ -305,18 +303,18 @@ public partial class FileManager_Funcations : System.Web.UI.Page
         if (!FolderPath.Contains(userFileFolder))
             return;
 
-        string[] files = System.IO.Directory.GetFiles(FolderPath);
+        string[] files = Directory.GetFiles(FolderPath);
         foreach (string file in files)
         {
-            System.IO.File.Delete(file);
+            File.Delete(file);
         }
-        string[] Folders = System.IO.Directory.GetDirectories(FolderPath);
+        string[] Folders = Directory.GetDirectories(FolderPath);
         foreach (string Folder in Folders)
         {
             DeleteFolder(Folder);
         }
 
-        System.IO.Directory.Delete(FolderPath);
+        Directory.Delete(FolderPath);
     }
     private void CopyFiles(string selectedFiles, string CurentPath)
     {
