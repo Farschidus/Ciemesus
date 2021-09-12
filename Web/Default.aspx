@@ -34,7 +34,7 @@
 		<div class="flex-w flex-sa p-r-200 respon1">
 			<div class="p-t-34 p-b-60 respon3">
 				<p class="l1-txt1 p-b-10 respon2">
-					Our website is
+					<%= Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Website", "Name", "langCode", Global.MethodsAndProps.CurrentLanguageCode) %> website is
 				</p>
 
 				<h3 class="l1-txt2 p-b-45 respon2 respon4">

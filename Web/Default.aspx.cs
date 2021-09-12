@@ -9,17 +9,15 @@ public partial class Default : BasePublic
 
         if (singlePage)
         {
-            Response.Redirect("Index.aspx");
+            Response.Redirect("Index.aspx", true);
         }
         else
         {
             bool RedirectToHome = Convert.ToBoolean(Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Website", "RedirectToHome", "value"));
             if (RedirectToHome)
             {
-                Response.Redirect(string.Format(Global.Constants.PAGE_HOME_ASPX, Global.MethodsAndProps.CurrentLanguageCode));
+                Response.Redirect(string.Format(Global.Constants.PAGE_HOME_ASPX, Global.MethodsAndProps.CurrentLanguageCode), true);
             }
-            else
-            { }
         }
     }
 }
