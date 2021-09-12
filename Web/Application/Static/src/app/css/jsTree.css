@@ -122,6 +122,7 @@
   background: #f5f5f5;
   border: 1px solid #979797;
   box-shadow: 2px 2px 2px #999999;
+  z-index: 1000;
 }
 .vakata-context ul {
   list-style: none;
