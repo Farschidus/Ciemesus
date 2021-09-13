@@ -8,6 +8,7 @@
             <ItemTemplate>
                 <div class="SideBar-item">
                     <a href='<%# mGetURL(Eval("alias").ToString()) %>'>
+                        <asp:Literal ID="litDate" runat="server"></asp:Literal>
                         <img class='img-fluid SideBar-itemImage' src='<%# mGetCoverImage(Eval("IDSubject").ToString()) %>'></img>                   
                         <span class="SideBar-itemTitle"><%# Eval("Title") %></span>
                     </a>

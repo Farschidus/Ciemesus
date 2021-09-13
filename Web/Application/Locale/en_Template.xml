@@ -408,6 +408,7 @@
     <message key="mediaManaging.default.search.description">Description</message>
     <message key="mediaManaging.default.search.url">URL</message>
     <message key="mediaManaging.default.grid.fileName">Name</message>
+    <message key="mediaManaging.default.grid.preview">Preview</message>
     <message key="mediaManaging.default.grid.fileExtention">Extention</message>
     <message key="mediaManaging.default.grid.date">Date</message>
     <message key="mediaManaging.default.grid.imageLink">View File</message>

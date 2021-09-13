@@ -11,6 +11,19 @@ using BLL.BusinessEntity;
 
 public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
 {
+    private bool showDate;
+    public bool ShowDate
+    {
+        get
+        {
+            return showDate;
+        }
+        set
+        {
+            showDate = value;
+        }
+    }
+
     private byte limit;
     public byte Limit
     {

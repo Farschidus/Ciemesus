@@ -408,6 +408,7 @@
     <message key="mediaManaging.default.search.description">توضیحات</message>
     <message key="mediaManaging.default.search.url">لینک</message>
     <message key="mediaManaging.default.grid.fileName">نام</message>
+    <message key="mediaManaging.default.grid.preview">نمایش عکس</message>
     <message key="mediaManaging.default.grid.fileExtention">پسوند</message>
     <message key="mediaManaging.default.grid.date">تاریخ</message>
     <message key="mediaManaging.default.grid.imageLink">نمایش فایل</message>

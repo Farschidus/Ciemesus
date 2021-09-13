@@ -20,7 +20,7 @@
     </div>
     <div id="ProjectsWidget">
         <div class="container">
-            <uc1:LatestList runat="server" ID="LatestList" Limit="3" SubjectType="Market_Sectors_and_Projects,پروژه_ها" />
+            <uc1:LatestList runat="server" ID="LatestList" ShowDate="true" Limit="4" SubjectType="Market_Sectors_and_Projects,پروژه_ها" />
         </div>
     </div>
     <uc4:PagePlugin ID="pagePlugin1" runat="server" />

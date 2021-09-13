@@ -71,6 +71,14 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField>
                                         <HeaderTemplate>
+                                            <%=Farschidus.Translator.AppTranslate["mediaManaging.default.grid.preview"]%>
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <%# mGetLinkToPreview((int)Eval("IDMedia"))%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField>
+                                        <HeaderTemplate>
                                             <%=Farschidus.Translator.AppTranslate["mediaManaging.default.grid.fileExtention"]%>
                                         </HeaderTemplate>
                                         <ItemTemplate>
