@@ -26,18 +26,23 @@
     <item key="Description" value="Ciemesus, Yet another content management system by Farschidus" langCode="en_US" />
   </section>
   <section name="ListType">
-    <item key="Grid"><![CDATA[<div class='List-ItemDataGrid'>
-                        <a href='{0}'> 
-                          <img class='List-ItemImageGrid' src='{1}'></img>
-                          <div class='List-ItemBodyGrid'>{2}<br></div>
-                        </a>
-                      </div>]]></item>
+    <item key="Grid"><![CDATA[<div class='col-lg-4 d-flex align-items-stretch my-2'>
+  <div class='card'>
+    <a href='{0}'>
+      <img src='{1}' class='card-img-top' alt='{2}'>
+      <div class='card-body'>
+        <h5 class='card-title'>{2}</h5>
+        <p class='card-text'>{3}</p>
+      </div>
+    </a>
+  </div>
+</div>]]></item>
     <item key="List"><![CDATA[<div class='List-ItemData'>
-                        <a href='{0}'> 
-                          <img class='itemImage' src='{1}'></img>                       
-                          <span class='List-ItemTitle'>{2}</span>
-                          <div class='List-Body'>{3}</div>
-                        </a>
-                      </div>]]></item>
+  <a href='{0}'> 
+    <img class='itemImage' src='{1}'></img>                       
+    <span class='List-ItemTitle'>{2}</span>
+    <div class='List-Body'>{3}</div>
+  </a>
+</div>]]></item>
   </section>
 </settings>

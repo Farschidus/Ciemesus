@@ -131,7 +131,7 @@ public partial class Pages_List_Default : BasePublic
         if (subjects.RowCount > 0)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("<div id='ListRepeator'>");
+            sb.Append("<div id='ListRepeator' class='row'>");
             do
             {
                 sb.Append(string.Format(listItem, mGenerateURL(subjects.pIDSubject), mGetCoverImage(subjects.pIDSubject.ToString()), subjects.pTitle, Global.MethodsAndProps.mGetLimitedString(100, Global.MethodsAndProps.mCleanHtmlTags(subjects.pBody))));
