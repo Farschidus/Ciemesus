@@ -1,0 +1,1 @@
+All files related to user profile will be saved in this folder.

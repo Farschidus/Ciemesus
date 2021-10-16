@@ -1,0 +1,1 @@
+All JS files uploaded via Plugin module will be saved in this folder.

@@ -1,0 +1,1 @@
+All files uploaded via file manager in rich text editor component will be saved in this folder.

@@ -1,0 +1,1 @@
+All files uploaded via Media module will be saved in this folder.

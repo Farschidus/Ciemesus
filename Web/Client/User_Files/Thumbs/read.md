@@ -1,0 +1,1 @@
+Generated thumb nails from pictures will be saved in this folder.
