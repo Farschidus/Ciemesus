@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BLL.Hardcodes 
+namespace BLL.Hardcodes
 {
     [Serializable]
     public class Item

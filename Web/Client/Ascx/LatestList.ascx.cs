@@ -63,6 +63,19 @@ public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
         }
     }
 
+    private Global.Constants.ListTypeStyle listTypeLink;
+    public Global.Constants.ListTypeStyle ListTypeLink
+    {
+        get
+        {
+            return listTypeLink;
+        }
+        set
+        {
+            listTypeLink = value;
+        }
+    }
+
     private byte language;
     private Guid subjectID;
 
@@ -89,7 +102,6 @@ public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
         foreach (string alias in aliasArray)
         {
             subject.LoadBySubjectAliasAndIDSubjectTypeAndIDLanguage(alias, (byte)SubjectTypes.Enum.list, lang.pIDLanguage, true);
-            //subject.LoadByIDSubjectTypeAndIDLanguage((byte)SubjectTypes.Enum.listItem, lang.pIDLanguage);
             if (subject.RowCount > 0)
             {
                 language = subject.pIDLanguage;
@@ -108,7 +120,6 @@ public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
 
         Subjects ListItems = new Subjects();
         ListItems.LoadByIDParent(subjectID);
-        //ListItems.LoadByIDSubjectTypeAndIDLanguage((byte)SubjectTypes.Enum.listItem, language);
         ListItems.Sort = Subjects.ColumnNames.Priority;
 
         Subjects result = new Subjects();
@@ -128,8 +139,7 @@ public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
     {
         Languages lang = new Languages(language);
         // string url = string.Format(Global.Constants.PAGE_LISTITEM_ASPX.Substring(1), lang.pCode, alias);
-        string url = string.Format("/{0}/Pages/List/List/{1}", lang.pCode, alias);
-        return url;
+        return string.Format("/{0}/Pages/List/{1}/{2}", lang.pCode, ListTypeLink.ToString(), alias);
     }
     public string mGetDate(DateTime dateTime)
     {

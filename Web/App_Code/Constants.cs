@@ -100,5 +100,11 @@ namespace Global
             Errors,
             Compare
         }
+
+        public enum ListTypeStyle
+        {
+            Grid,
+            List
+        }
     }
 }

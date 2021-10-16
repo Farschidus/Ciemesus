@@ -177,7 +177,7 @@ public partial class ControlP_MenuManager_Default : BaseCP
         ddlModule.DataValueField = BLL.Hardcodes.Item.FIELD_ID;
         ddlModule.DataBind();
 
-        rblPageListFormat.DataSource = tables.ListTypePage;
+        rblPageListFormat.DataSource = tables.ListTypeStyle;
         rblPageListFormat.DataTextField = BLL.Hardcodes.Item.FIELD_Title;
         rblPageListFormat.DataValueField = BLL.Hardcodes.Item.FIELD_ID;
         rblPageListFormat.DataBind();
