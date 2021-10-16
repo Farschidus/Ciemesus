@@ -7,12 +7,10 @@
         <asp:Repeater ID="rptSidebar" runat="server" >
             <ItemTemplate>
                 <div class="col-md-3 col-sm-6 d-flex align-items-stretch my-2 px-1">
-                  <div class="card">
+                  <div class="card w-100">
                     <a href='<%# mGetURL(Eval("alias").ToString()) %>'>
                         <asp:Literal ID="litDate" runat="server"></asp:Literal>
-                        <div>
-                            <img class="card-img-top" src='<%# mGetCoverImage(Eval("IDSubject").ToString()) %>' alt="<%# Eval("Title") %>"></img> 
-                        </div>
+                        <img class="card-img-top" src='<%# mGetCoverImage(Eval("IDSubject").ToString()) %>' alt="<%# Eval("Title") %>"></img> 
                         <div class="card-body">
                             <h5 class="card-title"><%# Eval("Title") %></h5>
                         </div>
