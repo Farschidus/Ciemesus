@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Data;
-using System.Text;
-using System.Web;
+﻿using BLL.BusinessEntity;
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
 
-public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
+public partial class Client_Ascx_LatestList : UserControl
 {
+    private string itemClass;
+    public string ItemClass
+    {
+        get
+        {
+            return itemClass;
+        }
+        set
+        {
+            itemClass = value;
+        }
+    }
+
     private bool showDate;
     public bool ShowDate
     {
@@ -21,6 +27,32 @@ public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
         set
         {
             showDate = value;
+        }
+    }
+
+    private bool showCoverImg;
+    public bool ShowCoverImg
+    {
+        get
+        {
+            return showCoverImg;
+        }
+        set
+        {
+            showCoverImg = value;
+        }
+    }
+    
+    private bool showDescription;
+    public bool ShowDescription
+    {
+        get
+        {
+            return showDescription;
+        }
+        set
+        {
+            showDescription = value;
         }
     }
 
@@ -128,6 +160,7 @@ public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
             result.AddNew();
             result.pIDSubject = ListItems.pIDSubject;
             result.pTitle = ListItems.pTitle;
+            result.pBody = ListItems.pBody;
             result.pAlias = ListItems.pAlias;
             ListItems.MoveNext();
         }
@@ -158,5 +191,9 @@ public partial class Client_Ascx_LatestList : System.Web.UI.UserControl
         else
             result = string.Format(result, Global.Constants.IMAGE_NOAVAILABLE_SMALL, string.Empty);
         return result;
+    }
+    public string mGetDescription(string body, int stringLimit = 100)
+    {
+        return Global.MethodsAndProps.mGetLimitedString(stringLimit, Global.MethodsAndProps.mCleanHtmlTags(body));
     }
 }

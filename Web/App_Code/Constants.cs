@@ -104,7 +104,8 @@ namespace Global
         public enum ListTypeStyle
         {
             Grid,
-            List
+            List,
+            ListItem
         }
     }
 }

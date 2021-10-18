@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
+﻿using BLL.BusinessEntity;
+using System;
 
 public partial class Pages_Page_Default : BasePublic
 {

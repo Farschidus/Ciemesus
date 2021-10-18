@@ -3,7 +3,7 @@
 * public
 */
 html, body {
-    background-color: #eeeeee;
+    background-color: #f4f4f4;
 }
 body {
     font-family: OpenSans;
@@ -166,6 +166,7 @@ input.searchInput[type="text"] {
 
 #sitemapLogin, #siteDate {
     color: #ffffff;
+    font-size: 0.9rem;
 }
 
     #sitemapLogin a {
@@ -179,6 +180,10 @@ input.searchInput[type="text"] {
 
 .img-fluid {
     width: 100%;
+}
+
+#Banner {
+    margin-bottom: 20px;
 }
 
 #PageTitle {
@@ -195,14 +200,18 @@ input.searchInput[type="text"] {
         color: #CB2027;
     }
 
+#Content {
+    padding-bottom: 2rem;
+}
+
 #Footer {
-	margin: 0 auto;
-	padding: 10px 0;
-	text-align: center;
-	clear: both;
-	background-color: #4e5b49;
-	color: #fff !important;
-	min-height: 200px;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    clear: both;
+    background-color: #4e5b49;
+    color: #fff !important;
+    min-height: 200px;
 }
 
 a.Footer-link {
@@ -211,10 +220,9 @@ a.Footer-link {
 }
 
 /******************************Projects widget**************************************/
-#ProjectsWidget {
-    background-color: #fff;
+#ProjectsWidget, #ServicesWidget {
     padding: 12px;
-    margin-bottom: 20px;
+    padding-top: 3.5rem;
 }
 
 div.SideBar {
@@ -419,7 +427,7 @@ a.backToList {
 }
 .LatestList-content .card-body {
     background-size: 100% 200%;
-    background-image: linear-gradient(to top, #56ac00 50%, white 50%);
+    background-image: linear-gradient(to top, #4e5b49 50%, white 50%);
     transition: background-position 0.3s;
     position: relative;
     display: flex;
@@ -427,42 +435,38 @@ a.backToList {
     flex-flow: column nowrap;
     padding: 1.4rem;
     margin-bottom: -100px;
-    padding-bottom: 99px;
+    padding-bottom: 101px;
     overflow: hidden;
 }
 .LatestList-content a:hover .card-body {
     background-position: 0 100%;
 }
-.LatestList-content a:hover .card-title {
+.LatestList-content a:hover .card-title,
+.LatestList-content a:hover .card-text {
     color: #fff;
 }
 .LatestList-content .card-title {
     transition: color linear 0.2s;
-}
-/*.LatestList-content .card-body {
-    position: relative;
-    display: flex;
-    flex: 1 0 auto;
-    flex-flow: column nowrap;
-    overflow: hidden;
+    color: #000;
 }
 
-.LatestList-content .card-body:after {
-    background-image: linear-gradient( 1deg,transparent 50%,#000 51%);
-    background-position: 0 100%;
-    background-size: 100% 200%;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: translateX(0);
-    transition: background-position .2s ease;
-    width: 100%;
-    will-change: transform;
+#ProjectsWidget .card-title {
+    text-align: center;
+    font-size: 1.2rem;
 }
 
-.LatestList-content a:hover .card-body:after {
-    background-position: 0 200%;
-    height: 102%;
-}*/
+#ServicesWidget a {
+    color: #000;
+}
+
+    #ServicesWidget a:hover, #ProjectsWidget a:hover {
+        text-decoration: none;
+    }
+
+#ServicesWidget .card-text {
+    text-align:justify;
+}
+
+.excerpt {
+    display: none;
+}

@@ -5,20 +5,6 @@
 <%@ Register Src="~/Client/Ascx/PagePlugin.ascx" TagName="PagePlugin" TagPrefix="uc3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#PageTitle").hide();
-            $Clickables = $(".clickable");
-            if ($Clickables.length > 0) {
-                $Clickables.click(function () {
-                    $('#' + $(this).attr("id") + 'Desc').addClass('ModalOpen');
-                })
-                $('.closee').click(function () {
-                    $(this).parent().removeClass('ModalOpen');
-                })
-            }
-        });
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphHeadContent" runat="Server">
     <uc1:PageBanner ID="pageBanner" runat="server" />

@@ -10,12 +10,14 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphMain" runat="Server">
     <div id="Body">
-        <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch">
-            <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput form-control rounded-end pe-5 default-value" style="margin-top:0;width:100%;height: 35px;"></asp:TextBox>
-            <asp:LinkButton ID="btnSearch" runat="server" OnClick="btnSearch_Click" CssClass="searchButton btn">
+        <div class="container">
+            <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch">
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="searchInput form-control rounded-end pe-5 default-value w-100" Style="height: 35px;"></asp:TextBox>
+                <asp:LinkButton ID="btnSearch" runat="server" OnClick="btnSearch_Click" CssClass="searchButton btn">
                      <%= Farschidus.Translator.AppTranslate["general.button.search"]%>
-            </asp:LinkButton>
-        </asp:Panel>
-        <asp:Literal ID="litBody" runat="server" />
+                </asp:LinkButton>
+            </asp:Panel>
+            <asp:Literal ID="litBody" runat="server" />
+        </div>
     </div>
 </asp:Content>

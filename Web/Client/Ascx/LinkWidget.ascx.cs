@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BLL.BusinessEntity;
+using System;
 using System.Text;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
 
-public partial class Client_Ascx_LinkWidget : System.Web.UI.UserControl
+public partial class Client_Ascx_LinkWidget : UserControl
 {
     private byte subjectType;
     private Global.Constants.Modules moduleName;
