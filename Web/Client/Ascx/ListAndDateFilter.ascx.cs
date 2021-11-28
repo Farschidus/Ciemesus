@@ -65,12 +65,15 @@ public partial class Client_Ascx_ListAndDateFilter : System.Web.UI.UserControl
     }
     private void mBindCategories()
     {
-        Subjects subject = new Subjects();
+        Subjects subject = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
         subject.LoadAllListByIDLanguage(language);
         StringBuilder sb = new StringBuilder();
         if (subject.RowCount > 0)
-        {
-            subject.Sort = Subjects.ColumnNames.Priority;            
+        {    
             do
             {
                 sb.Append(string.Format(@"<a href=""javascript:__doPostBack('{0}','Category#{1}')"">{2}</a>", updatePanelID, subject.pIDSubject, subject.pTitle));
@@ -99,11 +102,16 @@ public partial class Client_Ascx_ListAndDateFilter : System.Web.UI.UserControl
     private void mBindCategoriesWithPostback()
     {
         Languages lang = new Languages(language);
-        Subjects subject = new Subjects();
+        Subjects subject = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
         subject.LoadAllListByIDLanguage(language);
+
         if (subject.RowCount > 0)
         {
-            subject.Sort = Subjects.ColumnNames.Priority;
+            
             StringBuilder sb = new StringBuilder();
             do
             {

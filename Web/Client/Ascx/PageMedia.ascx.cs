@@ -40,12 +40,14 @@ public partial class Client_Ascx_PageMedia : System.Web.UI.UserControl
     }
     private void mInitializing()
     {
-        MediaSubjects medias = new MediaSubjects();
+        MediaSubjects medias = new MediaSubjects
+        {
+            Sort = MediaSubjects.ColumnNames.Priority
+        };
         medias.LoadByIDSubjectAndIDMediaSubjectType(Subject.pIDSubject, (byte)MediaSubjectTypes.Enum.attachment);
         if (medias.RowCount > 0)
         {
             rptMedia.Visible = true;
-            medias.Sort = MediaSubjects.ColumnNames.Priority;
             rptMedia.DataSource = medias.DefaultView;
             rptMedia.DataBind();
         }

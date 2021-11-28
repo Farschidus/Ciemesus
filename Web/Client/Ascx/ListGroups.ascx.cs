@@ -104,9 +104,11 @@ public partial class Client_Ascx_ListGroups : UserControl
     private void mLoadItems()
     {
         StringBuilder sb = new StringBuilder();
-        Subjects ListItems = new Subjects();
+        Subjects ListItems = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         ListItems.LoadByIDParentAndIDLanguage(subjectID, language);
-        ListItems.Sort = Subjects.ColumnNames.Priority;
 
         MediaSubjects medias = new MediaSubjects();
         int columnCounter = 1;

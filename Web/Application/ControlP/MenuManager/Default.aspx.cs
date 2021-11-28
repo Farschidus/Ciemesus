@@ -232,9 +232,12 @@ public partial class ControlP_MenuManager_Default : BaseCP
             case SubjectTypes.Enum.audioGallery:
             case SubjectTypes.Enum.category:
                 {
-                    Subjects subject = new Subjects();
+                    Subjects subject = new Subjects
+                    {
+                        Sort = Subjects.ColumnNames.Priority
+                    };
                     subject.LoadByIDSubjectTypeAndIDLanguage((byte)module, pLanguageID);
-                    subject.Sort = Subjects.ColumnNames.Priority;
+                    
                     ddlAlias.Enabled = true;
                     ddlAlias.Items.Clear();
                     ddlAlias.DataSource = subject.DefaultView;
@@ -248,11 +251,13 @@ public partial class ControlP_MenuManager_Default : BaseCP
                 {
                     ddlAlias.Enabled = true;
                     ddlAlias.Items.Clear();
-                    
-                    Subjects subject = new Subjects();
-                    subject.LoadAllListByIDLanguage(pLanguageID);
-                    subject.Sort = Subjects.ColumnNames.Priority;
 
+                    Subjects subject = new Subjects
+                    {
+                        Sort = Subjects.ColumnNames.Priority
+                    };
+                    subject.LoadAllListByIDLanguage(pLanguageID);
+                    
                     if (subject.RowCount > 0)
                     {
                         List<BLL.Hardcodes.Item> ddlItems = new List<BLL.Hardcodes.Item>();
@@ -281,9 +286,12 @@ public partial class ControlP_MenuManager_Default : BaseCP
                 }
             case SubjectTypes.Enum.form:
                 {
-                    Subjects subject = new Subjects();
+                    Subjects subject = new Subjects
+                    {
+                        Sort = Subjects.ColumnNames.Priority
+                    };
                     subject.LoadByIDSubjectTypeAndIDLanguage((byte)SubjectTypes.Enum.form, pLanguageID);
-                    subject.Sort = Subjects.ColumnNames.Priority;
+                    
                     ddlAlias.Enabled = true;
                     ddlAlias.Items.Clear();
                     if (subject.RowCount > 0)
@@ -580,8 +588,11 @@ public partial class ControlP_MenuManager_Default : BaseCP
     }
     private void mLoadRecursivlyByParentID(ref List<string> ddlItems, Guid subjectID, string title)
     {
-        Subjects subjects = new Subjects(subjectID);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        Subjects subjects = new Subjects(subjectID)
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
         if (subjects.RowCount > 0)
         {
             do

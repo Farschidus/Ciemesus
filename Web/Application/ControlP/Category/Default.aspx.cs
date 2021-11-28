@@ -365,9 +365,12 @@ public partial class PSM_Category_Default : BaseCP
 
     private int mSetPriority()
     {
-        Subjects subjects = new Subjects();
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         subjects.LoadByIDSubjectType((byte)SubjectTypes.Enum.category);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        
         if (subjects.RowCount > 0)
         {
             subjects.MoveTo(subjects.RowCount - 1);

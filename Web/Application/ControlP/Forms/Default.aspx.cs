@@ -193,7 +193,11 @@ public partial class PSM_Forms_Default : BaseCP
     private void mLoadAll()
     {
         int itemCount = 0;
-        Subjects subjects = new Subjects();
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
         subjects.Search(listPager.CurrentIndex - 1, listPager.PageSize, ref itemCount,
             null,
             (byte)SubjectTypes.Enum.form,
@@ -208,8 +212,8 @@ public partial class PSM_Forms_Default : BaseCP
             null,
             null,
             null,
-            Subjects.ColumnNames.Priority);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+            null);
+        
         listPager.ItemCount = itemCount;
 
         grvList.DataSource = subjects.DefaultView;
@@ -412,9 +416,12 @@ public partial class PSM_Forms_Default : BaseCP
 
     private int mSetPriority()
     {
-        Subjects subjects = new Subjects();
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         subjects.LoadByIDSubjectType((byte)SubjectTypes.Enum.form);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        
         if (subjects.RowCount > 0)
         {
             subjects.MoveTo(subjects.RowCount - 1);
@@ -495,8 +502,10 @@ public partial class PSM_Forms_Default : BaseCP
     }
     private void mLoadRecursivlyByParentID(ref List<string> ddlItems, Guid subjectID, string title)
     {
-        Subjects subjects = new Subjects(subjectID);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        Subjects subjects = new Subjects(subjectID)
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         if (subjects.RowCount > 0)
         {
             do

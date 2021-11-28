@@ -72,9 +72,11 @@ public partial class Pages_PageList_Default : BasePublic
     }
     private void mListBinding(Guid parentID)
     {
-        Subjects subjects = new Subjects();
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         subjects.LoadByIDParentAndIDLanguage(parentID, pCurrentLanguageID);
-        subjects.Sort = Subjects.ColumnNames.Priority;
 
         string[] oddEvenItem = { itemOdd, itemEven };
         int i = 0;

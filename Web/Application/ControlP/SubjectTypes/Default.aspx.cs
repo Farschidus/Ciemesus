@@ -402,9 +402,13 @@ public partial class PSM_SubjectTypes_Default : BaseCP
 
     private int mSetPriority()
     {
-        Subjects subjects = new Subjects();
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
         subjects.LoadByIDSubjectType((byte)SubjectTypes.Enum.list);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        
         if (subjects.RowCount > 0)
         {
             subjects.MoveTo(subjects.RowCount - 1);
@@ -490,9 +494,12 @@ public partial class PSM_SubjectTypes_Default : BaseCP
         List<BLL.Hardcodes.Item> ddlItems = new List<BLL.Hardcodes.Item>();
         ddlItems.Add(new BLL.Hardcodes.Item(0, Farschidus.Translator.AppTranslate["pagesManaging.default.addEdit.ddlParent.noParent"]));
 
-        Subjects subjects = new Subjects();
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         subjects.LoadAllListByIDLanguage(pLanguageID);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        
         if (subjects.RowCount > 0)
         {
             do
@@ -511,8 +518,10 @@ public partial class PSM_SubjectTypes_Default : BaseCP
     }
     private void mLoadRecursivlyByParentID(ref List<string> ddlItems, Guid subjectID, string title)
     {
-        Subjects subjects = new Subjects(subjectID);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        Subjects subjects = new Subjects(subjectID)
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         if (subjects.RowCount > 0)
         {
             do

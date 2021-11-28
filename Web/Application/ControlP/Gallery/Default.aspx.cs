@@ -125,9 +125,12 @@ public partial class PSM_Gallery_Default : BaseCP
         ListItem liInitial = new ListItem(Farschidus.Translator.AppTranslate["dropdown.initial.selectText"], "0");
         ddlCategory.Items.Add(liInitial);
 
-        Subjects categories = new Subjects();
+        Subjects categories = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         categories.LoadByIDSubjectTypeAndIDLanguage((byte)SubjectTypes.Enum.category, pLanguageID);
-        categories.Sort = Subjects.ColumnNames.Priority;
+        
         ddlCategory.DataSource = categories.DefaultView;
         ddlCategory.DataTextField = Subjects.ColumnNames.Title;
         ddlCategory.DataValueField = Subjects.ColumnNames.IDSubject;
@@ -189,9 +192,12 @@ public partial class PSM_Gallery_Default : BaseCP
         ListItem liInitial = new ListItem(Farschidus.Translator.AppTranslate["dropdown.initial.selectText"], "0");
         ddlCategory.Items.Add(liInitial);
 
-        Subjects categories = new Subjects();
+        Subjects categories = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         categories.LoadByIDSubjectTypeAndIDLanguage((byte)SubjectTypes.Enum.category, pLanguageID);
-        categories.Sort = Subjects.ColumnNames.Priority;
+        
         ddlCategory.DataSource = categories.DefaultView;
         ddlCategory.DataTextField = Subjects.ColumnNames.Title;
         ddlCategory.DataValueField = Subjects.ColumnNames.IDSubject;
@@ -443,9 +449,12 @@ public partial class PSM_Gallery_Default : BaseCP
 
     private int mSetPriority()
     {
-        Subjects subjects = new Subjects();
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         subjects.LoadByIDSubjectType(Convert.ToByte(ddlAddEditGalleryType.SelectedValue));
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        
         if (subjects.RowCount > 0)
         {
             subjects.MoveTo(subjects.RowCount - 1);

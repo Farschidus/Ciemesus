@@ -169,8 +169,10 @@ public partial class Pages_Compare_Default : BasePublic
     }
     private void mLoadRecursivlyByParentID(ref List<int> propertyIDs, Guid subjectID)
     {
-        Subjects subjects = new Subjects(subjectID);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        Subjects subjects = new Subjects(subjectID)
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         if (subjects.RowCount > 0)
         {
             do
@@ -195,8 +197,10 @@ public partial class Pages_Compare_Default : BasePublic
     }
     private void mGetHighestGroupID(Guid subjectID)
     {
-        Subjects subjects = new Subjects(subjectID);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        Subjects subjects = new Subjects(subjectID)
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
         if (subjects.RowCount > 0)
         {
             do
@@ -253,9 +257,16 @@ public partial class Pages_Compare_Default : BasePublic
     }
     private static void mLoadAllListItemsRecursivlyBySubjectID(ref List<BLL.Hardcodes.Item> listItems, Guid subjectID, byte langID)
     {
-        Subjects subject = new Subjects(subjectID);
-        Subjects subjects = new Subjects();
-        subject.Sort = Subjects.ColumnNames.Priority;
+        Subjects subject = new Subjects(subjectID)
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
+        Subjects subjects = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
         if (subject.RowCount > 0)
         {
             subjects.LoadByIDParentAndIDSubjectTypeAndIDLanguage(subjectID, (byte)SubjectTypes.Enum.listItem, langID, true);

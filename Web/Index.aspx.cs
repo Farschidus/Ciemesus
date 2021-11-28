@@ -41,12 +41,16 @@ public partial class Index : BasePublic
     }
     private void mRenderSections()
     {
-        Subjects sbjPages = new Subjects();
-        sbjPages.LoadByIDSubjectTypeAndIDLanguage((byte)SubjectTypes.Enum.page, pCurrentLanguageID);
         StringBuilder sb = new StringBuilder();
+        Subjects sbjPages = new Subjects
+        {
+            Sort = Subjects.ColumnNames.Priority
+        };
+
+        sbjPages.LoadByIDSubjectTypeAndIDLanguage((byte)SubjectTypes.Enum.page, pCurrentLanguageID);
+        
         if(sbjPages.RowCount > 0)
         {
-            sbjPages.Sort = Subjects.ColumnNames.Priority;
             do
             {
                 sb.AppendFormat("<section id='{0}'>", sbjPages.pTitle.ToLower());
