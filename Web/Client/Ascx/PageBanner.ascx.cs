@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BLL.BusinessEntity;
+using System;
 using System.Text;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
 
-public partial class Client_Ascx_PageBanner : System.Web.UI.UserControl
+public partial class Client_Ascx_PageBanner : UserControl
 {
     public Subjects Subject
     {
@@ -132,17 +129,15 @@ public partial class Client_Ascx_PageBanner : System.Web.UI.UserControl
 
         if (galleryPlugin.pGenerateTitle || galleryPlugin.pGenerateDesc || galleryPlugin.pGenerateDate)
         {
-            sb.Append("<div>");
-            sb.Append("<h1>");
+            sb.Append("<div class='carousel-caption d-none d-md-block'>");
 
             if (galleryPlugin.pGenerateTitle)
-                sb.Append(filename + "<br>");
-            if (galleryPlugin.pGenerateDate)
-                sb.Append(date.Year.ToString() + "<br>");
+                sb.Append("<h5>" + filename + "</h5>");
             if (galleryPlugin.pGenerateDesc)
-                sb.Append(description);            
+                sb.Append("<p>" + description + "</p>");
+            if (galleryPlugin.pGenerateDate)
+                sb.Append("<p>" + date.ToString(galleryPlugin.pDateFormat) + "</p>");
 
-            sb.Append("</h1>");
             sb.Append("</div>");
         }
 
