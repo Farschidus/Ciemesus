@@ -23,7 +23,7 @@
             theme_advanced_buttons2: "cut,copy,paste,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,forecolor,backcolor,|,sub,sup,|,fullscreen",
             theme_advanced_buttons3: "",
             file_browser_callback: "filebrowser",
-            extended_valid_elements: "input[aria-invalid|placeholder|required|class|id|type],textarea[aria-invalid|placeholder|required|class|id|type],figure"
+            extended_valid_elements: "video[width|height|controls],source[src|type],input[aria-invalid|placeholder|required|class|id|type],textarea[aria-invalid|placeholder|required|class|id|type],figure"
         });
         setTimeout(TinyMceEncode, 300);
     }

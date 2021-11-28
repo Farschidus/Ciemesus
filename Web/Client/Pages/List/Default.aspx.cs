@@ -1,10 +1,7 @@
-﻿using System;
+﻿using BLL.BusinessEntity;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
 
 public partial class Pages_List_Default : BasePublic
 {
@@ -134,7 +131,7 @@ public partial class Pages_List_Default : BasePublic
             sb.Append("<div id='ListRepeator' class='row'>");
             do
             {
-                sb.Append(string.Format(listItem, mGenerateURL(subjects.pIDSubject), mGetCoverImage(subjects.pIDSubject.ToString()), subjects.pTitle, Global.MethodsAndProps.mGetLimitedString(100, Global.MethodsAndProps.mCleanHtmlTags(subjects.pBody))));
+                sb.Append(string.Format(listItem, mGenerateURL(subjects.pIDSubject), mGetCoverImage(subjects.pIDSubject.ToString()), subjects.pTitle, Global.MethodsAndProps.mGetLimitedString(100, Global.MethodsAndProps.mCleanHtmlTags(subjects.pBody)), subjects.pDate.ToString("MMM dd, yyyy")));
             }
             while (subjects.MoveNext());
             sb.Append("</div>");

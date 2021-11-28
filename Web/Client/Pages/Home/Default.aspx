@@ -20,12 +20,17 @@
     </div>
     <div id="ProjectsWidget">
         <div class="container">
-            <uc1:LatestList runat="server" ID="LatestList" ItemClass="col-md-3 col-sm-6" Limit="4" ShowCoverImg="true" ListTypeLink="Grid" SubjectType="Market_Sectors_and_Projects,پروژه_ها" />
+            <uc1:LatestList runat="server" ID="LatestList" ItemClass="col-md-3 col-sm-6 d-flex align-items-stretch my-2 px-2" Limit="4" ShowCoverImg="true" ListTypeLink="Grid" SubjectType="Market_Sectors_and_Projects,پروژه_ها" />
         </div>
     </div>
     <div id="ServicesWidget">
         <div class="container">
-            <uc1:LatestList runat="server" ID="lstServices" ItemClass="col-md-6 col-sm-6" Limit="4" ShowDescription="true" ListTypeLink="ListItem" SubjectType="Market_Sectors_and_Projects" />
+            <uc1:LatestList runat="server" ID="lstServices" ItemClass="col-md-6 col-sm-6 d-flex align-items-stretch my-2 px-2" Limit="4" ShowDescription="true" ListTypeLink="ListItem" SubjectType="Services,خدمات" />
+        </div>
+    </div>
+    <div id="NewsWidget">
+        <div class="container">
+            <uc1:LatestList runat="server" ID="lstNews" ItemClass="carousel-item" Limit="4" ShowDescription="true" ShowCoverImg="true" ShowDate="true" ListTypeLink="ListItem" SubjectType="News,اخبار" />
         </div>
     </div>
     <uc4:PagePlugin ID="pagePlugin1" runat="server" />

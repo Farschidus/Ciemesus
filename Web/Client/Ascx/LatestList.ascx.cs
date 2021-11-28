@@ -161,8 +161,10 @@ public partial class Client_Ascx_LatestList : UserControl
             result.pIDSubject = ListItems.pIDSubject;
             result.pTitle = ListItems.pTitle;
             result.pBody = ListItems.pBody;
+            result.pDate = ListItems.pDate;
             result.pAlias = ListItems.pAlias;
-            ListItems.MoveNext();
+            var moreItem = ListItems.MoveNext();
+            if (!moreItem) break;
         }
 
         rptSidebar.DataSource = result.DefaultView;

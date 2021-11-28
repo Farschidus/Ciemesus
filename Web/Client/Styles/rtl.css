@@ -6,6 +6,19 @@
     text-align: right;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 2.5rem;
+}
+
+.h1, h1 {
+    font-size: 2.2rem;
+    line-height: 4.5rem;
+}
+
+.h4, h4, .h5, h5 {
+    font-size: 1.2rem;
+}
+
 #LanguagesList {
     margin: 0 0 0 5px;
 }
@@ -42,4 +55,12 @@ input.searchInput[type="text"] {
     text-indent: 10px;
     margin-bottom: 10px;
     line-height: 26px;
+}
+
+.icon-box_stat {
+    direction: ltr;
+}
+
+.en {
+    font-family: OpenSans;
 }
