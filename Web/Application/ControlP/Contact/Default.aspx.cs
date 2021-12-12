@@ -394,12 +394,9 @@ public partial class PSM_Contacts_Default : BaseCP
 
     private int mSetPriority()
     {
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
         subjects.LoadByIDSubjectType((byte)SubjectTypes.Enum.list);
-        
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             subjects.MoveTo(subjects.RowCount - 1);

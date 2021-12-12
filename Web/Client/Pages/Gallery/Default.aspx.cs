@@ -62,13 +62,11 @@ public partial class Pages_Gallery_Default : BasePublic
     private void mLoadMedias()
     {
         StringBuilder sb = new StringBuilder();
-        MediaSubjects medias = new MediaSubjects
-        {
-            Sort = MediaSubjects.ColumnNames.Priority
-        };
+        MediaSubjects medias = new MediaSubjects();
         medias.LoadByIDSubjectAndIDMediaSubjectType(pSubject.pIDSubject, (byte)MediaSubjectTypes.Enum.gallery);
         if (medias.RowCount > 0)
         {
+            medias.Sort = MediaSubjects.ColumnNames.Priority;
             sb.Append("<ul class='thumbItems'>");
             do
             {

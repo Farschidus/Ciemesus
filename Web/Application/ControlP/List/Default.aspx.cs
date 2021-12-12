@@ -201,11 +201,8 @@ public partial class PSM_List_Default : BaseCP
     private void mLoadAll()
     {
         int itemCount = 0;
-        Subjects subjects = new Subjects
-        {
-            //Sort = Subjects.ColumnNames.Date + " Desc";
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
+
         subjects.Search(listPager.CurrentIndex - 1, listPager.PageSize, ref itemCount,
             null,
             (byte)SubjectTypes.Enum.listItem,
@@ -221,8 +218,9 @@ public partial class PSM_List_Default : BaseCP
             null,
             null,
             null);
-
         listPager.ItemCount = itemCount;
+        //subjects.Sort = Subjects.ColumnNames.Date + " Desc";
+        subjects.Sort = Subjects.ColumnNames.Priority;
 
         grvList.DataSource = subjects.DefaultView;
         grvList.DataBind();
@@ -231,11 +229,7 @@ public partial class PSM_List_Default : BaseCP
     private void mSearch()
     {
         int itemCount = 0;
-        Subjects subjects = new Subjects
-        {
-            //Sort = Subjects.ColumnNames.Date + " Desc";
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
 
         Guid searchListTypeID = new Guid(ddlListTypeSearch.SelectedValue);
 
@@ -266,6 +260,8 @@ public partial class PSM_List_Default : BaseCP
             null,
             null);
         listPager.ItemCount = itemCount;
+        //subjects.Sort = Subjects.ColumnNames.Date + " Desc";
+        subjects.Sort = Subjects.ColumnNames.Priority;
 
         grvList.DataSource = subjects.DefaultView;
         grvList.DataBind();
@@ -275,10 +271,7 @@ public partial class PSM_List_Default : BaseCP
     }
     private void mFillForm()
     {
-        Subjects subject = new Subjects()
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subject = new Subjects();
         subject.LoadByIDSubjectAndIDLanguage(pIDSubject.Value, pLanguageID);
 
         txtDate.Text = subject.pDate.ToShortDateString();
@@ -433,12 +426,9 @@ public partial class PSM_List_Default : BaseCP
         ddlListTypeSearch.Items.Clear();
         List<BLL.Hardcodes.Item> ddlItems = new List<BLL.Hardcodes.Item>();
 
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
         subjects.LoadAllListByIDLanguage(pLanguageID);
-        
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             do
@@ -474,12 +464,9 @@ public partial class PSM_List_Default : BaseCP
     }
     private int mSetPriority()
     {
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
         subjects.LoadByIDParent(pSubjectTypeID.Value);
-
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             subjects.MoveTo(subjects.RowCount - 1);
@@ -561,11 +548,8 @@ public partial class PSM_List_Default : BaseCP
 
     private void mLoadRecursivlyByParentID(ref List<string> ddlItems, Guid subjectID, string title)
     {
-        Subjects subjects = new Subjects(subjectID)
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
-
+        Subjects subjects = new Subjects(subjectID);
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             do

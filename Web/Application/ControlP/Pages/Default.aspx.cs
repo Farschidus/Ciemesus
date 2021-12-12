@@ -179,11 +179,7 @@ public partial class PSM_Pages_Default : BaseCP
     private void mLoadAll()
     {
         int itemCount = 0;
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
-
+        Subjects subjects = new Subjects();
         subjects.Search(listPager.CurrentIndex - 1, listPager.PageSize, ref itemCount,
             null,
             (byte)SubjectTypes.Enum.page,
@@ -198,10 +194,9 @@ public partial class PSM_Pages_Default : BaseCP
             null,
             null,
             null,
-            null);
-
+            Subjects.ColumnNames.Priority);
         listPager.ItemCount = itemCount;
-
+        subjects.Sort = Subjects.ColumnNames.Priority;
         grvList.DataSource = subjects.DefaultView;
         grvList.DataBind();
         uplList.Update();
@@ -209,10 +204,7 @@ public partial class PSM_Pages_Default : BaseCP
     private void mSearch()
     {
         int itemCount = 0;
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
 
         string Title = "";
         if (!string.IsNullOrEmpty(txtTitleSearch.Text))
@@ -239,10 +231,9 @@ public partial class PSM_Pages_Default : BaseCP
             null,
             null,
             null,
-            null);
-
+            Subjects.ColumnNames.Priority);
         listPager.ItemCount = itemCount;
-        
+        subjects.Sort = Subjects.ColumnNames.Priority;
         grvList.DataSource = subjects.DefaultView;
         grvList.DataBind();
         uplList.Update();
@@ -425,12 +416,9 @@ public partial class PSM_Pages_Default : BaseCP
     }
     private int mSetPriority()
     {
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
         subjects.LoadByIDSubjectType((byte)SubjectTypes.Enum.page);
-
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             subjects.MoveTo(subjects.RowCount - 1);

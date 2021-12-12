@@ -61,18 +61,14 @@ public partial class Client_Ascx_GalleryList : System.Web.UI.UserControl
     }
     private void mLoadAll()
     {
-        Subjects subject = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
-
+        Subjects subject = new Subjects();
         if (!string.IsNullOrEmpty(categoryID))
             subject.LoadByIDParentAndIDSubjectTypeAndIDLanguage(new Guid(categoryID), (byte)galleryType, language, true);
         else
             subject.LoadByIDSubjectTypeAndIDLanguage((byte)galleryType, language);
-
         if (subject.RowCount > 0)
         {
+            subject.Sort = Subjects.ColumnNames.Priority;
             rptGalleryBar.DataSource = subject.DefaultView;
             rptGalleryBar.DataBind();
         }

@@ -69,12 +69,9 @@ public partial class Client_Ascx_PageBanner : UserControl
                     Subjects subjectGallery = new Subjects(Subject.pIDGallery);
                     if (subjectGallery.RowCount > 0)
                     {
-                        MediaSubjects mediaSubjects = new MediaSubjects
-                        {
-                            Sort = MediaSubjects.ColumnNames.Priority
-                        };
+                        MediaSubjects mediaSubjects = new MediaSubjects();
                         mediaSubjects.LoadByIDSubjectAndIDMediaSubjectType(subjectGallery.pIDSubject, (byte)MediaSubjectTypes.Enum.gallery);
-                        
+                        mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
                         if (mediaSubjects.RowCount > 0)
                         {
                             System.Data.DataColumn dc = mediaSubjects.AddColumn("FilePath", Type.GetType("System.String"));

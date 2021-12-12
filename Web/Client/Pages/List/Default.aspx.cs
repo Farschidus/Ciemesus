@@ -122,12 +122,9 @@ public partial class Pages_List_Default : BasePublic
     }
     private void mListBinding(Guid parentID)
     {
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
         subjects.LoadByIDParentAndIDSubjectTypeAndIDLanguage(parentID, (byte)SubjectTypes.Enum.listItem, pCurrentLanguageID, true);
-        
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             StringBuilder sb = new StringBuilder();
@@ -163,13 +160,11 @@ public partial class Pages_List_Default : BasePublic
     private void mLoadMedias(Subjects Subject)
     {
         StringBuilder sb = new StringBuilder();
-        MediaSubjects medias = new MediaSubjects
-        {
-            Sort = MediaSubjects.ColumnNames.Priority
-        };
+        MediaSubjects medias = new MediaSubjects();
         medias.LoadByIDSubjectAndIDMediaSubjectType(Subject.pIDSubject, (byte)MediaSubjectTypes.Enum.attachment);
         if (medias.RowCount > 0)
         {
+            medias.Sort = MediaSubjects.ColumnNames.Priority;
             sb.Append("<ul class='thumbItems'>");
             do
             {
@@ -204,10 +199,8 @@ public partial class Pages_List_Default : BasePublic
     }
     private void mLoadRecursivlyByParentID(ref List<int> propertyIDs, Guid subjectID)
     {
-        Subjects subjects = new Subjects(subjectID)
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects(subjectID);
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             do

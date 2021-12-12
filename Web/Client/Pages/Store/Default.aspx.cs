@@ -333,13 +333,11 @@ public partial class Pages_Store_Default : BasePublic
             subjects.LoadBySubjectAliasAndIDLanguage(Request.QueryString[Global.Constants.QUERYSTRING_SUBJECT_ALIAS].ToString(), pCurrentLanguageID);
             if (subjects.RowCount > 0)
             {
-                Subjects groups = new Subjects
-                {
-                    Sort = Subjects.ColumnNames.Priority
-                };
+                Subjects groups = new Subjects();
                 groups.LoadByIDParentAndIDSubjectTypeAndIDLanguage(subjects.pIDSubject, (byte)SubjectTypes.Enum.list, pCurrentLanguageID, true);
                 if (groups.RowCount > 0)
                 {
+                    groups.Sort = Subjects.ColumnNames.Priority;
                     ddlGroups.DataSource = groups.DefaultView;
                     ddlGroups.DataTextField = Subjects.ColumnNames.Title;
                     ddlGroups.DataValueField = Subjects.ColumnNames.IDSubject;
@@ -364,11 +362,9 @@ public partial class Pages_Store_Default : BasePublic
     }
     private void mListBinding(Guid parentID)
     {
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
         subjects.LoadByIDParentAndIDSubjectTypeAndIDLanguage(parentID, (byte)SubjectTypes.Enum.listItem, pCurrentLanguageID, true);
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             StringBuilder sb = new StringBuilder();

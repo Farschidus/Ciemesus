@@ -87,12 +87,9 @@ public partial class Pages_PageList_Default : BasePublic
     }
     private void mLoadRecursivly(StringBuilder sb, Guid subjectID, string title, string prefix)
     {
-        Subjects subjects = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects();
         subjects.LoadByIDParentAndIDLanguage(subjectID, pCurrentLanguageID);
-        
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             do

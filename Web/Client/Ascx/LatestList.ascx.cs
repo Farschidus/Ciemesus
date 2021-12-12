@@ -150,13 +150,10 @@ public partial class Client_Ascx_LatestList : UserControl
         Languages lang = new Languages();
         lang.LoadByLanguageCode(Global.MethodsAndProps.CurrentLanguageCode);
 
-        Subjects ListItems = new Subjects
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
-
+        Subjects ListItems = new Subjects();
         ListItems.LoadByIDParent(subjectID);
-        
+        ListItems.Sort = Subjects.ColumnNames.Priority;
+
         Subjects result = new Subjects();
         for (int i = 0; i < limit; i++)
         {

@@ -80,10 +80,8 @@ public partial class Pages_ListItem_Default : BasePublic
     }
     private void mLoadRecursivlyByParentID(ref List<int> propertyIDs, Guid subjectID)
     {
-        Subjects subjects = new Subjects(subjectID)
-        {
-            Sort = Subjects.ColumnNames.Priority
-        };
+        Subjects subjects = new Subjects(subjectID);
+        subjects.Sort = Subjects.ColumnNames.Priority;
         if (subjects.RowCount > 0)
         {
             do

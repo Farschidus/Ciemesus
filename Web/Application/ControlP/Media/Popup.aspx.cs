@@ -194,10 +194,8 @@ public partial class ControlP_Media_Popup : BasePage
     private void mLoadAllPageMedias()
     {
         MediaSubjects mediaSubjects = new MediaSubjects();
-        mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
-
         mediaSubjects.LoadByIDSubjectAndIDMediaSubjectType(pSubjectID, pMediaSubjectTypeID);
-        
+        mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
         grvPageList.DataSource = mediaSubjects.DefaultView;
         grvPageList.DataBind();
         uplPageList.Update();
@@ -224,9 +222,8 @@ public partial class ControlP_Media_Popup : BasePage
 
     private void reorderMediaSubjects(MediaSubjects mediaSubjects)
     {
-        mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
         mediaSubjects.LoadByIDSubjectAndIDMediaSubjectType(pSubjectID, pMediaSubjectTypeID);
-        
+        mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
         int i = 1;
         if (mediaSubjects.RowCount > 0)
         {
@@ -242,9 +239,8 @@ public partial class ControlP_Media_Popup : BasePage
     private int mSetPriority()
     {
         MediaSubjects mediaSubjects = new MediaSubjects();
-        mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
         mediaSubjects.LoadByIDSubjectAndIDMediaSubjectType(pSubjectID, pMediaSubjectTypeID);
-
+        mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
         if (mediaSubjects.RowCount > 0)
         {
             mediaSubjects.MoveTo(mediaSubjects.RowCount - 1);
