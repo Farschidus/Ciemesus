@@ -303,22 +303,15 @@ namespace BLL.BusinessEntity
 
             return base.LoadFromSql("SELECT TOP " + Count.ToString() + " * FROM " + QuerySource + " WHERE @IDLanguage = IDLanguage AND IsActive = 1 AND @IDParent = IDParent ORDER BY DATE DESC", parameters, System.Data.CommandType.Text);
         }
-        public bool LoadByIDParentAndIDSubjectTypeAndIDLanguage(Guid IDParent, byte IDSubjectType, byte IDLanguage, bool? IsActive)
+        public bool LoadByIDParentAndIDSubjectTypeAndIDLanguage(Guid IDParent, byte IDSubjectType, byte IDLanguage, bool IsActive = true)
         {
             ListDictionary parameters = new ListDictionary();
             parameters.Add(Parameters.IDParent, IDParent);
             parameters.Add(Parameters.IDSubjectType, IDSubjectType);
             parameters.Add(Parameters.IDLanguage, IDLanguage);
-            if (IsActive.HasValue)
-            {
-                parameters.Add(Parameters.IsActive, IsActive);
-                return base.LoadFromSql("SELECT * FROM " + QuerySource + " WHERE @IDLanguage = IDLanguage AND @IsActive = IsActive AND @IDParent = IDParent AND @IDSubjectType = IDSubjectType", parameters, System.Data.CommandType.Text);
-            }
-            else
-            {
-                return base.LoadFromSql("SELECT * FROM " + QuerySource + " WHERE @IDLanguage = IDLanguage AND @IDParent = IDParent AND @IDSubjectType = IDSubjectType", parameters, System.Data.CommandType.Text);
-            }
-            
+
+            parameters.Add(Parameters.IsActive, IsActive);
+            return base.LoadFromSql("SELECT * FROM " + QuerySource + " WHERE @IDLanguage = IDLanguage AND @IsActive = IsActive AND @IDParent = IDParent AND @IDSubjectType = IDSubjectType", parameters, System.Data.CommandType.Text);
         }
         public bool LoadBySubjectAliasAndIDLanguage(string Alias, byte IDLanguage)
         {

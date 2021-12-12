@@ -194,6 +194,7 @@ public partial class PSM_Forms_Default : BaseCP
     {
         int itemCount = 0;
         Subjects subjects = new Subjects();
+
         subjects.Search(listPager.CurrentIndex - 1, listPager.PageSize, ref itemCount,
             null,
             (byte)SubjectTypes.Enum.form,
@@ -209,7 +210,7 @@ public partial class PSM_Forms_Default : BaseCP
             null,
             null,
             Subjects.ColumnNames.Priority);
-        subjects.Sort = Subjects.ColumnNames.Priority;
+        
         listPager.ItemCount = itemCount;
 
         grvList.DataSource = subjects.DefaultView;

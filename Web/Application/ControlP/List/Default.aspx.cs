@@ -48,7 +48,8 @@ public partial class PSM_List_Default : BaseCP
             Subjects subjects = new Subjects();
             if (ViewState["pSubjects"] == null)
             {
-                subjects.LoadByIDParent(pSubjectTypeID.Value);
+                subjects.LoadByIDParentAndIDSubjectTypeAndIDLanguage(pSubjectTypeID.Value, (byte)SubjectTypes.Enum.listItem, pLanguageID);
+                subjects.Sort = Subjects.ColumnNames.Priority;
                 ViewState["pSubjects"] = subjects.Serialize();
             }
             else
@@ -217,7 +218,8 @@ public partial class PSM_List_Default : BaseCP
             null,
             null,
             null,
-            null);
+            Subjects.ColumnNames.Priority);
+
         listPager.ItemCount = itemCount;
         //subjects.Sort = Subjects.ColumnNames.Date + " Desc";
         subjects.Sort = Subjects.ColumnNames.Priority;
@@ -258,7 +260,8 @@ public partial class PSM_List_Default : BaseCP
             null,
             null,
             null,
-            null);
+            Subjects.ColumnNames.Priority);
+
         listPager.ItemCount = itemCount;
         //subjects.Sort = Subjects.ColumnNames.Date + " Desc";
         subjects.Sort = Subjects.ColumnNames.Priority;
