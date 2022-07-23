@@ -29,6 +29,7 @@
     <div id="Body">
         <div class="container">
             <asp:Literal ID="litBody" runat="server" />
+            <asp:Literal ID="litAddedFiles" runat="server" />
         </div>
     </div>
     <uc2:PageMedia ID="pageMedia" runat="server" />

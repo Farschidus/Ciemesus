@@ -37,10 +37,10 @@ public partial class Pages_ListItem_Default : BasePublic
                 {
                     Languages lang = new Languages(pCurrentLanguageID);
                     litPageTitle.Text = pTitle = pSubject.pTitle;
-                    //litBody.Text = string.Format("<img class='itemImage' src='{0}'></img>{1}", mGetCoverImage(pSubject.pIDSubject.ToString()), mGetThumbnails(pSubject.pIDSubject.ToString()), pSubject.pBody);
                     litBody.Text = pSubject.pBody;
+                    litAddedFiles.Text = string.Format("{0}", mGetThumbnails(pSubject.pIDSubject.ToString()));
                     pageBanner.Subject = pSubject;
-                    //pageMedia.Subject = pSubject;
+                    // pageMedia.Subject = pSubject;
                     pagePlugin.SubjectID = pSubject.pIDSubject;
                 }
                 else
@@ -62,19 +62,20 @@ public partial class Pages_ListItem_Default : BasePublic
     public string mGetThumbnails(string IDSubject)
     {
         StringBuilder result = new StringBuilder();
-        string thumbItem = "<li><a href='{0}{1}{2}' rel='lightbox[Thumbnail]'><img src='{3}{4}{5}' style='width: 50px; height: 50px; border:1px solid #555; padding:5px'></a></li>";
+        string thumbItem = "<div class='text-center m-2'><a href='{0}{1}{2}' rel='lightbox[Thumbnail]'><img src='{3}{4}{5}' class='img-thumbnail'></a></div>";
 
         MediaSubjects ThumbNails = new MediaSubjects();
         ThumbNails.LoadByIDSubjectAndIDMediaSubjectType(new Guid(IDSubject), (byte)MediaSubjectTypes.Enum.attachment);
         if (ThumbNails.RowCount > 0)
         {
-            result.Append("<ul id='Thumbnails' class='jcarousel-skin-tango'>");
+            result.Append("<div id='AttchedFiles' class='row align-items-center justify-content-center'>");
             do
             {
-                result.AppendFormat(thumbItem, Global.Constants.FOLDER_MEDIAS.Substring(1), ThumbNails.pIDMedia, ThumbNails.pFileExtention, Global.Constants.FOLDER_THUMBS.Substring(1), ThumbNails.pIDMedia, ThumbNails.pFileExtention);
+                result.AppendFormat(thumbItem, Global.Constants.FOLDER_MEDIAS.Substring(1), ThumbNails.pIDMedia, ThumbNails.pFileExtention,
+                    Global.Constants.FOLDER_THUMBS.Substring(1), ThumbNails.pIDMedia, ThumbNails.pFileExtention);
             }
             while (ThumbNails.MoveNext());
-            result.Append("</ul>");
+            result.Append("</div>");
         }
         return result.ToString();
     }
