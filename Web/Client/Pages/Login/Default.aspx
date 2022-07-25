@@ -6,41 +6,42 @@
     <title>Control Panel Login Page</title>
     <link type="text/css" rel="Stylesheet" href="/Client/static/dist/css/client.min.css?<%= System.Configuration.ConfigurationManager.AppSettings["Version"] %>" />
 </head>
-<body>
+<body>    
     <div id="LoginContainer">
-        <div id="loginDistance">
-        </div>
+        <div id="logo"></div>
         <div id="body">
-            <div id="logo">
-            <span id="welcome">Welcom to<br /><span>Ciemesus</span></span>
-            </div>        
-            <div id="login" >
-                <form id="form1" runat="server" style="padding-top:25px;">
-                <asp:Login runat="server" DisplayRememberMe="False" ID="LoginControl" DestinationPageUrl="~/Application/ControlP/Desktop/"
-                    OnLoggedIn="LoginControl_LoggedIn" >
-                    <LayoutTemplate>
-                        <asp:Panel ID="Panel1" runat="server" DefaultButton="LoginButton">
-                            <div class="form-group">
-                                <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="UserName" runat="server" CssClass="loginTextBox username"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
-                                    ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="ctl10">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="loginTextBox password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                                    ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="ctl10">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" ValidationGroup="ctl10" CssClass="login" Text="Login"></asp:Button>
-                            </div>
-                            <%--<asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName"><%= Farschidus.Translator.AppTranslate["login.default.label.userName"]%></asp:Label>
+            <div id="login">
+                <form id="form1" runat="server">
+                    <asp:Login runat="server" DisplayRememberMe="False" ID="LoginControl" DestinationPageUrl="~/Application/ControlP/Desktop/"
+                        OnLoggedIn="LoginControl_LoggedIn">
+                        <LayoutTemplate>
+                            <asp:Panel ID="Panel1" runat="server" DefaultButton="LoginButton">
+                                <div class="form-group">
+                                    <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                </div>
+                                <div class="form-group">
+                                    <h3 class="loginTitle ">Welcome to Ciemesus</h3>
+                                </div>
+                                <div class="form-group">
+                                    <label class="loginLable">Username</label><br />
+                                    <asp:TextBox ID="UserName" runat="server" CssClass="loginTextBox username"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                        ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="ctl10">*</asp:RequiredFieldValidator>
+                                </div>
+                                <div class="form-group">
+                                    <label class="loginLable">Password</label><br />
+                                    <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="loginTextBox password"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                        ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="ctl10">*</asp:RequiredFieldValidator>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" ValidationGroup="ctl10" CssClass="login" Text="Login"></asp:Button>
+                                </div>
+                                <%--<asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName"><%= Farschidus.Translator.AppTranslate["login.default.label.userName"]%></asp:Label>
                                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password"><%= Farschidus.Translator.AppTranslate["login.default.label.password"]%></asp:Label>--%>
-                        </asp:Panel>
-                    </LayoutTemplate>
-                </asp:Login>
+                            </asp:Panel>
+                        </LayoutTemplate>
+                    </asp:Login>
                 </form>
             </div>
         </div>
