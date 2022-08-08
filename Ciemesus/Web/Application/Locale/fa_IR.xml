@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<locale name="fa_IR" full_name="farsi">
+	<module type="Genaral" name="Genaral">
+		<message key="general.label.language">زبان:</message>
+		<message key="general.label.updateProgress.waiting">منتظر بمانید</message>
+		<message key="general.label.loginStatus.logout">خروج</message>
+		<message key="general.label.ciemesus">سی‌ام‌اسوس</message>
+		<message key="general.label.version">نسخه </message>
+		<message key="general.label.versionNumber">۵</message>
+		<message key="general.label.description">کنترل‌پنل سی‌ام‌اسوس | طراحی و اجرا فرشید قوانینی و مریم فرشته | شهریور ماه 1392</message>
+		<message key="general.label.backToWebsite">وب‌سایت</message>
+		<message key="general.label.fileNotExist">فایل موجود نیست</message>
+		<message key="general.label.urlLink">لینک</message>
+		<message key="general.label.pager.pageSizeSelectClause">اندازه صفحه:</message>
+		<message key="general.label.pager.goToClause">صفحه‌ی:</message>
+		<message key="general.message.reordered">جابجایی ثبت گردید.</message>
+		<message key="general.message.success">اطلاعات با موفقیت ثبت گردید.</message>
+		<message key="general.message.fieldsEmpty">فیلدهای اختصار و عنوان اجباری می‌باشند</message>
+		<message key="general.message.valueNotSet">لطفا مقدار مورد نظر را وارد نمایید.</message>
+		<message key="general.message.passwordChaneged">رمز عبور با موفقیت ثبت گردید.</message>
+		<message key="general.message.deleted">اطلاعات با موفقیت حذف شد.</message>
+		<message key="general.message.recycled">اطلاعات با موفقیت بازیابی گردید</message>
+		<message key="general.message.confirmDelete">آیا می‌خواهید این رکورد را حذف نمایید؟</message>
+		<message key="general.message.loading">در حال دریافت اطلاعات</message>
+		<message key="general.message.listEnumError">چنین لیستی تعریف نگردیده است ویا کلید QueryString اشتباه می‌باشد</message>
+		<message key="general.message.aliasDuplication">این اختصار قبلا ایجاد گردیده است.</message>
+		<message key="general.message.propertyDuplication">این ویژگی قبلا ایجاد گردیده است.</message>
+		<message key="general.message.gridsEmptyDataText">هیچ اطلاعاتی یافت نشد</message>
+		<message key="general.button.submit">ثبت</message>
+		<message key="general.button.save">ذخیره</message>
+		<message key="general.button.delete">حذف</message>
+		<message key="general.button.remove">برداشتن تصویر</message>
+		<message key="general.button.saveToRepository">ذخیره در بانک</message>
+		<message key="general.button.cancel">انصراف</message>
+		<message key="general.button.back">بازگشت</message>
+		<message key="general.button.ok">تایید</message>
+		<message key="general.button.search">جستجو</message>
+		<message key="general.button.edit">ویرایش</message>
+		<message key="general.button.add">افزودن</message>
+		<message key="general.button.loadAll">فهرست تمامی موارد</message>
+		<message key="general.button.create">ایجاد آیتم جدید</message>
+		<message key="general.button.send">ارسال</message>
+	</module>
+	<module type="Genaral" name="DropDowns">
+		<message key="dropdown.initial.searchText">-- همه --</message>
+		<message key="dropdown.initial.selectText">-- انتخاب کنید --</message>
+	</module>
+	<module type="General" name="RadioButtonList">
+		<message key="radioButtonList.all.text">همه</message>
+	</module>
+	<module type="UserControl" name="Plugin">
+		<message key="ascx.plugin.addPlugin">افزودن پلاگین</message>
+		<message key="ascx.plugin.popupTitle">افزودن پلاگین</message>
+		<message key="plugin.popup.addedPlugins">پلاگین‌های افزوده شده</message>
+		<message key="plugin.popup.repositoryPlugins">پلاگین‌های موجود</message>
+		<message key="plugin.popup.button.addToPage">افزودن</message>
+		<message key="plugin.popup.button.removeFromPage">حذف</message>
+		<message key="plugin.popup.button.delete">حذف پلاگین</message>
+		<message key="plugin.popup.button.save">ثبت تغییرات</message>
+		<message key="plugin.popup.message.alreadyExist">این فایل موجود می‌باشد.</message>
+	</module>
+	<module type="UserControl" name="Media">
+		<message key="ascx.media.addFile">افزودن فایل ضمیمه</message>
+		<message key="ascx.media.popupTitle">افزودن فایل</message>
+		<message key="ascx.media.bodyGalleryPopupTitle">افزودن تصاویر گالری متن</message>
+		<message key="ascx.media.popupLinks.title">نمایش فایل</message>
+		<message key="ascx.media.message.noFile">ابتدا فایل خود را بارگذاری نمایید</message>
+		<message key="media.popup.label.date">تاریخ</message>
+		<message key="media.popup.label.selectFile">انتخاب فایل</message>
+		<message key="media.popup.label.fileName">نام فایل</message>
+		<message key="media.popup.label.url">لینک اختیاری</message>
+		<message key="media.popup.label.addedFiles">فایل‌های افزوده شده</message>
+		<message key="media.popup.label.repositoryFiles">فایل‌های موجود در بانک وب‌سایت</message>
+		<message key="media.popup.label.description">توضیحات</message>
+		<message key="media.popup.links.showFile">نمایش فایل</message>
+		<message key="media.popup.grid.fileName">نام فایل</message>
+		<message key="media.popup.grid.fileExtention">نوع فایل</message>
+		<message key="media.popup.grid.imageLink">نمایش فایل</message>
+		<message key="media.popup.button.addToPage">افزودن</message>
+		<message key="media.popup.button.removeFromPage">حذف</message>
+		<message key="media.popup.message.noFile">ابتدا فایل خود را بارگذاری نمایید</message>
+		<message key="media.popup.message.alreadyExist">این فایل قبلا به این صفحه افزوده شده است</message>
+	</module>
+	<module type="UserControl" name="BodyGallery">
+		<message key="ascx.bodyGallery.addFile">افزودن تصویر ضمیمه</message>
+		<message key="ascx.bodyGallery.popupTitle">افزودن تصویر</message>
+		<message key="ascx.bodyGallery.bodyGalleryPopupTitle">افزودن تصاویر گالری متن</message>
+		<message key="ascx.bodyGallery.popupLinks.title">نمایش تصویر</message>
+		<message key="ascx.bodyGallery.message.noFile">ابتدا فایل تصویر خود را بارگذاری نمایید</message>
+		<message key="bodyGallery.popup.label.date">تاریخ</message>
+		<message key="bodyGallery.popup.label.selectFile">انتخاب تصویر</message>
+		<message key="bodyGallery.popup.label.fileName">نام فایل تصویر</message>
+		<message key="bodyGallery.popup.label.url">لینک اختیاری</message>
+		<message key="bodyGallery.popup.label.addedFiles">تصاویر افزوده شده</message>
+		<message key="bodyGallery.popup.label.repositoryFiles">تصاویر موجود در بانک وب‌سایت</message>
+		<message key="bodyGallery.popup.label.description">توضیحات</message>
+		<message key="bodyGallery.popup.links.showFile">نمایش تصویر</message>
+		<message key="bodyGallery.popup.grid.fileName">نام فایل تصویر</message>
+		<message key="bodyGallery.popup.grid.fileExtention">نوع فایل تصویر</message>
+		<message key="bodyGallery.popup.grid.imageLink">نمایش تصویر</message>
+		<message key="bodyGallery.popup.button.addToPage">افزودن</message>
+		<message key="bodyGallery.popup.button.removeFromPage">حذف</message>
+		<message key="bodyGallery.popup.message.noFile">ابتدا تصویر خود را بارگذاری نمایید</message>
+		<message key="bodyGallery.popup.message.alreadyExist">این تصویر قبلا به این صفحه افزوده شده است</message>
+	</module>
+	<module type="UserControl" name="Banner">
+		<message key="ascx.banner.setHeaderTitle">انتخاب نوع هدر</message>
+		<message key="ascx.banner.popupTitle">انتخاب نوع هدر</message>
+		<message key="banner.popup.label.selectType">نوع هدر</message>
+		<message key="banner.popup.label.inactive">غیر فعال</message>
+		<message key="banner.popup.label.selectPicture">انتخاب عکس</message>
+		<message key="banner.popup.label.selectGalleryType">نوع گالری</message>
+		<message key="banner.popup.label.selectGallery">نام گالری</message>
+		<message key="banner.popup.label.selectPlugin">نوع نمایش</message>
+		<message key="banner.popup.label.generateTitle">ایجاد نام عکس در گالری</message>
+		<message key="banner.popup.label.generateDescription">ایجاد توضیحات عکس در گالری</message>
+		<message key="banner.popup.label.generateAnchor">ایجاد لینک عکس در گالری</message>
+		<message key="banner.popup.label.generateDate">ایجاد تاریخ عکس در گالری</message>
+		<message key="banner.popup.label.dateFormat">فرمت نمایش تاریخ</message>
+		<message key="banner.popup.label.options">تنظیمات پلاگین</message>
+		<message key="banner.popup.label.css">تنظیمات CSS</message>
+		<message key="banner.popup.grid.fileName">نام فایل</message>
+		<message key="banner.popup.grid.fileExtention">نوع فایل</message>
+		<message key="banner.popup.grid.select">انتخاب</message>
+	</module>
+	<module type="UserControl" name="Thumbnail">
+		<message key="ascx.thumbnail.setHeaderTitle">افزودن عکس معرف</message>
+		<message key="ascx.thumbnail.popupTitle">افزودن عکس معرف</message>
+		<message key="thumbnail.popup.label.selectPicture">انتخاب عکس</message>
+		<message key="thumbnail.popup.links.showFile">نمایش فایل</message>
+		<message key="thumbnail.popup.repositoryFiles">فایل‌های موجود در بانک وب‌سایت</message>
+		<message key="thumbnail.popup.addedFiles">فایل‌های افزوده شده</message>
+		<message key="thumbnail.popup.grid.fileName">نام فایل</message>
+		<message key="thumbnail.popup.grid.fileExtention">نوع فایل</message>
+		<message key="thumbnail.popup.grid.imageLink">نمایش فایل</message>
+		<message key="thumbnail.popup.grid.select">انتخاب</message>
+		<message key="thumbnail.popup.button.addToPage">افزودن</message>
+		<message key="thumbnail.popup.button.removeFromPage">حذف</message>
+		<message key="thumbnail.popup.message.alreadyExist">این فایل موجود می‌باشد.</message>
+	</module>
+	<module type="UserControl" name="Property">
+		<message key="ascx.property.addProperties">ایجاد ویژگی‌ها</message>
+		<message key="ascx.property.popupTitle">ایجاد ویژگی‌ها</message>
+		<message key="ascx.property.message.noProperty">ویژگی مورد نظر را انتخاب نمایید.</message>
+		<message key="property.popup.label.isSearchable">دارای قابلیت جستجو می‌باشد؟</message>
+		<message key="property.popup.label.selectProperty">انتخاب ویژگی‌ها</message>
+		<message key="property.popup.label.addedProperties">ایجاد ویژگی‌ها</message>
+		<message key="property.popup.label.repositoryProperties">بانک ویژگی‌ها</message>
+		<message key="property.popup.grid.propertyName">نام ویژگی</message>
+		<message key="property.popup.grid.isSearchable">قابلیت جستجو</message>
+		<message key="property.popup.button.addToPage">ایجاد</message>
+		<message key="property.popup.button.removeFromPage">حذف</message>
+		<message key="property.popup.message.noProperty">ویژگی مورد نظر را انتخاب نمایید.</message>
+		<message key="property.popup.message.alreadyExist">این ویژگی موجود می‌باشد</message>
+	</module>
+	<module type="UserControl" name="PropertyValue">
+		<message key="ascx.propertyValue.addPropertyValue">افزودن مقادیر ویژگی‌ها</message>
+		<message key="ascx.propertyValue.popupTitle">افزودن مقادیر ویژگی‌ها</message>
+		<message key="ascx.propertyValue.message.noProperty">لطفا ویژگی مورد نظر را انتخاب فرمایید.</message>
+		<message key="propertyValue.popup.label.selectProperty">انتخاب ویژگی</message>
+		<message key="propertyValue.popup.label.addedProperties">افزودن انتخاب ویژگی</message>
+		<message key="propertyValue.popup.label.repositoryProperties">بانک ویژگی‌ها</message>
+		<message key="propertyValue.popup.button.addToPage">افزودن</message>
+		<message key="propertyValue.popup.button.removeFromPage">حذف</message>
+		<message key="propertyValue.popup.message.noProperty">لطفا مقدار مورد نظر را انتخاب فرمایید</message>
+		<message key="propertyValue.popup.message.alreadyExist">این مقدار قبلا ایجاد گردیده است.</message>
+	</module>
+	<module type="HardcodeTables" name="SubjectTypes">
+		<message key="subjectTypes.title.home">ماژول صفحه نخست</message>
+		<message key="subjectTypes.title.page">ماژول صفحات</message>
+		<message key="subjectTypes.title.list">ماژول صفحات گروهی</message>
+		<message key="subjectTypes.title.imageGallery">ماژول گالری عکس</message>
+		<message key="subjectTypes.title.videoGallery">ماژول گالری ویدیو</message>
+		<message key="subjectTypes.title.audioGallery">ماژول گالری صوتی</message>
+		<message key="subjectTypes.title.listItem">ماژول تک صفحه‌ای از یک گروه</message>
+		<message key="subjectTypes.title.category">ماژول دسته‌ها</message>
+		<message key="subjectTypes.title.userPage">ماژول صفحات کاربران</message>
+		<message key="subjectTypes.title.form">ماژول فرم</message>
+		<message key="subjectTypes.title.contact">ماژول تماس با ما</message>
+		<message key="subjectTypes.title.store">ماژول فروشگاه</message>
+	</module>
+	<module type="HardcodeTables" name="HeaderTypes">
+		<message key="headerTypes.title.inActive">غیر فعال</message>
+		<message key="headerTypes.title.picture">عکس</message>
+		<message key="headerTypes.title.gallery">گالری</message>
+	</module>
+	<module type="HardcodeTables" name="ListTypePage">
+		<message key="listTypePage.title.grid">جدول</message>
+		<message key="listTypePage.title.list">لیست</message>
+	</module>
+	<module type="HardcodeTables" name="GalleryTypes">
+		<message key="galleryTypes.title.imageGallery">عکس</message>
+		<message key="galleryTypes.title.videoGallery">ویدیو</message>
+		<message key="galleryTypes.title.audioGallery">صوتی</message>
+	</module>
+	<module type="HardcodeTables" name="MediaSubjectTypes">
+		<message key="mediaSubjectTypes.title.attachment">فایل ضمیمه</message>
+		<message key="mediaSubjectTypes.title.headerImage">عکس هدر</message>
+		<message key="mediaSubjectTypes.title.gallery">عکس گالری</message>
+		<message key="mediaSubjectTypes.title.thumbnail">عکس معرف</message>
+	</module>
+	<module type="HardcodeTables" name="TranslatorType">
+		<message key="translatorType.title.controlPanel">کنترل‌پنل</message>
+		<message key="translatorType.title.website">وب‌سایت</message>
+	</module>
+	<module type="HardcodeTables" name="PropertyTypes">
+		<message key="propertyTypes.title.text">متن</message>
+		<message key="propertyTypes.title.integer">عدد صحیح</message>
+		<message key="propertyTypes.title.floati">عدد اعشاری</message>
+		<message key="propertyTypes.title.singleSelect">تک انتخابی</message>
+		<message key="propertyTypes.title.multiSelect">چند انتخابی</message>
+		<message key="propertyTypes.title.trueFalse">درست/نادرست</message>
+		<message key="propertyTypes.title.date">تاریخ</message>
+		<message key="propertyTypes.title.time">زمان</message>
+		<message key="propertyTypes.title.dateTime">تاریخ و زمان</message>
+		<message key="propertyTypes.title.multilineText">متنی چند خطی</message>
+		<message key="propertyTypes.title.image">تصویر</message>
+	</module>
+	<module type="HardcodeTables" name="PropertyItems">
+		<message key="propertyItems.title">عنوان</message>
+		<message key="propertyItems.value">مقدار</message>
+	</module>
+	<module type="Page" name="Desktop">
+		<message key="desktop.default.page.title">میزکار کنترل‌پنل</message>
+		<message key="desktop.default.message.welcome">به کنترل‌پنل سایت خوش‌آمدید.&lt;br/&gt;    لطفا از منوی کنترل‌پنل به بخش مورد نظر وارد شوید.    </message>
+		<message key="desktop.default.members.count">تعداد کاربران:</message>
+		<message key="desktop.default.button.regenThumbs">بازتولید تامنیل‌ها</message>
+	</module>
+	<module type="Module" name="UserManager">
+		<message key="userManager.default.page.title">مدیریت کاربران</message>
+		<message key="userManager.default.search.roles">نقش‌:</message>
+		<message key="userManager.default.search.approval">وضعیت تایید:</message>
+		<message key="userManager.default.search.locked">وضعیت قفل:</message>
+		<message key="userManager.default.search.online">وضعیت برخط:</message>
+		<message key="userManager.default.search.usernameFilter">فیلتر نام کاربری:</message>
+		<message key="userManager.default.addEdit.roles">نقش‌های کاربری</message>
+		<message key="userManager.default.addEdit.username">نام کاربر</message>
+		<message key="userManager.default.addEdit.password">رمز عبور</message>
+		<message key="userManager.default.addEdit.email">ایمیل</message>
+		<message key="userManager.default.addEdit.firstName">نام</message>
+		<message key="userManager.default.addEdit.lastName">نام خانوادگی</message>
+		<message key="userManager.default.addEdit.dateOfBirth">تاریخ تولد</message>
+		<message key="userManager.default.addEdit.gender">جنسیت</message>
+		<message key="userManager.default.addEdit.female">زن</message>
+		<message key="userManager.default.addEdit.male">مرد</message>
+		<message key="userManager.default.addEdit.tel">تلفن</message>
+		<message key="userManager.default.addEdit.address">آدرس</message>
+		<message key="userManager.default.grid.fullName">نام کامل</message>
+		<message key="userManager.default.grid.ActivationCount">تعداد فعال‌سازی</message>
+		<message key="userManager.default.grid.userName">نام کاربری</message>
+		<message key="userManager.default.grid.lastActivityDate">آخرین فعال‌سازی</message>
+		<message key="userManager.default.grid.changeActivation">فعال سازی</message>
+		<message key="userManager.default.grid.lockStatus">وضعیت قفل:</message>
+		<message key="userManager.default.grid.changePassword">رمز عبور</message>
+		<message key="userManager.default.grid.edit">ویرایش</message>
+		<message key="userManager.default.grid.delete">حذف</message>
+		<message key="userManager.default.popup.userName">نام کاربری:</message>
+		<message key="userManager.default.popup.password">رمز عبور جدید:</message>
+		<message key="userManager.default.popup.changePassword">ویرایش رمز عبور</message>
+		<message key="userManager.profile.message.hasInvoice">این کاربر دارای رکورد در جدول تراکنش‌های بانکی می‌باشد</message>
+		<message key="userManager.profile.message.hasActivation">این کاربر دارای رکورد در جدول فعال‌سازی‌ها می‌باشد</message>
+		<message key="userManager.profile.message.roleUpdate">نقش کاربری با موفقیت بروز گردید. </message>
+		<message key="userManager.profile.message.errorUpdate">بروز خطا در بروزرسانی اطلاعات شخصی.</message>
+	</module>
+	<module type="Module" name="LanguageManaging">
+		<message key="languages.default.page.title">مدیریت زبان‌های وب‌سایت</message>
+		<message key="languages.default.labels.rtl">راست به چپ</message>
+		<message key="languages.default.labels.ltr">چپ به راست</message>
+		<message key="languages.default.addEdit.title">عنوان</message>
+		<message key="languages.default.addEdit.code">کد زبان</message>
+		<message key="languages.default.addEdit.isRTL">راست به چپ</message>
+		<message key="languages.default.addEdit.isActive">فعال</message>
+		<message key="languages.default.addEdit.isDefault">زبان اصلی</message>
+		<message key="languages.default.search.title">عنوان</message>
+		<message key="languages.default.search.code">کد زبان</message>
+		<message key="languages.default.search.isRTL">راست به چپ</message>
+		<message key="languages.default.search.isActive">فعال</message>
+		<message key="languages.default.search.isDefault">زبان اصلی</message>
+		<message key="languages.default.grid.title">عنوان</message>
+		<message key="languages.default.grid.code">کد زبان</message>
+		<message key="languages.default.grid.isRTL">جهت نوشتار</message>
+		<message key="languages.default.grid.isActive">فعال</message>
+		<message key="languages.default.grid.isDefault">زبان اصلی</message>
+		<message key="languages.default.grid.edit">ویرایش</message>
+		<message key="languages.default.grid.delete">حذف</message>
+	</module>
+	<module type="Module" name="HomePageManaging">
+		<message key="homePageManaging.default.page.title">مدیریت صفحه نخست</message>
+		<message key="homePageManaging.default.addEdit.title">عنوان</message>
+		<message key="homePageManaging.default.addEdit.body">متن</message>
+		<message key="homePageManaging.default.addEdit.isActive">فعال</message>
+		<message key="homePageManaging.default.search.iDHeaderGallery">کد کالری هدر</message>
+		<message key="homePageManaging.default.search.bannerType">نوع گالری هدر</message>
+		<message key="homePageManaging.default.search.alias">اختصار</message>
+		<message key="homePageManaging.default.grid.subjectName">عنوان</message>
+		<message key="homePageManaging.default.grid.bannerType">نوع هدر</message>
+		<message key="homePageManaging.default.grid.edit">ویرایش</message>
+	</module>
+	<module type="Module" name="PageManaging">
+		<message key="pagesManaging.default.page.title">مدیریت صفحات</message>
+		<message key="pagesManaging.default.addEdit.pageID">شناسه</message>
+		<message key="pagesManaging.default.addEdit.isActive">فعال</message>
+		<message key="pagesManaging.default.addEdit.alias">اختصار</message>
+		<message key="pagesManaging.default.addEdit.iDParent">صفحه</message>
+		<message key="pagesManaging.default.addEdit.title">عنوان</message>
+		<message key="pagesManaging.default.addEdit.body">متن</message>
+		<message key="pagesManaging.default.addEdit.ddlParent.noParent">-- بدون والد --</message>
+		<message key="pagesManaging.default.search.title">عنوان</message>
+		<message key="pagesManaging.default.search.alias">اختصار</message>
+		<message key="pagesManaging.default.grid.subjectName">عنوان</message>
+		<message key="pagesManaging.default.grid.bannerType">نوع هدر</message>
+		<message key="pagesManaging.default.grid.alias">alias</message>
+		<message key="pagesManaging.default.grid.edit">ویرایش</message>
+		<message key="pagesManaging.default.grid.delete">حذف</message>
+	</module>
+	<module type="Module" name="ListTypeManaging">
+		<message key="listType.default.page.title">مدیریت گروه‌ها</message>
+		<message key="listType.default.addEdit.alias">اختصار</message>
+		<message key="listType.default.addEdit.title">عنوان</message>
+		<message key="listType.default.addEdit.body">توضیحات</message>
+		<message key="listType.default.search.title">عنوان</message>
+		<message key="listType.default.grid.subjectName">عنوان</message>
+		<message key="listType.default.grid.bannerType">نوع هدر</message>
+		<message key="listType.default.grid.edit">ویرایش</message>
+		<message key="listType.default.grid.delete">حذف</message>
+		<message key="listType.default.message.thereIsPage">این گروه دارای صفحه می‌باشد.</message>
+		<message key="listType.default.message.deletePageFirst">ابتدا صفحه مورد نظر را در مدیریت صفحات این گروه حذف نمایید.</message>
+	</module>
+	<module type="Module" name="ListItemManaging">
+		<message key="listItemManaging.default.page.title">مدیریت صفحات گروهی</message>
+		<message key="listItemManaging.default.search.title">عنوان</message>
+		<message key="listItemManaging.default.search.alias">اختصار</message>
+		<message key="listItemManaging.default.search.subjectType">گروه</message>
+		<message key="listItemManaging.default.addEdit.date">تاریخ</message>
+		<message key="listItemManaging.default.addEdit.isActive">فعال</message>
+		<message key="listItemManaging.default.addEdit.alias">اختصار</message>
+		<message key="listItemManaging.default.addEdit.title">عنوان</message>
+		<message key="listItemManaging.default.addEdit.body">متن</message>
+		<message key="listItemManaging.default.grid.subjectName">عنوان</message>
+		<message key="listItemManaging.default.grid.bannerType">نوع هدر</message>
+		<message key="listItemManaging.default.grid.edit">ویرایش</message>
+		<message key="listItemManaging.default.grid.delete">حذف</message>
+		<message key="listItemManaging.default.ddlListType.noList">هیچ گروهی در زبان انتخاب شده ایجاد نگردیده است</message>
+		<message key="listItemManaging.default.message.noSubjectTypeID">در زبان انتخاب شده هیچ گروهی ایجاد نگردیده است.</message>
+		<message key="listItemManaging.default.message.createList">ابتدا از منوی مدیریت گروه‌ها، گروه مورد نظر خود را ایجاد نمایید.</message>
+	</module>
+	<module type="Module" name="GalleryManaging">
+		<message key="galleryManaging.default.page.title">مدیریت گالری</message>
+		<message key="galleryManaging.default.search.title">عنوان</message>
+		<message key="galleryManaging.default.search.alias">اختصار</message>
+		<message key="galleryManaging.default.search.galleryType">نوع</message>
+		<message key="galleryManaging.default.addEdit.isActive">فعال</message>
+		<message key="galleryManaging.default.addEdit.alias">اختصار</message>
+		<message key="galleryManaging.default.addEdit.type">نوع</message>
+		<message key="galleryManaging.default.addEdit.category">دسته</message>
+		<message key="galleryManaging.default.addEdit.title">عنوان</message>
+		<message key="galleryManaging.default.addEdit.body">متن</message>
+		<message key="galleryManaging.default.grid.subjectName">عنوان</message>
+		<message key="galleryManaging.default.grid.bannerType">نوع هدر</message>
+		<message key="galleryManaging.default.grid.edit">ویرایش</message>
+		<message key="galleryManaging.default.grid.delete">حذف</message>
+		<message key="galleryManaging.default.message.subjectGalleryRelation">از این گالری در صفحات زیر استفاده شده است.</message>
+	</module>
+	<module type="Module" name="ContactManaging">
+		<message key="contactManaging.default.page.title">مدیریت تماس با ما</message>
+		<message key="contactManaging.default.addEdit.title">عنوان</message>
+		<message key="contactManaging.default.addEdit.subject">موضوع</message>
+		<message key="contactManaging.default.addEdit.email">ایمیل</message>
+		<message key="contactManaging.default.addEdit.phone">تلفن</message>
+		<message key="contactManaging.default.addEdit.fax">فکس</message>
+		<message key="contactManaging.default.addEdit.address">آدرس</message>
+		<message key="contactManaging.default.search.title">عنوان</message>
+		<message key="contactManaging.default.search.email">ایمیل</message>
+		<message key="contactManaging.default.search.phone">تلفن</message>
+		<message key="contactManaging.default.search.fax">فکس</message>
+		<message key="contactManaging.default.search.address">آدرس</message>
+		<message key="contactManaging.default.grid.title">عنوان</message>
+		<message key="contactManaging.default.grid.email">ایمیل</message>
+		<message key="contactManaging.default.grid.edit">ویرایش</message>
+		<message key="contactManaging.default.grid.delete">حذف</message>
+	</module>
+	<module type="Module" name="PluginsManaging">
+		<message key="pluginsManaging.default.page.title">مدیریت پلاگین‌ها</message>
+		<message key="pluginsManaging.default.addEdit.name">نام</message>
+		<message key="pluginsManaging.default.addEdit.jSfileName">فایل</message>
+		<message key="pluginsManaging.default.addEdit.version">نسخه</message>
+		<message key="pluginsManaging.default.addEdit.description">توضیحات</message>
+		<message key="pluginsManaging.default.addEdit.settings">تنظیمات</message>
+		<message key="pluginsManaging.default.addEdit.css">گرافیک</message>
+		<message key="pluginsManaging.default.addEdit.jSinit">اسکریپت اولیه</message>
+		<message key="pluginsManaging.default.search.name">نام</message>
+		<message key="pluginsManaging.default.search.jSfileName">نام فایل js</message>
+		<message key="pluginsManaging.default.search.version">نسخه</message>
+		<message key="pluginsManaging.default.search.description">توضیحات</message>
+		<message key="pluginsManaging.default.search.settings">تنظیمات</message>
+		<message key="pluginsManaging.default.search.css">css</message>
+		<message key="pluginsManaging.default.search.jSinit">اسکریپت اولیه</message>
+		<message key="pluginsManaging.default.grid.name">نام</message>
+		<message key="pluginsManaging.default.grid.version">نسخه</message>
+		<message key="pluginsManaging.default.grid.description">توضیحات</message>
+		<message key="pluginsManaging.default.grid.edit">ویرایش</message>
+		<message key="pluginsManaging.default.grid.delete">حذف</message>
+		<message key="pluginsManaging.default.message.fileExist">فایلی با این نام موجود می‌باشد!</message>
+		<message key="pluginsManaging.default.message.noFile">بارگذاری فایل اجباری می‌باشد</message>
+		<message key="pluginsManaging.default.message.subjectPluginsRelation">صفحات زیر دارای این پلاگین می‌باشند</message>
+		<message key="pluginsManaging.default.message.galleryPluginsRelation">صفحات زیر در گالری هدر دارای این پلاگین می‌باشند</message>
+	</module>
+	<module type="Module" name="CategoryManaging">
+		<message key="categoryManaging.default.page.title">مدیریت دسته‌ها</message>
+		<message key="categoryManaging.default.addEdit.idSubject">کد</message>
+		<message key="categoryManaging.default.addEdit.alias">اختصار</message>
+		<message key="categoryManaging.default.addEdit.title">عنوان</message>
+		<message key="categoryManaging.default.addEdit.body">توضیحات</message>
+		<message key="categoryManaging.default.search.title">عنوان</message>
+		<message key="categoryManaging.default.grid.subjectName">عنوان</message>
+		<message key="categoryManaging.default.grid.bannerType">نوع هدر</message>
+		<message key="categoryManaging.default.grid.edit">ویرایش</message>
+		<message key="categoryManaging.default.grid.delete">حذف</message>
+		<message key="categoryManaging.default.message.thereIsPage">صفحه‌ای در این گروه موجود می‌باشد.</message>
+		<message key="categoryManaging.default.message.deletePageFirst">ابتدا صفحه مورد نظر را در مدیریت صفحات این گروه حذف نمایید.</message>
+	</module>
+	<module type="Module" name="MediaManaging">
+		<message key="mediaManaging.default.page.title">مدیریت فایل‌های وب‌سایت</message>
+		<message key="mediaManaging.default.addEdit.fileName">نام</message>
+		<message key="mediaManaging.default.addEdit.selectFile">انتخاب فایل</message>
+		<message key="mediaManaging.default.addEdit.description">توضیحات</message>
+		<message key="mediaManaging.default.addEdit.date">تاریخ</message>
+		<message key="mediaManaging.default.addEdit.url">لینک</message>
+		<message key="mediaManaging.default.search.fileName">نام</message>
+		<message key="mediaManaging.default.search.fileExtention">پسوند</message>
+		<message key="mediaManaging.default.search.description">توضیحات</message>
+		<message key="mediaManaging.default.search.url">لینک</message>
+		<message key="mediaManaging.default.grid.fileName">نام</message>
+		<message key="mediaManaging.default.grid.preview">نمایش عکس</message>
+		<message key="mediaManaging.default.grid.fileExtention">پسوند</message>
+		<message key="mediaManaging.default.grid.date">تاریخ</message>
+		<message key="mediaManaging.default.grid.imageLink">نمایش فایل</message>
+		<message key="mediaManaging.default.grid.edit">ویرایش</message>
+		<message key="mediaManaging.default.grid.delete">حذف</message>
+		<message key="mediaManaging.default.message.subjectMediaRelation">صفحات زیر دارای این فایل می‌باشند</message>
+		<message key="mediaManaging.default.message.galleryMediaRelation">صفحات زیر در گالری هدر دارای این فایل می‌باشند</message>
+	</module>
+	<module type="Module" name="MenuManager">
+		<message key="menuManager.default.page.title">مدیریت منوی سایت</message>
+		<message key="menuManager.default.addEdit.ddlNoUrl">بدون لینک/لینک خارجی</message>
+		<message key="menuManager.default.addEdit.title">عنوان</message>
+		<message key="menuManager.default.addEdit.module">نوع</message>
+		<message key="menuManager.default.addEdit.alias">صفحه</message>
+		<message key="menuManager.default.addEdit.rawUrl">لینک</message>
+		<message key="menuManager.default.addEdit.listPageFormat">نمایش لیست</message>
+		<message key="menuManager.default.addEdit.vertical">عمودی</message>
+		<message key="menuManager.default.addEdit.horizental">افقی</message>
+		<message key="menuManager.default.addEdit.ddlAlias.noList">هیچ گروهی قبلا ایجاد نگردیده است</message>
+		<message key="menuManager.default.dropdown.createPage">اطلاعات مربوط به این صفحه در این زبان ایجاد نگردیده است</message>
+		<message key="menuManager.default.checkbox.showRelated">نمایش صفحات مرتبط</message>
+		<message key="menuManager.default.message.createPage">ابتدا در ماژول مورد نظر آیتم مربوطه را در زبان انتخابی ایجاد نمایید</message>
+		<message key="menuManager.default.message.selectDDLs">انتخاب عنوان و صفحه اجباری می‌باشد!</message>
+		<message key="menuManager.default.message.noSiteMap">در زبان منتخب فایل منو ایجاد نگردیده است!</message>
+		<message key="menuManager.default.message.addSiteMap">با افزودن یک آیتم در زبان مورد نظر، فایل منو ایجاد می‌گردد.</message>
+		<message key="menuManager.default.message.duplicateSiteMap">این آیتم قبلا به این منو افزوده شده است.</message>
+	</module>
+	<module type="Module" name="MembersManager">
+		<message key="membersPageManager.default.page.title">صفحات کاربران</message>
+		<message key="membersPageManager.default.addEdit.isActive">فعال</message>
+		<message key="membersPageManager.default.addEdit.title">عنوان</message>
+		<message key="membersPageManager.default.addEdit.body">متن</message>
+		<message key="membersPageManager.default.search.roles">نقش‌ها:</message>
+		<message key="membersPageManager.default.search.approval">وضعیت تایید:</message>
+		<message key="membersPageManager.default.search.locked">وضعیت قفل</message>
+		<message key="membersPageManager.default.search.online">وضعیت آنلاین:</message>
+		<message key="membersPageManager.default.search.usernameFilter">فیلتر نام کاربری:</message>
+		<message key="membersPageManager.default.grid.fullName">نام و نام‌خانوادگی</message>
+		<message key="membersPageManager.default.grid.userName">نام کاربری</message>
+		<message key="membersPageManager.default.grid.edit">ویرایش</message>
+	</module>
+	<module type="Module" name="Localization">
+		<message key="localization.default.page.title">بومی‌سازی</message>
+		<message key="localization.lable.section">بخش</message>
+		<message key="localization.lable.module">ماژول</message>
+		<message key="localization.lable.translate">متن ترجمه</message>
+		<message key="localization.lable.englishExample">مثال انگلیسی</message>
+	</module>
+	<module type="Module" name="SettingManager">
+		<message key="settingPage.default.lable.description">
+			<![CDATA[
+      زبان مورد نظر را انتخاب نموده و بر روی دکمه ایجاد آیتم جدید کلیک نمایید
+      <br/>
+      تنها موارد اطلاعات سایت و نام وب‌سایت وابسته به زبان می‌باشند
+      ]]>
+		</message>
+		<message key="settingPage.default.page.title">تنظیمات سایت</message>
+		<message key="settingPage.default.addEdit.websiteName">نام وب‌سایت</message>
+		<message key="settingPage.default.addEdit.singlePage">رندر تک صفحه‌ای</message>
+		<message key="settingPage.default.addEdit.redirectToHome">تغییر مسیر به صفحه خانگی</message>
+		<message key="settingPage.default.addEdit.timezone">کشور و زمان</message>
+		<message key="settingPage.default.addEdit.pubDefLang">زبان اصلی وب‌سایت</message>
+		<message key="settingPage.default.addEdit.cpDefLang">زبان اصلی کنترل‌پنل</message>
+		<message key="settingPage.default.addEdit.serverDateFormat">فرمت تاریخ</message>
+		<message key="settingPage.default.addEdit.favIcon">آیکن وب‌سایت</message>
+		<message key="settingPage.default.addEdit.thumbnail">عکس معرف</message>
+		<message key="settingPage.default.addEdit.thumbnail.width">طول</message>
+		<message key="settingPage.default.addEdit.thumbnail.height">عرض</message>
+		<message key="settingPage.default.addEdit.mailSetting.mail">تنظیمات ایمیل</message>
+		<message key="settingPage.default.addEdit.mailSetting.UserName">نام کاربری</message>
+		<message key="settingPage.default.addEdit.mailSetting.password">رمز عبور</message>
+		<message key="settingPage.default.addEdit.mailSetting.host">آدرس سرور</message>
+		<message key="settingPage.default.addEdit.mailSetting.port">پورت</message>
+		<message key="settingPage.default.addEdit.metaTages">اطلاعات سایت</message>
+		<message key="settingPage.default.addEdit.metaTages.keyWords">کلمات کلیدی</message>
+		<message key="settingPage.default.addEdit.metaTages.description">توضیحات</message>
+		<message key="settingPage.default.addEdit.listPage">نحوه نمایش صفحات لیست</message>
+		<message key="settingPage.default.addEdit.listPage.horizental">چیدمان افقی</message>
+		<message key="settingPage.default.addEdit.listPage.vertical">چیدمان عمودی</message>
+	</module>
+	<module type="Module" name="PropertyManaging">
+		<message key="propertyManaging.default.page.title">مدیریت ویژگی‌ها</message>
+		<message key="propertyManaging.default.message.subjectPropertyRelation">گروه‌های زیر دارای این ویژگی می‌باشند</message>
+		<message key="propertyManaging.default.addEdit.Group">گروه</message>
+		<message key="propertyManaging.default.addEdit.propetyType">نوع ویژگی</message>
+		<message key="propertyManaging.default.addEdit.name">نام</message>
+		<message key="propertyManaging.default.addEdit.itemTitle">عنوان</message>
+		<message key="propertyManaging.default.search.propetyType">نوع ویژگی</message>
+		<message key="propertyManaging.default.search.name">نام</message>
+		<message key="propertyManaging.default.grid.name">نام</message>
+		<message key="propertyManaging.default.grid.propetyType">نوع ویژگی</message>
+		<message key="propertyManaging.default.grid.itemTitle">عنوان</message>
+		<message key="propertyManaging.default.grid.edit">ویرایش</message>
+		<message key="propertyManaging.default.grid.delete">حذف</message>
+		<message key="propertyManaging.default.button.loadAll">فهرست تمامی موارد</message>
+		<message key="propertyManaging.default.button.create">ایجاد</message>
+	</module>
+	<module type="Module" name="PropertyTypes">
+		<message key="propertyTypes.default.page.title">مدیریت نوع ویژگی‌ها</message>
+		<message key="propertyTypes.default.addEdit.name">نام</message>
+		<message key="propertyTypes.default.search.name">نام</message>
+		<message key="propertyTypes.default.grid.name">نام</message>
+		<message key="propertyTypes.default.grid.edit">ویرایش</message>
+		<message key="propertyTypes.default.grid.delete">حذف</message>
+	</module>
+	<module type="Module" name="PropertyItems">
+		<message key="propertyItems.default.page.title">Property Items Manager</message>
+		<message key="propertyItems.default.addEdit.title">عنوان</message>
+		<message key="propertyItems.default.search.title">عنوان</message>
+		<message key="propertyItems.default.grid.title">عنوان</message>
+		<message key="propertyItems.default.grid.edit">ویرایش</message>
+		<message key="propertyItems.default.grid.delete">حذف</message>
+	</module>
+	<module type="Module" name="SubjectProperties">
+		<message key="subjectProperties.default.page.title">Subject Properties Manager</message>
+		<message key="subjectProperties.default.addEdit.isSearchable">قابلت جستجو</message>
+		<message key="subjectProperties.default.search.isSearchable">قابلت جستجو</message>
+		<message key="subjectProperties.default.grid.isSearchable">قابلت جستجو</message>
+		<message key="subjectProperties.default.grid.edit">ویرایش</message>
+		<message key="subjectProperties.default.grid.delete">حذف</message>
+	</module>
+	<module type="Module" name="subjectPropertyValues">
+		<message key="subjectPropertyValues.default.page.title">مدیریت مقادر ویژگی‌ها</message>
+		<message key="subjectPropertyValues.default.addEdit.value">مقدار</message>
+		<message key="subjectPropertyValues.default.search.value">مقدار</message>
+		<message key="subjectPropertyValues.default.grid.value">مقدار</message>
+		<message key="subjectPropertyValues.popup.grid.propertyName">نام</message>
+		<message key="subjectPropertyValues.default.grid.edit">ویرایش</message>
+		<message key="subjectPropertyValues.default.grid.delete">حذف</message>
+	</module>
+	<module type="Module" name="FormManaging">
+		<message key="form.default.page.title">مدیریت فرم‌ها</message>
+		<message key="form.default.addEdit.formID">شناسه</message>
+		<message key="form.default.addEdit.alias">اختصار</message>
+		<message key="form.default.addEdit.title">عنوان</message>
+		<message key="form.default.addEdit.body">توضیحات</message>
+		<message key="form.default.search.title">عنوان</message>
+		<message key="form.default.grid.subjectName">عنوان</message>
+		<message key="form.default.grid.bannerType">نوع هدر</message>
+		<message key="form.default.grid.report">گزارش</message>
+		<message key="form.default.grid.edit">ویرایش</message>
+		<message key="form.default.grid.delete">حذف</message>
+	</module>
+</locale>

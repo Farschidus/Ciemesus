@@ -1,0 +1,164 @@
+﻿#LoginContainer {
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /*background-color: #1ABC9C; #03B6C1*/
+    background: transparent url(../Images/LoginBg.jpg) no-repeat no-repeat center center;    
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal normal 10pt/14pt OpenSans;
+}
+
+label {
+    text-shadow: 1px 1px 0 #000;
+}
+
+#body {
+    margin: 0 auto;
+    position: relative;
+    clear: left;
+    direction: ltr;
+    text-align: center;
+}
+
+#logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    float: left;
+    width: 200px;
+    height: 55px;
+    background: transparent url(../Images/CiemesusLogo.png) no-repeat left center;
+    margin: 30px 0 0 30px;
+}
+
+#welcome {
+    float: left;
+    margin-top: 120px;
+    margin-left: 20px;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+    #welcome span {
+        font-family: OpenSansBold;
+        font-size: 18px;
+    }
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    direction: ltr;
+    background-color: rgba(255,255,255,.13);
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(255,255,255,.1);
+    box-shadow: 0 0 40px #080710;
+    padding: 20px 20px 40px 20px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#developer {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+    #developer span {
+        color: #fff;
+        display: block;
+        margin-top: 10px;
+    }
+
+        #developer span a, #developer span a:visited {
+            color: #c9fffd;
+            text-decoration: none;
+            border-bottom: 1px dotted #fff;
+        }
+
+            #developer span a:hover {
+                border-bottom: 1px solid #fff;
+            }
+
+loginTitle {
+    margin-bottom: 30px;
+}
+
+.loginLable {
+    float: left;
+}
+
+.loginTextBox {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-color: #fff;
+    width: 360px;
+    height: 36px;
+    color: #030013;
+    font-size: 18px;
+    padding: 0 5px;
+    margin: 0;
+    border: 2px solid #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all 0.25s linear 0s;
+    -moz-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+    .loginTextBox:focus {
+        border: none;
+        outline: none;
+        background-color: rgba(255,255,255,0.8);
+    }
+
+input.login, a.login {
+    height: 25px;
+    position: relative;
+    top: 15px;
+    left: -5px;
+    white-space: nowrap;
+    border: none;
+    overflow: visible;
+    text-decoration: none;
+    color: #fff;
+    width: 360px;
+    height: 40px;
+    font-size: 18px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #022b41; /*#1ABC9C*/
+    -webkit-transition: all 0.25s linear 0s;
+    -moz-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+.username {
+    /*background: #fff url(../Images/username.png) no-repeat 285px center;*/
+}
+
+.password {
+   /*background: #fff url(../Images/password.png) no-repeat 285px center;*/
+}
+
+input.login:hover, a.login:hover {
+    color: #fff;
+}
+
+input.login:hover {
+    background: #021532 ; /*#42C7AD #42C7AD;*/
+    cursor: pointer;
+}
