@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BLL.BusinessEntity;
+using System;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using BLL.BusinessEntity;
 
 public partial class Pages_Gallery_Default : BasePublic
 {
@@ -63,7 +59,7 @@ public partial class Pages_Gallery_Default : BasePublic
     {
         StringBuilder sb = new StringBuilder();
         MediaSubjects medias = new MediaSubjects();
-        medias.LoadByIDSubjectAndIDMediaSubjectType(pSubject.pIDSubject, (byte)MediaSubjectTypes.Enum.gallery);
+        medias.LoadByIDSubjectAndIDMediaSubjectType(pSubject.pIDSubject, (byte)MediaSubjectTypes.Enum.imageAttachment);
         if (medias.RowCount > 0)
         {
             medias.Sort = MediaSubjects.ColumnNames.Priority;

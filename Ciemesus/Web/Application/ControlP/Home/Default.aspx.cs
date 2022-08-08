@@ -55,7 +55,7 @@ public partial class ControlP_Home_Default : BaseCP
     {
         if (!IsPostBack)
         {
-            pShowMediaManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = true;
+            pShowMediaManager = pShowBodyGalleryManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = true;
             pShownSearchButton = pShownLoadAllButton = pShownDeleteButton = false;
             grvList.EmptyDataText = Farschidus.Translator.AppTranslate["general.message.gridsEmptyDataText"];
             Title = Farschidus.Translator.AppTranslate["homePageManaging.default.page.title"];
@@ -275,7 +275,7 @@ public partial class ControlP_Home_Default : BaseCP
     }
     private void mSetPopupData(Subjects subject)
     {
-        hdfData.Value = string.Format("{0}|{1}|{2}", subject.pIDSubject.ToString(), pLanguageID, (byte)MediaSubjectTypes.Enum.attachment);
+        hdfData.Value = string.Format("{0}|{1}", subject.pIDSubject.ToString(), pLanguageID);
         pUpdatePanelToolbarButtons.Update();
     }
 

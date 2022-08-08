@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using BLL.BusinessEntity;
 using Farschidus.Web.UI.WebControls;
-using BLL.BusinessEntity;
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 public partial class PSM_List_Default : BaseCP
 {
@@ -72,7 +69,7 @@ public partial class PSM_List_Default : BaseCP
     {
         if (!IsPostBack)
         {
-            pShowMediaManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = pShowPropertyValueManager = true;
+            pShowMediaManager = pShowBodyGalleryManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = pShowPropertyValueManager = true;
             grvList.EmptyDataText = Farschidus.Translator.AppTranslate["general.message.gridsEmptyDataText"];
             Title = Farschidus.Translator.AppTranslate["listItemManaging.default.page.title"];
             mInitialBindings();
@@ -419,8 +416,10 @@ public partial class PSM_List_Default : BaseCP
         txtAlias.Text = txtTitle.Text = TCMEValue.Value = string.Empty;
         cbxIsActive.Checked = true;
         pIDSubject = null;
+        DateExtender.Mask = Global.MethodsAndProps.DateFormat;
+        calExtDate.Format = Global.MethodsAndProps.DateFormat;
+        txtDate.Text = DateTime.UtcNow.AddHours(Global.MethodsAndProps.TimeZone).ToString();        
         uplAddEdit.Update();
-        txtDate.Text = DateTime.UtcNow.AddHours(Global.MethodsAndProps.TimeZone).ToString(Global.MethodsAndProps.DateFormat);
     }
 
     private void mDDLListTypeBinding()
@@ -545,7 +544,7 @@ public partial class PSM_List_Default : BaseCP
     }
     private void mSetPopupData(Subjects subject)
     {
-        hdfData.Value = string.Format("{0}|{1}|{2}", subject.pIDSubject.ToString(), pLanguageID, (byte)MediaSubjectTypes.Enum.attachment);
+        hdfData.Value = string.Format("{0}|{1}", subject.pIDSubject.ToString(), pLanguageID);
         pUpdatePanelToolbarButtons.Update();
     }
 

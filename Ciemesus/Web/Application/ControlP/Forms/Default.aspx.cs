@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Text;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using BLL.BusinessEntity;
 using Farschidus.Web.UI.WebControls;
-using BLL.BusinessEntity;
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 public partial class PSM_Forms_Default : BaseCP
 {
@@ -71,7 +68,7 @@ public partial class PSM_Forms_Default : BaseCP
     {
         if (!IsPostBack)
         {
-            pShowBannerManager = pShowPluginManager = pShowPropertyManager = pShowThumbnailManager = pShowMediaManager = true;
+            pShowMediaManager = pShowBannerManager = pShowPluginManager = pShowPropertyManager = pShowThumbnailManager = true;
             pShownSearchButton = false;
             grvList.EmptyDataText = Farschidus.Translator.AppTranslate["general.message.gridsEmptyDataText"];
             Title = Farschidus.Translator.AppTranslate["form.default.page.title"];
@@ -491,7 +488,7 @@ public partial class PSM_Forms_Default : BaseCP
     }
     private void mSetPopupData(Subjects subject)
     {
-        hdfData.Value = string.Format("{0}|{1}|{2}", subject.pIDSubject.ToString(), pLanguageID, (byte)MediaSubjectTypes.Enum.attachment);
+        hdfData.Value = string.Format("{0}|{1}", subject.pIDSubject.ToString(), pLanguageID);
         pUpdatePanelToolbarButtons.Update();
     }
     private void mLoadRecursivlyByParentID(ref List<string> ddlItems, Guid subjectID, string title)

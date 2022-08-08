@@ -56,7 +56,7 @@ public partial class PSM_Pages_Default : BaseCP
     {
         if (!IsPostBack)
         {
-            pShowMediaManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = true;
+            pShowMediaManager = pShowBodyGalleryManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = true;
             pShownSearchButton = true;
             grvList.EmptyDataText = Farschidus.Translator.AppTranslate["general.message.gridsEmptyDataText"];
             Title = Farschidus.Translator.AppTranslate["pagesManaging.default.page.title"];
@@ -306,7 +306,7 @@ public partial class PSM_Pages_Default : BaseCP
                 subjects.pIDLanguage = pLanguageID;
                 subjects.pTitle = txtTitle.Text;
                 HiddenField TCMEValue = (HiddenField)tinyMCE.FindControl("TCMEValue");
-                subjects.pBody = System.Web.HttpUtility.HtmlDecode(TCMEValue.Value);
+                subjects.pBody = HttpUtility.HtmlDecode(TCMEValue.Value);
                 subjects.pIsActive = cbxIsActive.Checked;
                 subjects.pAlias = Global.MethodsAndProps.mAliasCorrection(txtAlias.Text);
 
@@ -494,7 +494,7 @@ public partial class PSM_Pages_Default : BaseCP
     }
     private void mSetPopupData(Subjects subject)
     {
-        hdfData.Value = string.Format("{0}|{1}|{2}", subject.pIDSubject.ToString(), pLanguageID, (byte)MediaSubjectTypes.Enum.attachment);
+        hdfData.Value = string.Format("{0}|{1}", subject.pIDSubject.ToString(), pLanguageID);
         pUpdatePanelToolbarButtons.Update();
     }
 

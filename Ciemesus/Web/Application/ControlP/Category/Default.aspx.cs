@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Xml;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using BLL.BusinessEntity;
 using Farschidus.Web.UI.WebControls;
-using BLL.BusinessEntity;
+using System;
+using System.Web.UI.WebControls;
 
 public partial class PSM_Category_Default : BaseCP
 {
@@ -443,7 +439,7 @@ public partial class PSM_Category_Default : BaseCP
     }
     private void mSetPopupData(Subjects subject)
     {
-        hdfData.Value = string.Format("{0}|{1}|{2}", subject.pIDSubject.ToString(), pLanguageID, (byte)MediaSubjectTypes.Enum.attachment);
+        hdfData.Value = string.Format("{0}|{1}", subject.pIDSubject.ToString(), pLanguageID);
         pUpdatePanelToolbarButtons.Update();
     }
 

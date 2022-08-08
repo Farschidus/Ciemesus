@@ -241,6 +241,9 @@ input[type="text"]:focus, select:focus, textarea:focus{
 .mediaManager {     
     background: #1ABC9C url('../Images/CP/CPIcons.png') no-repeat -73px -237px !important; 
 }
+.bodyGalleryManager {
+    background: #1ABC9C url('../Images/CP/CPIcons.png') no-repeat -73px -207px !important;
+}
 .propertyManager{
     background: #1ABC9C url('../Images/CP/CPIcons.png') no-repeat -73px -297px !important;
 }
@@ -568,8 +571,7 @@ p#vtip #vtipArrow
 	transform: scale(1) !important;
 	opacity: 1 !important;
 }
-#MediaPopup, #BannerPopup, #PluginPopup, #ThumbnailPopup, #PropertyPopup, #PropertyValuePopup
-{
+#MediaPopup, #BodyGalleryPopup, #BannerPopup, #PluginPopup, #ThumbnailPopup, #PropertyPopup, #PropertyValuePopup {
     position: fixed;
     direction: rtl;
     z-index: 500;
@@ -581,13 +583,13 @@ p#vtip #vtipArrow
     background: rgba(0,0,0,0.8);
     visibility: hidden;
     -webkit-transform: scale(2);
-	-moz-transform: scale(2);
-	-ms-transform: scale(2);
-	transform: scale(2);
-	opacity: 0;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
 }
 .Popup
 {
