@@ -449,11 +449,14 @@ public partial class PSM_Medias_Default : BaseCP
     {
         Medias media = new Medias(mediaId);
         string[] imageFile = System.IO.Directory.GetFiles(MapPath(Global.Constants.FOLDER_MEDIAS), media.pIDMedia.ToString() + ".*");
-        string link = string.Format(@"<a href='javascript:void(0)' onclick=""window.open('/{0}?{1}', 'File', 'height=515,width=990,top=120,left=10,scrollbars=yes,resizable=yes')"">{2}</a>",
+        if (imageFile.Count() > 0)
+        {
+            return string.Format(@"<a href='javascript:void(0)' onclick=""window.open('/{0}?{1}', 'File', 'height=515,width=990,top=120,left=10,scrollbars=yes,resizable=yes')"">{2}</a>",
                 Global.Constants.FOLDER_MEDIAS.Substring(2) + System.IO.Path.GetFileName(imageFile[0]),
                 DateTime.Now.ToString(),
                 Farschidus.Translator.AppTranslate["ascx.media.popupLinks.title"]);
-        return link;
+        }
+        return "";
     }
 
     #endregion
