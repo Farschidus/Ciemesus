@@ -164,6 +164,13 @@ public class BaseCP : BasePage
             ((System.Web.UI.HtmlControls.HtmlGenericControl)(this.Master.Master.FindControl("cphMainMaster").FindControl("MediaManager"))).Visible = value;
         }
     }
+    public bool pShowBodyGalleryManager
+    {
+        set
+        {
+            ((System.Web.UI.HtmlControls.HtmlGenericControl)(this.Master.Master.FindControl("cphMainMaster").FindControl("BodyGalleryManager"))).Visible = value;
+        }
+    }
     public bool pShowPropertyManager
     {
         set

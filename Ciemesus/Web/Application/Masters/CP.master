@@ -4,6 +4,7 @@
 <%@ Register Src="~/Application/Ascx/MediaManager.ascx" TagName="MediaManager" TagPrefix="ucMedia" %>
 <%@ Register Src="~/Application/Ascx/BannerManager.ascx" TagName="BannerManager" TagPrefix="ucBanner" %>
 <%@ Register Src="~/Application/Ascx/PluginManager.ascx" TagName="PluginManager" TagPrefix="ucPlugin" %>
+<%@ Register Src="~/Application/Ascx/BodyGalleryManager.ascx" TagName="BodyGalleryManager" TagPrefix="ucBodyGallery" %>
 <%@ Register Src="~/Application/Ascx/ThumbnailManager.ascx" TagName="ThumbnailManager" TagPrefix="ucThumbnail" %>
 <%@ Register Src="~/Application/Ascx/PropertyManager.ascx" TagName="PropertyManager" TagPrefix="ucProperty"%>
 <%@ Register Src="~/Application/Ascx/PropertyValueManager.ascx" TagName="PropertyValueManager" TagPrefix="ucPropertyValue" %>
@@ -168,6 +169,9 @@
                             </li>
                             <li runat="server" id="MediaManager" visible="false">
                                 <ucMedia:MediaManager ID="MediaManager1" runat="server" />
+                            </li>
+                            <li runat="server" id="BodyGalleryManager" visible="false">
+                                <ucBodyGallery:BodyGalleryManager ID="BodyGalleryManager1" runat="server" />
                             </li>
                             <li runat="server" id="PropertyManager" visible="false">
                                 <ucProperty:PropertyManager id="PropertyManager1" runat="server" />

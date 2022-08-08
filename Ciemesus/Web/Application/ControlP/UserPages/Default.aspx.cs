@@ -387,7 +387,7 @@ public partial class PSM_UserPages_Default : BaseCP
     }
     private void mSetPopupData(Subjects subject)
     {
-        hdfData.Value = string.Format("{0}|{1}|{2}", subject.pIDSubject.ToString(), pLanguageID, (byte)MediaSubjectTypes.Enum.attachment);
+        hdfData.Value = string.Format("{0}|{1}", subject.pIDSubject.ToString(), pLanguageID);
         pUpdatePanelToolbarButtons.Update();
     }
     public string mGetUSerFullName(object idUser)

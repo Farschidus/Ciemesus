@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using BLL.BusinessEntity;
 using Farschidus.Web.UI.WebControls;
-using BLL.BusinessEntity;
+using System;
+using System.Web.UI.WebControls;
 
-public partial class ControlP_Media_Popup : BasePage
+public partial class ControlP_Media_BodyGalleryPopup : BasePage
 {
     #region "Properties"
 
@@ -111,7 +108,7 @@ public partial class ControlP_Media_Popup : BasePage
                     }
                     else
                     {
-                        pMessage.Add(Farschidus.Translator.AppTranslate["media.popup.message.alreadyExist"] + ": " + mediaSubjects.Medias.pFileName, Farschidus.Web.UI.Message.MessageTypes.Information);
+                        pMessage.Add(Farschidus.Translator.AppTranslate["bodyGallery.popup.message.alreadyExist"] + ": " + mediaSubjects.Medias.pFileName, Farschidus.Web.UI.Message.MessageTypes.Information);
                     }
                 }
             }
@@ -181,7 +178,7 @@ public partial class ControlP_Media_Popup : BasePage
         {
             string[] Data = hdfData.Value.Split('|');
             pSubjectID = new Guid(Data[0]);
-            pMediaSubjectTypeID = (byte)MediaSubjectTypes.Enum.attachment;
+            pMediaSubjectTypeID = (byte)MediaSubjectTypes.Enum.imageAttachment;
             if (hdfRefresh.Value.Equals("1000"))
                 mLoadAll();
         }
@@ -336,7 +333,7 @@ public partial class ControlP_Media_Popup : BasePage
             output = string.Format(@"<a href='javascript:void(0)' onclick=""window.open('/{0}?{1}', 'File', 'height=515,width=990,top=120,left=10,scrollbars=yes,resizable=yes')"">{2}</a>",
                 Global.Constants.FOLDER_MEDIAS.Substring(2) + System.IO.Path.GetFileName(imageFile[0]),
                 DateTime.Now.ToString(),
-                Farschidus.Translator.AppTranslate["media.popup.links.showFile"]);
+                Farschidus.Translator.AppTranslate["bodyGallery.popup.links.showFile"]);
         else
             output = Farschidus.Translator.AppTranslate["general.label.fileNotExist"];
 

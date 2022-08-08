@@ -445,3 +445,17 @@ a.backToList {
 .excerpt {
     display: none;
 }
+
+/******************************* Bootstrtap carousel caption *************************************/
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 0;
+    color: #fff;
+    text-align: center;
+    background-color: rgb(0 0 0 / 56%);
+}

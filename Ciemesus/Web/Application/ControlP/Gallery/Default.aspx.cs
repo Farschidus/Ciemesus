@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using BLL.BusinessEntity;
 using Farschidus.Web.UI.WebControls;
-using BLL.BusinessEntity;
+using System;
+using System.Web.UI.WebControls;
 
 public partial class PSM_Gallery_Default : BaseCP
 {
@@ -56,7 +52,7 @@ public partial class PSM_Gallery_Default : BaseCP
     {
         if (!IsPostBack)
         {
-            pShowMediaManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = true;
+            pShowBodyGalleryManager = pShowBannerManager = pShowPluginManager = pShowThumbnailManager = true;
             grvList.EmptyDataText = Farschidus.Translator.AppTranslate["general.message.gridsEmptyDataText"];
             Title = Farschidus.Translator.AppTranslate["galleryManaging.default.page.title"];            
             mInitialBindings();
@@ -520,7 +516,7 @@ public partial class PSM_Gallery_Default : BaseCP
     }
     private void mSetPopupData(Subjects subject)
     {
-        hdfData.Value = string.Format("{0}|{1}|{2}", subject.pIDSubject.ToString(), pLanguageID, (byte)MediaSubjectTypes.Enum.gallery);
+        hdfData.Value = string.Format("{0}|{1}", subject.pIDSubject.ToString(), pLanguageID);
         pUpdatePanelToolbarButtons.Update();
     }
     public string mGetPageURL()

@@ -110,7 +110,7 @@ namespace BLL.BusinessEntity
         {
             attachment = 1,
             headerImage,
-            gallery,
+            imageAttachment,
             thumbnail
         }
 

@@ -70,7 +70,7 @@ public partial class Client_Ascx_PageBanner : UserControl
                     if (subjectGallery.RowCount > 0)
                     {
                         MediaSubjects mediaSubjects = new MediaSubjects();
-                        mediaSubjects.LoadByIDSubjectAndIDMediaSubjectType(subjectGallery.pIDSubject, (byte)MediaSubjectTypes.Enum.gallery);
+                        mediaSubjects.LoadByIDSubjectAndIDMediaSubjectType(subjectGallery.pIDSubject, (byte)MediaSubjectTypes.Enum.imageAttachment);
                         mediaSubjects.Sort = MediaSubjects.ColumnNames.Priority;
                         if (mediaSubjects.RowCount > 0)
                         {
