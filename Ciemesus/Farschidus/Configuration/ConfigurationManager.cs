@@ -333,7 +333,7 @@ namespace Farschidus.Configuration
         public bool AddItem(string section, string key, string value)
         {
             ListDictionary valueAttr = new ListDictionary();
-            valueAttr.Add(STRING_VALUE, value);          
+            valueAttr.Add(STRING_VALUE, value);
 
             return AddItem(section, key, valueAttr);
         }
@@ -343,7 +343,7 @@ namespace Farschidus.Configuration
             valueAttr.Add(STRING_VALUE, value);
             valueAttr.Add(property, propValue);
 
-            return AddItem(section, key, valueAttr);
+            return AddItem(section, key, valueAttr, propValue);
         }
         /// <summary>
         /// Adds a new Item to the given section
@@ -365,6 +365,77 @@ namespace Farschidus.Configuration
                     {
                         //Create Item node
                         if (!IsItemExisted(section, key))
+                        {
+                            XmlNode xmlNodeItem = ConfigDocument.CreateElement(STRING_ITEM);
+
+                            //Create  attributes of the "Item" node
+                            XmlAttribute xmlAtrKey = ConfigDocument.CreateAttribute(STRING_KEY);
+                            //Set the value of "key" attribute.
+                            xmlAtrKey.Value = key;
+                            //Appent "key" attribute to the newly created section item element
+                            xmlNodeItem.Attributes.Append(xmlAtrKey);
+
+                            XmlAttribute xmlAtrValue = null;
+                            foreach (string attrKeys in attributes.Keys)
+                            {
+                                if (!string.IsNullOrEmpty(attrKeys))
+                                {
+                                    xmlAtrValue = ConfigDocument.CreateAttribute(attrKeys);
+                                    //Set the value of "value" attribute.
+                                    xmlAtrValue.Value = attributes[attrKeys].ToString();
+
+                                    //Appent the attribute to the newly created item element.
+                                    xmlNodeItem.Attributes.Append(xmlAtrValue);
+                                }
+                            }
+                            //Appent newly created item to the given section.
+                            xmlNodeSection.AppendChild(xmlNodeItem);
+
+                            ConfigDocument.Save(ConfigFilePath);
+                        }
+                        else
+                        {
+                            throw new Exception(string.Format("an item with the same key already exists [{0}]", key));
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("The key value of item can not be null or empty string");
+                    }
+                }
+                else
+                {
+                    throw new Exception(string.Format("There is no section with the given name [{0}]", section));
+                }
+            }
+            else
+            {
+                throw new Exception("The 'section','key' and 'attributes' can not be null or empty");
+            }
+
+            return true;
+        }
+        /// <summary>
+        /// Adds a new Item to the given section
+        /// </summary>
+        /// <param name="section">The name of the section</param>
+        /// <param name="key">The key of the item to add section</param>
+        /// <param name="attributes">The attribute and their values to add as pair values</param>
+        /// <param name="langCode">The langCode</param>
+        /// <returns>true if successful, false if fails</returns>
+        public bool AddItem(string section, string key, ListDictionary attributes, string langCode = default)
+        {
+            if (!string.IsNullOrEmpty(section) && !string.IsNullOrEmpty(key) && attributes.Count > 0)
+            {
+                if (IsSectionExisted(section))
+                {
+                    XmlNode xmlNodeSection = ConfigDocument.SelectSingleNode(
+                        string.Format("{0}/{1}[@{2}=\"{3}\"]", STRING_SETTINGS, STRING_SECTION, STRING_NAME, section));
+
+                    if (!string.IsNullOrEmpty(key))
+                    {
+                        //Create Item node
+                        if (!IsItemExisted(section, key, STRING_LANGCODE, langCode))
                         {
                             XmlNode xmlNodeItem = ConfigDocument.CreateElement(STRING_ITEM);
 
@@ -455,7 +526,7 @@ namespace Farschidus.Configuration
             }
             return true;
         }
-         
+
         public bool UpdateItemAttribute(string section, string key, string attribute, string value)
         {
             if (!string.IsNullOrEmpty(section) && !string.IsNullOrEmpty(key)
@@ -632,7 +703,7 @@ namespace Farschidus.Configuration
                     string.Format("{0}/{1}[@{2}=\"{3}\"]", STRING_SETTINGS, STRING_SECTION, STRING_NAME, section));
 
                 XmlNode xmlItemNode = xmlNodeSection.SelectSingleNode(
-                    string.Format("{0}[@{1}=\"{2}\"and @{3}=\"{4}\"]", STRING_ITEM, STRING_KEY, key, property, propValue));                                  
+                    string.Format("{0}[@{1}=\"{2}\"and @{3}=\"{4}\"]", STRING_ITEM, STRING_KEY, key, property, propValue));
 
                 if (xmlItemNode != null)
                 {
@@ -653,7 +724,7 @@ namespace Farschidus.Configuration
                 Settings.AddSection(section);
                 Settings.AddItem(section, key, defaultValue);
             }
-            if(!Settings.IsItemExisted(section, key))
+            if (!Settings.IsItemExisted(section, key))
             {
                 Settings.AddItem(section, key, defaultValue);
             }

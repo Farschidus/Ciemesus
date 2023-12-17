@@ -119,7 +119,7 @@ public partial class PSM_Settings_Default : BaseCP
     #region "Private Methodes"
 
     private void mInitialBindings()
-    {   
+    {
         Languages lang = new Languages();
         lang.LoadActiveLanguages();
 
@@ -172,9 +172,9 @@ public partial class PSM_Settings_Default : BaseCP
         cbxSinglePage.Checked = Convert.ToBoolean(Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Website", "SinglePage", "value"));
         cbxRedirectToHome.Checked = Convert.ToBoolean(Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Website", "RedirectToHome", "value"));
 
-        if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Website", "Name", "langCode", langCode.pCode))                    
-            txtwebsiteName.Text = Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Website", "Name", "langCode", langCode.pCode);       
-        else        
+        if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Website", "Name", "langCode", langCode.pCode))
+            txtwebsiteName.Text = Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Website", "Name", "langCode", langCode.pCode);
+        else
             txtwebsiteName.Text = string.Empty;
 
         if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Metatags", "KeyWords", "langCode", langCode.pCode))
@@ -185,8 +185,8 @@ public partial class PSM_Settings_Default : BaseCP
         if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Metatags", "Description", "langCode", langCode.pCode))
             txtMetaDesc.Text = Farschidus.Configuration.ConfigurationManager.Settings.GetItemAttribute("Metatags", "Description", "langCode", langCode.pCode);
         else
-            txtMetaDesc.Text = string.Empty;        
-       
+            txtMetaDesc.Text = string.Empty;
+
         uplAddEdit.Update();
     }
     private bool mValidateAddEdit()
@@ -210,13 +210,13 @@ public partial class PSM_Settings_Default : BaseCP
 
                     if (File.Exists(MapPath(strFavFile)))
                         File.Delete(MapPath(strFavFile));
-                    
+
                     File.Move(MapPath(Global.Constants.IMAGE_TEMP_FAVICON), MapPath(strFavFile));
                 }
 
                 Farschidus.Translator.SetPublicDefaultLanguage(ddlPubDefLang.SelectedValue);
                 Farschidus.Translator.SetCPDefaultLanguage(ddlCpDefLang.SelectedValue);
-                Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Website", "TimeZone", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, ddlTimezone.SelectedValue);                
+                Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Website", "TimeZone", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, ddlTimezone.SelectedValue);
                 Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Website", "ServerDateFormat", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, ddlServerDateFormat.SelectedValue);
                 Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Thumbnail", "Dimention", "width", txtThumbWidth.Text);
                 Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Thumbnail", "Dimention", "height", txtThumbHeight.Text);
@@ -228,24 +228,26 @@ public partial class PSM_Settings_Default : BaseCP
                 Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemInnerText("ListType", "List", txtlistPageHorizontal.Text);
                 Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Website", "SinglePage", "value", cbxSinglePage.Checked.ToString());
                 Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Website", "RedirectToHome", "value", cbxRedirectToHome.Checked.ToString());
-                
+
                 Languages langCode = new Languages(pLanguageID);
 
-                if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Website", "Name", "langCode", langCode.pCode))                                    
-                    Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Website", "Name", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, txtwebsiteName.Text, "langCode", langCode.pCode);                
-                else                
-                    Farschidus.Configuration.ConfigurationManager.Settings.AddItem("Website", "Name", txtwebsiteName.Text, "langCode", langCode.pCode);                
-
-                if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Metatags", "KeyWords", "langCode", langCode.pCode))                
-                    Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Metatags", "KeyWords", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, txtMetaKeyWord.Text, "langCode", langCode.pCode);                
+                if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Website", "Name", "langCode", langCode.pCode))
+                    Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Website", "Name", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, txtwebsiteName.Text, "langCode", langCode.pCode);
                 else
-                    Farschidus.Configuration.ConfigurationManager.Settings.AddItem("Metatags", "KeyWords", txtwebsiteName.Text, "langCode", langCode.pCode);                
+                    Farschidus.Configuration.ConfigurationManager.Settings.AddItem("Website", "Name", txtwebsiteName.Text, "langCode", langCode.pCode);
+
+
+                if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Metatags", "KeyWords", "langCode", langCode.pCode))
+                    Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Metatags", "KeyWords", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, txtMetaKeyWord.Text, "langCode", langCode.pCode);
+                else
+                    Farschidus.Configuration.ConfigurationManager.Settings.AddItem("Metatags", "KeyWords", txtMetaKeyWord.Text, "langCode", langCode.pCode);
+
 
                 if (Farschidus.Configuration.ConfigurationManager.Settings.IsItemExisted("Metatags", "Description", "langCode", langCode.pCode))
-                    Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Metatags", "Description", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, txtMetaDesc.Text, "langCode", langCode.pCode);                
+                    Farschidus.Configuration.ConfigurationManager.Settings.UpdateItemAttribute("Metatags", "Description", Farschidus.Configuration.ConfigurationManager.STRING_VALUE, txtMetaDesc.Text, "langCode", langCode.pCode);
                 else
                     Farschidus.Configuration.ConfigurationManager.Settings.AddItem("Metatags", "Description", txtMetaDesc.Text, "langCode", langCode.pCode);
-                
+
 
                 pMessage.Clear();
                 pMessage.Add(Farschidus.Translator.AppTranslate["general.message.success"], Farschidus.Web.UI.Message.MessageTypes.Success);
@@ -263,7 +265,7 @@ public partial class PSM_Settings_Default : BaseCP
     {
     }
     private void mClear()
-    { 
+    {
         pIDSubject = null;
         uplAddEdit.Update();
     }
