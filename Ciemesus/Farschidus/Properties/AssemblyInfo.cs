@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Web.UI;
 
@@ -38,5 +37,5 @@ using System.Web.UI;
 // TagPrefix for Thrita Controls
 [assembly: TagPrefix("Farschidus.Web.UI.WebControls", "Farschidus")]
 // Embedded files
-[assembly: System.Web.UI.WebResource("Farschidus.EmbeddedFiles.TableDnD.js", "text/javascript")]     //Farschidus.Web.UI.WebControls.GridView
-[assembly: System.Web.UI.WebResource("Farschidus.EmbeddedFiles.Config.xml", "text/xml")]             //Farschidus.Configuration
+[assembly: WebResource("Farschidus.EmbeddedFiles.TableDnD.js", "text/javascript")]     //Farschidus.Web.UI.WebControls.GridView
+[assembly: WebResource("Farschidus.EmbeddedFiles.Config.xml", "text/xml")]             //Farschidus.Configuration

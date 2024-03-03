@@ -160,10 +160,9 @@
                             <asp:RequiredFieldValidator ID="rfvDate" runat="server" ErrorMessage="*" ControlToValidate="txtDate"
                                 ValidationGroup="valGrouop"></asp:RequiredFieldValidator>                        
                             <ajax:MaskedEditExtender ID="DateExtender" runat="server" TargetControlID="txtDate"
-                                Mask="<%# Global.MethodsAndProps.DateFormat %>" MessageValidatorTip="true" OnFocusCssClass="MaskedEditFocus"
-                                OnInvalidCssClass="MaskedEditError" MaskType="Date" DisplayMoney="Left" AcceptNegative="Left"
-                                ErrorTooltipEnabled="True" />
-                            <ajax:CalendarExtender ID="calExtDate" runat="server" TargetControlID="txtDate" Format="<%# Global.MethodsAndProps.DateFormat %>">
+                                Mask="9999/99/99" MessageValidatorTip="true" OnFocusCssClass="MaskedEditFocus"
+                                OnInvalidCssClass="MaskedEditError" MaskType="Date" ErrorTooltipEnabled="True" />
+                            <ajax:CalendarExtender ID="calExtDate" runat="server" TargetControlID="txtDate" Format="yyyy/MM/dd">
                             </ajax:CalendarExtender>
                         </td>
                     </tr>

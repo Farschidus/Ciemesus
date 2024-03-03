@@ -416,9 +416,8 @@ public partial class PSM_List_Default : BaseCP
         txtAlias.Text = txtTitle.Text = TCMEValue.Value = string.Empty;
         cbxIsActive.Checked = true;
         pIDSubject = null;
-        DateExtender.Mask = Global.MethodsAndProps.DateFormat;
-        calExtDate.Format = Global.MethodsAndProps.DateFormat;
-        txtDate.Text = DateTime.UtcNow.AddHours(Global.MethodsAndProps.TimeZone).ToString();        
+        txtDate.Text = DateTime.UtcNow.AddHours(Global.MethodsAndProps.TimeZone).ToString(Global.MethodsAndProps.DateFormat);
+        calExtDate.Format = Global.MethodsAndProps.DateFormat;      
         uplAddEdit.Update();
     }
 

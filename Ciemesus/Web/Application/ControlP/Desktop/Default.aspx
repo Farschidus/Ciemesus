@@ -1,4 +1,4 @@
-﻿<%@ Page Title="میزکار مدیر سایت" Language="C#" MasterPageFile="~/Application/Masters/CP.master"
+<%@ Page Title="میزکار مدیر سایت" Language="C#" MasterPageFile="~/Application/Masters/CP.master"
     AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="ControlP_Desktop_Default" %>
 
 <%@ Register Assembly="Farschidus" Namespace="Farschidus.Web.UI.WebControls" TagPrefix="Farschidus" %>
