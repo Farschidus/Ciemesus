@@ -230,6 +230,6 @@ gulp.task(spaCss, function () {
 // Actions
 gulp.task(actionsApplication, gulp.series(cleanApplication, copyAppFonts, copyAppImages, baseJs, baseCss, cpJs, cpCss));
 gulp.task(actionsClient, gulp.series(cleanClient, copyClientFonts, copyClientImages, clientJs, clientCss, underConstructionJs, underConstructionCss, spaJs, spaCss));
-gulp.task('A-FastClientBuild', gulp.series(cleanClient, copyClientFonts, copyClientImages, clientJs, clientCss));
 
-gulp.task('actions-allBuild', gulp.parallel([actionsApplication, actionsClient]));
+gulp.task('A-FastClientBuild', gulp.series(cleanClient, copyClientFonts, copyClientImages, clientJs, clientCss));
+gulp.task('A-allBuild', gulp.parallel([actionsApplication, actionsClient]));
