@@ -31,7 +31,7 @@
             <ContentTemplate>
                 <div>
                     <span class="favIconSettingView">
-                        <asp:Image ID="imgFaveIcon" runat="server" ImageUrl="~/Client/Images/favicon.ico"></asp:Image>
+                        <asp:Image ID="imgFaveIcon" runat="server" ImageUrl="~/Client/Images/favicon.ico" Width="20px"></asp:Image>
                     </span>
                     <table width="700px" style="display: inline-block">
                         <tr>
