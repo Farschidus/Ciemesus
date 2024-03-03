@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="/client/static/dist/css/underConstruction.min.css?<%= DateTime.UtcNow.ToString("yyyyMMddHHmmss") %>" />
 </head>
 <body>
-	<div class="bg-img1 size1 overlay1 p-t-24" style="background-image: url('Client/Images/Public/underConstruction.jpg');">
+	<div class="bg-img1 size1 overlay1 p-t-24" style="background-image: url('Client/Images/Public/System/underConstruction.jpg');">
 		<div class="flex-w flex-sb-m p-l-80 p-r-74 p-b-175 respon5">
 			<div class="wrappic1 m-r-30 m-t-10 m-b-10">
 				<a href="http://ciemesus.com" target="_blank"><img id="ciemesus" src="Application/Images/General/CiemesusLogo.png" alt="Ciemesus"></a>
